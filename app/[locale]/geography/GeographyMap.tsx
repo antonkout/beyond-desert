@@ -2,14 +2,7 @@
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import 'maplibre-gl/dist/maplibre-gl.css';
-
-const SITES = [
-  { id: 'ras-al-hadd', name: 'Ras al-Hadd', coords: [59.79, 22.52], note: 'Bronze Age coastal site, Oman' },
-  { id: 'halban', name: 'Halban Necropolis', coords: [58.16, 23.51], note: 'Iron Age necropolis, Oman' },
-  { id: 'romail', name: 'Romail Shelter', coords: [57.5, 23.0], note: 'Prehistoric rock shelter, Oman' },
-  { id: 'marib', name: 'Marib', coords: [45.32, 15.42], note: 'Temple of Awam, Yemen' },
-  { id: 'baraqish', name: 'Baraqish', coords: [44.79, 16.0], note: 'Cenotaph site, Yemen' },
-];
+import sites from '@/public/data/sites.geojson.json';
 
 export default function GeographyMap() {
   const t = useTranslations('sections.geography');
@@ -36,22 +29,44 @@ export default function GeographyMap() {
           },
           layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
         },
-        center: [52, 22],
-        zoom: 4,
+        center: [56, 22],
+        zoom: 5,
       });
 
-      SITES.forEach((site) => {
+      map.addControl(new maplibregl.NavigationControl(), 'top-right');
+
+      (sites as any).features.forEach((feature: any) => {
+        const props = feature.properties;
+        const [lng, lat] = feature.geometry.coordinates;
+        const isUnibo = props.unibo === true;
+
         const el = document.createElement('button');
-        el.setAttribute('aria-label', site.name);
-        el.style.cssText =
-          'width:20px;height:20px;border-radius:50%;background:#A32D2D;border:3px solid #E7D6B9;cursor:pointer;';
+        el.setAttribute('aria-label', props.name);
+        el.style.cssText = `
+          width: ${isUnibo ? '22px' : '16px'};
+          height: ${isUnibo ? '22px' : '16px'};
+          border-radius: 50%;
+          background: ${isUnibo ? '#A32D2D' : '#1F3F4D'};
+          border: 3px solid #E7D6B9;
+          cursor: pointer;
+          box-shadow: 0 2px 6px rgba(0,0,0,0.25);
+        `;
+
+        const popupHtml = `
+          <div style="font-family: 'IBM Plex Sans', system-ui, sans-serif; min-width: 200px;">
+            <strong style="font-family: Outfit, sans-serif; font-size: 15px; color: #163039;">
+              ${props.name}
+            </strong>
+            ${props.mission ? `<div style="font-size: 12px; color: #A32D2D; margin-top: 2px;">${props.mission}</div>` : ''}
+            ${props.period ? `<div style="font-size: 12px; color: #163039; opacity: 0.7; margin-top: 4px;">${props.period}</div>` : ''}
+            ${props.lead ? `<div style="font-size: 12px; color: #163039; margin-top: 6px;">${props.lead}</div>` : ''}
+            ${props.institute ? `<div style="font-size: 11px; color: #163039; opacity: 0.7; margin-top: 4px; font-style: italic;">${props.institute}</div>` : ''}
+          </div>
+        `;
+
         new maplibregl.Marker(el)
-          .setLngLat(site.coords as [number, number])
-          .setPopup(
-            new maplibregl.Popup({ offset: 18 }).setHTML(
-              `<strong style="font-family:Outfit,sans-serif">${site.name}</strong><br><span style="color:#163039">${site.note}</span>`
-            )
-          )
+          .setLngLat([lng, lat])
+          .setPopup(new maplibregl.Popup({ offset: 18, maxWidth: '300px' }).setHTML(popupHtml))
           .addTo(map);
       });
     })();
@@ -68,18 +83,34 @@ export default function GeographyMap() {
         <h1 className="font-display text-4xl md:text-5xl mb-4 text-deep-basalt">
           {t('title')}
         </h1>
-        <p className="max-w-prose mb-10 text-deep-basalt/85">{t('lead')}</p>
+        <p className="max-w-prose mb-6 text-deep-basalt/85">{t('lead')}</p>
+
+        <div className="flex flex-wrap gap-6 mb-6 text-sm">
+          <span className="flex items-center gap-2 text-deep-basalt">
+            <span
+              aria-hidden
+              className="inline-block w-4 h-4 rounded-full bg-unibo-red border-2 border-desert-sand"
+            />
+            {t('legendUnibo')}
+          </span>
+          <span className="flex items-center gap-2 text-deep-basalt">
+            <span
+              aria-hidden
+              className="inline-block w-3 h-3 rounded-full bg-petroleum-blue border-2 border-desert-sand"
+            />
+            {t('legendOther')}
+          </span>
+        </div>
 
         <div
           ref={mapContainer}
           role="application"
           aria-label="Map of archaeological sites in the Arabian Peninsula"
-          className="w-full h-[500px] rounded-lg border border-deep-basalt/15 overflow-hidden"
+          className="w-full h-[560px] rounded-lg border border-deep-basalt/15 overflow-hidden"
         />
 
         <p className="text-xs text-deep-basalt/60 mt-4">
-          Map data © OpenStreetMap contributors. Site coordinates approximate;
-          interactive markers link to mission detail pages.
+          {t('caption')} Map data © OpenStreetMap contributors.
         </p>
       </div>
     </article>

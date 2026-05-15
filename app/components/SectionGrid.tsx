@@ -19,7 +19,7 @@ export default function SectionGrid() {
       className="relative py-20 bg-cover bg-center bg-no-repeat"
       style={{ backgroundImage: "url('/images/desert-dune.jpg')" }}
     >
-      <div aria-hidden className="absolute inset-0 bg-desert-sand/30" />
+      <div aria-hidden className="absolute inset-0 bg-desert-sand/35" />
 
       <div className="max-w-6xl mx-auto px-6 relative">
         <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">

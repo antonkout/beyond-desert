@@ -1,0 +1,384 @@
+{
+  "type": "FeatureCollection",
+  "name": "Italian and international archaeological missions in Arabia",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.033333, 23.583333] },
+      "properties": {
+        "id": "halban",
+        "name": "Necropolis of Halban",
+        "mission": "IAMHAL",
+        "institute": "Università di Bologna",
+        "lead": "Eugenio Bortolini, Stefano Benazzi",
+        "period": "Bronze Age",
+        "unibo": true,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [59.789, 22.523] },
+      "properties": {
+        "id": "ras-al-hadd",
+        "name": "Ras al-Hadd",
+        "mission": "Joint Hadd Project",
+        "institute": "Università di Bologna",
+        "lead": "Maurizio Cattani, Francesco Genchi, Nunzia Larosa",
+        "period": "Bronze Age",
+        "unibo": true,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [59.508, 22.392] },
+      "properties": {
+        "id": "ras-al-jinz",
+        "name": "Ras al-Jinz",
+        "mission": "Joint Hadd Project",
+        "institute": "Università di Bologna",
+        "lead": "Valentina Azzarà, Alexandre P. De Rorre",
+        "period": "Bronze Age",
+        "unibo": true,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.95, 23.45] },
+      "properties": {
+        "id": "khutm",
+        "name": "Khutm",
+        "mission": "",
+        "institute": "Università di Bologna",
+        "lead": "Enzo Cocca",
+        "period": "Bronze Age",
+        "unibo": true,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [59.18, 22.42] },
+      "properties": {
+        "id": "wadi-bani-khalid-tiwi",
+        "name": "Wadi Bani Khalid and Tiwi",
+        "mission": "DExPO",
+        "institute": "",
+        "lead": "Romolo Loreto, Elena Maini",
+        "period": "Bronze–Iron Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.534, 22.93] },
+      "properties": {
+        "id": "al-salayli",
+        "name": "Al Ṣalaylī",
+        "mission": "",
+        "institute": "",
+        "lead": "Michela Gaudiello",
+        "period": "Iron Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [54.115, 17.005] },
+      "properties": {
+        "id": "al-baleed",
+        "name": "Al Baleed",
+        "mission": "",
+        "institute": "",
+        "lead": "R. Giunta & A. D'Andrea",
+        "period": "Islamic",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.873, 23.668] },
+      "properties": {
+        "id": "wadi-al-maawel",
+        "name": "Wadi Al Ma'awel",
+        "mission": "MASPAG",
+        "institute": "Sapienza Università di Roma",
+        "lead": "Marco Ramazzotti",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.78, 21.62] },
+      "properties": {
+        "id": "dhomiap",
+        "name": "DHOMIAP survey area",
+        "mission": "DHOMIAP",
+        "institute": "",
+        "lead": "Silvia Lischi",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.483, 23.183] },
+      "properties": {
+        "id": "al-tikha",
+        "name": "Al Tikha",
+        "mission": "Omani-Italian Archaeological Expedition",
+        "institute": "",
+        "lead": "K. Douglas, Sara Pizzimenti",
+        "period": "Iron Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [59.5, 21.5] },
+      "properties": {
+        "id": "arabian-seashores",
+        "name": "Arabian Seashores survey",
+        "mission": "Arabian Seashores",
+        "institute": "",
+        "lead": "Vincent Charpentier, Maria Pia Maiorano",
+        "period": "Neolithic",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.741, 23.262] },
+      "properties": {
+        "id": "bat-al-arid",
+        "name": "Bat / Al Arid",
+        "mission": "",
+        "institute": "",
+        "lead": "Corinne Castel",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.687, 19.668] },
+      "properties": {
+        "id": "duqm-nejd",
+        "name": "Duqm and Nejd",
+        "mission": "ARDUQ",
+        "institute": "",
+        "lead": "R. Garba, A.F. Danielisová & J.I. Rose",
+        "period": "Palaeolithic",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.547, 23.587] },
+      "properties": {
+        "id": "yanqul",
+        "name": "Yanqul Wilayat",
+        "mission": "ArWHO",
+        "institute": "Johns Hopkins University",
+        "lead": "M.J. Harrower & P. Paulsen",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.215, 16.728] },
+      "properties": {
+        "id": "wadi-sayq",
+        "name": "Wadi Sayq (Khor Kharfot)",
+        "mission": "Khor Kharfot Research Project",
+        "institute": "",
+        "lead": "F.R. Hauck",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.4, 22.55] },
+      "properties": {
+        "id": "al-ghoryeen",
+        "name": "Al Ghoryeen, Mudhaybi",
+        "mission": "Sultan Qaboos University Project",
+        "institute": "Sultan Qaboos University",
+        "lead": "N.S. Al-Jahwari, K. Douglas & M. Hesein",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.265, 22.866] },
+      "properties": {
+        "id": "bisya",
+        "name": "Bisya",
+        "mission": "French Archaeological Mission",
+        "institute": "CNRS",
+        "lead": "M. Jean & M. Sauvage",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.527, 22.937] },
+      "properties": {
+        "id": "tanuf",
+        "name": "Tanūf",
+        "mission": "ISTIDAMA",
+        "institute": "",
+        "lead": "Y. Kondo",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.4, 23.95] },
+      "properties": {
+        "id": "hayl-ajah",
+        "name": "Hayl Ajah",
+        "mission": "",
+        "institute": "",
+        "lead": "I. Mateiciucová & M. Wilding",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.184, 23.671] },
+      "properties": {
+        "id": "seeb",
+        "name": "Seeb",
+        "mission": "",
+        "institute": "",
+        "lead": "S. Priestman, E. MacDonald & M. Gajewska",
+        "period": "Islamic",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.32, 22.94] },
+      "properties": {
+        "id": "fulayj",
+        "name": "Fulayj",
+        "mission": "",
+        "institute": "",
+        "lead": "S. Priestman, N. Al-Jahwari, E. MacDonald & D. Kennet",
+        "period": "Late Antique / Early Islamic",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.812, 22.834] },
+      "properties": {
+        "id": "al-khashbah",
+        "name": "Al Khashbah",
+        "mission": "",
+        "institute": "",
+        "lead": "K. Schmitt, S. Döpper",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.7, 23.0] },
+      "properties": {
+        "id": "khor-jarama",
+        "name": "Khor Jarama",
+        "mission": "",
+        "institute": "",
+        "lead": "C. Sévin Allouet",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [56.741, 23.262] },
+      "properties": {
+        "id": "bap-bat",
+        "name": "Bat (BAP)",
+        "mission": "BAP",
+        "institute": "",
+        "lead": "J. Swerida, E. Dollarhide, R. Jensen & R. Bryant",
+        "period": "Bronze Age",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.4, 22.95] },
+      "properties": {
+        "id": "shuraijah",
+        "name": "Shuraijah and Wadi Bani Habib",
+        "mission": "",
+        "institute": "Università di Milano",
+        "lead": "S. Turner, A. Zerboni, T. Kinnaird, M. Al-Kindi",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.487, 23.583] },
+      "properties": {
+        "id": "al-khod",
+        "name": "Al Khod / Ḥūr ad-dabʿ / Muscat",
+        "mission": "Joint Heidelberg / Ministry of Heritage and Tourism",
+        "institute": "Heidelberg University",
+        "lead": "P.A. Yule",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [57.243, 22.984] },
+      "properties": {
+        "id": "salut-bisya-rock-art",
+        "name": "Salut and Bisya (Rock Art Landscape)",
+        "mission": "Rock Art Landscape",
+        "institute": "",
+        "lead": "A. Zerboni, M. Degli Esposti",
+        "period": "Multi-period",
+        "unibo": false,
+        "country": "Oman"
+      }
+    }
+  ]
+}
