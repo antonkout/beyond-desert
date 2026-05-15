@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import 'maplibre-gl/dist/maplibre-gl.css';
 
 const SITES = [
   { id: 'ras-al-hadd', name: 'Ras al-Hadd', coords: [59.79, 22.52], note: 'Bronze Age coastal site, Oman' },
@@ -20,7 +21,6 @@ export default function GeographyPage() {
 
     (async () => {
       const maplibregl = (await import('maplibre-gl')).default;
-      await import('maplibre-gl/dist/maplibre-gl.css');
 
       map = new maplibregl.Map({
         container: mapContainer.current!,
