@@ -1,0 +1,73 @@
+{
+  "meta": {
+    "title": "Beyond the Desert: Stories of Civilizations",
+    "description": "Temporary exhibition at Biblioteca Sala Borsa, Bologna, in occasion of the 59th Seminar for Arabian Studies.",
+    "dates": "13 July – 3 August 2026",
+    "venue": "Biblioteca Sala Borsa, Bologna"
+  },
+  "nav": {
+    "exhibition": "Exhibition",
+    "geography": "Geography",
+    "history": "History",
+    "research": "Research",
+    "archive3d": "3D Archive",
+    "visit": "Visit"
+  },
+  "hero": {
+    "tag": "Temporary Exhibition · 59th Seminar for Arabian Studies",
+    "lead": "Step into a land where ancient worlds meet cutting-edge science. From vast deserts to thriving civilizations, discover how archaeology is uncovering the past — and helping us understand the climate challenges of our future.",
+    "tagline": "Explore. Discover. Rethink the past.",
+    "cta": "Begin the journey"
+  },
+  "sections": {
+    "geography": {
+      "title": "Geography",
+      "lead": "Six decades of Italian archaeological work mapped across the Arabian Peninsula — from Yemeni highlands to the Omani coast."
+    },
+    "history": {
+      "title": "Stories of People and Discoveries",
+      "lead": "Three formative periods reshape what we know about Arabia: not a marginal periphery of the Near East, but an active, connected, dynamic territory.",
+      "bronze": {
+        "title": "Bronze Age",
+        "period": "3rd–2nd millennium BCE",
+        "body": "Pastoralists, merchants, and artisans moved regularly across Arabia — between oases, coastal sites, and inland routes. Mobility was not backwardness but an organizing principle. Funerary architecture from this period, from monumental tombs at Marib's Temple of Awam to the empty cenotaphs at Baraqish for merchants lost on the Incense Road, reveals a sophisticated symbolic order built around memory, lineage, and territory."
+      },
+      "iron": {
+        "title": "Iron Age",
+        "period": "1st millennium BCE – early Islamic era",
+        "body": "Stable kingdoms emerge — Saba, Qataban, Ma'in — consolidating control over the Incense Road and the resources of the oases. Necropolises become tools of political identity. External influences from the Levant, Mesopotamia, and the Hellenistic and Roman worlds are absorbed and reinterpreted, never dominant."
+      },
+      "preIslamic": {
+        "title": "Pre-Islamic to Islamic",
+        "period": "1st–7th century CE",
+        "body": "Funerary practices simplify; an attention to equality before death anticipates the uniform practices of Islam. Climate, oases, and the falaj irrigation systems shape settlement patterns that endure to the present day."
+      }
+    },
+    "research": {
+      "title": "UniBo Excavations in Arabia",
+      "lead": "A history of research at three key sites investigated by the University of Bologna.",
+      "rasAlHadd": "Ras Al-Hadd",
+      "halban": "Halban Necropolis",
+      "romail": "Romail Shelter"
+    },
+    "archive3d": {
+      "title": "3D Archive",
+      "lead": "Rotate, zoom, and place burial structures from Ras al-Hadd and Halban in your own space using augmented reality. Scan QR codes in the exhibition to view in AR."
+    },
+    "visit": {
+      "title": "Visit",
+      "address": "Piazza del Nettuno 3, 40124 Bologna",
+      "hours": "Mon–Sat 10:00–20:00 · Sun 10:00–19:00",
+      "admission": "Free admission"
+    }
+  },
+  "accessibility": {
+    "audioLabel": "Listen to this panel",
+    "skipToContent": "Skip to main content",
+    "languageSwitch": "Change language"
+  },
+  "footer": {
+    "rights": "University of Bologna · Department of Cultural Heritage",
+    "partner": "In collaboration with Biblioteca Sala Borsa and Comune di Bologna"
+  }
+}

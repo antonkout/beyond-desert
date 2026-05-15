@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=IBM+Plex+Sans:wght@300;400;500;600&family=Noto+Sans+Arabic:wght@400;500;700&display=swap');
+
+:root {
+  --color-bg: #E7D6B9;
+  --color-bg-dark: #1F3F4D;
+  --color-ink: #163039;
+  --color-accent: #A32D2D;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-desert-sand text-deep-basalt font-body antialiased;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+[lang='ar'] body {
+  @apply font-arabic;
+}
+
+h1, h2, h3 {
+  @apply font-display font-extrabold tracking-tight;
+}
+
+/* Accessibility — meet WCAG 2.1 AA per museum panel guidance */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  @apply absolute left-2 top-2 z-50 -translate-y-20 bg-unibo-red text-white px-4 py-2 rounded;
+  transition: transform 0.2s;
+}
+.skip-link:focus {
+  @apply translate-y-0;
+}
