@@ -7,18 +7,13 @@ export default function Hero() {
 
   return (
     <section className="relative bg-petroleum-blue text-desert-sand overflow-hidden">
-      {/* Decorative camel silhouette echoing brand mark */}
-      <div
+      {/* Decorative camel brand mark, faded into the background */}
+      <img
+        src="/images/logo-mark.svg"
+        alt=""
         aria-hidden
-        className="absolute right-0 bottom-0 w-[600px] h-[600px] opacity-10 pointer-events-none"
-      >
-        <svg viewBox="0 0 200 200" className="w-full h-full">
-          <path
-            d="M40 140 Q100 20 160 140 Q140 130 130 145 L110 150 L100 145 L80 150 L70 145 Q60 130 40 140Z"
-            fill="currentColor"
-          />
-        </svg>
-      </div>
+        className="absolute -right-16 -bottom-16 w-[560px] h-[560px] opacity-[0.07] pointer-events-none select-none"
+      />
 
       <div className="max-w-5xl mx-auto px-6 py-24 md:py-32 relative">
         <motion.p
