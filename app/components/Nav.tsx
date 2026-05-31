@@ -25,12 +25,15 @@ export default function Nav({ locale }: { locale: string }) {
     <header className="sticky top-0 z-40 bg-petroleum-blue text-desert-sand border-b border-petroleum-blue-light/40">
       <div className="max-w-6xl mx-auto flex items-center justify-between px-6 py-4">
         <Link href={`/${locale}`} className="flex items-center gap-3 group">
-          <span
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src="/images/logo-badge.svg"
+            alt=""
             aria-hidden
-            className="w-9 h-9 rounded-full bg-desert-sand text-petroleum-blue flex items-center justify-center text-xl"
-          >
-            ☾
-          </span>
+            width={36}
+            height={36}
+            className="w-9 h-9"
+          />
           <span className="font-display font-extrabold text-sm tracking-wide">
             Beyond the Desert
           </span>
