@@ -1,8 +1,13 @@
-// Exhibition panel content (English). Translated from the original Italian
+// History section content (English). Translated from the original Italian
 // panel texts. Production notes, image placeholders and internal TODOs from the
 // source documents have been removed. Kept as structured data here (rather than
 // in the i18n message files) because the volume is large and the IT/AR locales
 // are still pending translation.
+//
+// The Bronze Age and Iron Age subsections of the "history" panel were expanded
+// from a fuller Italian draft ("Oltre il deserto: storie di popoli e scoperte"),
+// adding burial archaeology, named coastal sites and the social-differentiation
+// narrative that the original panel text only summarised.
 
 export type Block =
   | { type: 'h'; text: string }
@@ -128,7 +133,23 @@ export const PANELS: Panel[] = [
       },
       {
         type: 'p',
+        text: 'Funerary architecture is among the most telling testimonies of the period. Tumuli, necropolises and monumental tombs — such as those of the Awam temple cemetery at Marib, where thousands of graves bear funerary stelae with stylised portraits and dedicatory inscriptions — reveal an almost obsessive concern with eternal memory and with the name of the deceased. A striking phenomenon is that of the so-called empty tombs, or cenotaphs, found at sites such as Baraqish: monuments raised for merchants who died on the long journeys along the Incense Road and whose bodies could not be brought home, showing that memory and honour mattered more than the physical presence of the body. The tombs also acted as landmarks, marking boundaries and routes across the desert and turning the territory into a “cultural landscape” in which memory, trade and identity were interwoven.',
+      },
+      {
+        type: 'p',
+        text: 'The typology of burials evolves over time: from collective tombs, indicative of clan identity, the period shifts towards individual burials linked to status, prestige or personal wealth — a sign of growing social differentiation that nonetheless never produced centralised states or rigid hierarchies. Grave goods, exotic objects and secondary burials point to elaborate rituals that could last months, making the tombs instruments of social and political cohesion as much as means of consolidating economic relations and marking the land.',
+      },
+      {
+        type: 'p',
+        text: 'The coastal sites reveal how urbanised and interconnected these societies could be. Qal‘at al-Bahrain, capital of the legendary Dilmun civilisation, grew into a fortified “free port” and pivot between Mesopotamia and the Indus, where circular soapstone seals and a standardised Dilmun weight system attest to advanced notions of property and mercantile accounting. The island of Umm an-Nar, eponymous site of the culture that spread across northern and eastern Arabia between 2700 and 2000 BCE, specialised in smelting and exporting copper from the interior mountains and is famous for its monumental circular collective tombs in finely worked stone. At Tell Abraq, occupied continuously from the Bronze to the Iron Age, an imposing circular fortress of stone and mud brick protected accumulated wealth and yielded finds from across the known ancient world — cuneiform seals, Indus Valley pottery and ivory.',
+      },
+      {
+        type: 'p',
         text: 'The Bronze Age is also characterised by the domestication and spread of the dromedary (around the 10th century), which revolutionised the possibilities of movement across the desert. Pastoralism was still widely practised. New techniques in food preservation, such as smoking and drying, were also developed, allowing food to be transported on long desert journeys. These technological innovations enabled merchants and herders to move across Arabia — between oases, coastal sites and inland routes — creating more extensive and stable networks of interaction. Mobility thus became a genuine organising principle for the better exploitation of the territory.',
+      },
+      {
+        type: 'p',
+        text: 'Towards the close of the Bronze Age, in the transition to the Iron Age, the region underwent a progressive aridification, with declining rainfall caused by a shift in the path and intensity of the monsoon currents.',
       },
       { type: 'h', text: 'Iron Age' },
       {
@@ -137,11 +158,23 @@ export const PANELS: Panel[] = [
       },
       {
         type: 'p',
+        text: 'The monumental necropolises take on an even more prominent role as instruments of political and social identity. The Awam temple cemetery at Marib, with its thousands of tombs, is emblematic: funerary stelae with stylised portraits and dedicatory inscriptions point to an extreme attention to the memory and prestige of the dead, often tied to influential families or high-ranking merchants. Such monuments also consolidated the kingdoms’ presence on the land and marked symbolic boundaries, turning the tombs into veritable “lighthouses” of the desert landscape. Alongside tombs holding real bodies, cenotaphs continued to be built for merchants who died on trade journeys — empty buildings that again placed the memory and recognised role of the deceased above the body itself.',
+      },
+      {
+        type: 'p',
+        text: 'External influences — from the Levant and Mesopotamia, and later from the Hellenistic and Roman worlds — were assimilated and reinterpreted without overturning local structures. Some loculus or kokhim tombs echo foreign traditions yet were absorbed into local funerary practice, producing an original heritage adapted to Arabian conditions. Cultural interaction did not imply subordination: the Arabian kingdoms remained the protagonists of their own choices.',
+      },
+      {
+        type: 'p',
         text: 'During the Iron Age, Arabia consolidated trade routes with connections crossing the entire Near East and reaching as far as the Mediterranean. The oasis of Dadan (al-‘Ula, Saudi Arabia) was the northern terminal of an overland route linking Yemen with Palestine. The Arabian kingdoms controlled the trade in precious goods — frankincense, myrrh and spices — along caravan routes. The production area for the highest-quality frankincense and myrrh lay between north-eastern Yemen and south-western Oman, in the present-day Dhofar region, favoured by the seasonal monsoons. Navigation became more frequent towards the north-west: around the 1st century BCE an anonymous Greek author compiled a portolan known as the Periplus of the Erythraean Sea, a commercial guide for sailing and trading between the Arabian Peninsula, Africa and India. Recent Greek and Roman influences were assimilated and reinterpreted by the Arabian populations without overturning local structures: around 230 BCE, the king of Gerrha, Abiyata’, minted coins portraying himself as a Macedonian sovereign.',
       },
       {
         type: 'p',
         text: 'The development of writing in Arabia occurred during the Iron Age: between the 10th and 8th centuries BCE a South Arabian alphabet became established, while the first North Arabian graffiti are dated to the 6th–4th centuries BCE. Although graffiti and small statuettes already attested a complex religiosity in earlier periods, epigraphic sources allow us to recognise a multitude of deities celebrated by the local populations — with a strong personal relationship between the worshipper and the deity, each with specific characteristics and dedicated places of worship, whether large buildings or natural recesses.',
+      },
+      {
+        type: 'p',
+        text: 'A significant trait of the Iron Age is also its cultural preparation for the transition to the Islamic era. Although pagan rituals continued for centuries, funerary practices gradually tended towards simplification, with fewer grave goods and a growing attention to equality before death — a sensibility that anticipates the uniform practices of Islam. Taken together, the tombs of the Iron Age tell a story of prestige, memory and cohesion, attesting both to the participation of the Arabian kingdoms in complex cultural and economic networks and to their will to consolidate local identity and the bond with the territory.',
       },
       { type: 'h', text: 'Islam' },
       {
