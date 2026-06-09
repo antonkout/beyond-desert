@@ -11,8 +11,7 @@
     "history": "History",
     "research": "Research",
     "climate": "Climate & Aflaj",
-    "archive3d": "3D Archive",
-    "visit": "Visit"
+    "archive3d": "3D Archive"
   },
   "hero": {
     "tag": "Temporary Exhibition · 59th Seminar for Arabian Studies",
@@ -91,12 +90,6 @@
     "archive3d": {
       "title": "3D Archive",
       "lead": "Rotate, zoom, and place burial structures from Ras al-Hadd and Halban in your own space using augmented reality. Scan QR codes in the exhibition to view in AR."
-    },
-    "visit": {
-      "title": "Visit",
-      "address": "Piazza del Nettuno 3, 40124 Bologna",
-      "hours": "Mon–Sat 10:00–20:00 · Sun 10:00–19:00",
-      "admission": "Free admission"
     }
   },
   "accessibility": {
