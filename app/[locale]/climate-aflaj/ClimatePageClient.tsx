@@ -1,5 +1,10 @@
 'use client';
 import { useTranslations } from 'next-intl';
+import { PANELS } from '@/app/[locale]/history/panels';
+import PanelBody from '@/app/components/PanelBody';
+
+// Long-form panel moved here from the history section.
+const AFLAJ_PANEL = PANELS.find((p) => p.id === 'aflaj')!;
 
 export default function ClimatePageClient() {
   const t = useTranslations('sections.climate');
@@ -41,6 +46,19 @@ export default function ClimatePageClient() {
           <p className="text-deep-basalt/85 leading-relaxed whitespace-pre-line">
             {t('climate.body')}
           </p>
+        </section>
+
+        <section
+          id={AFLAJ_PANEL.id}
+          className="mt-16 pt-12 border-t border-deep-basalt/15 scroll-mt-24 text-deep-basalt"
+        >
+          <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
+            {AFLAJ_PANEL.kicker}
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl mb-8 text-deep-basalt">
+            {AFLAJ_PANEL.title}
+          </h2>
+          <PanelBody panel={AFLAJ_PANEL} />
         </section>
       </div>
     </article>

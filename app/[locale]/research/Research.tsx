@@ -1,7 +1,14 @@
 'use client';
 import { useTranslations } from 'next-intl';
+import { PANELS } from '@/app/[locale]/history/panels';
+import PanelBody from '@/app/components/PanelBody';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
+
+// Long-form panels moved here from the history section.
+const RESEARCH_PANELS = PANELS.filter(
+  (p) => p.id === 'history-of-studies' || p.id === 'current-excavations'
+);
 
 // Bibliography. Citations are kept in their original language, as is standard
 // for scholarly references, so they are not part of the i18n message files.
@@ -131,6 +138,22 @@ export default function Research() {
           </h2>
           <p className="text-deep-basalt/85 leading-relaxed">{t('history.lead')}</p>
         </div>
+
+        {RESEARCH_PANELS.map((panel) => (
+          <section
+            key={panel.id}
+            id={panel.id}
+            className="mb-16 scroll-mt-24 text-deep-basalt"
+          >
+            <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
+              {panel.kicker}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl mb-8 text-deep-basalt">
+              {panel.title}
+            </h2>
+            <PanelBody panel={panel} />
+          </section>
+        ))}
 
         <section
           aria-labelledby="references-heading"
