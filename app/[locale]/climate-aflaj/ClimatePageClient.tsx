@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
 import PanelBody from '@/app/components/PanelBody';
+import Collapsible from '@/app/components/Collapsible';
 
 // Long-form panel moved here from the history section.
 const AFLAJ_PANEL = PANELS.find((p) => p.id === 'aflaj')!;
@@ -58,7 +59,9 @@ export default function ClimatePageClient() {
           <h2 className="font-display text-3xl md:text-4xl mb-8 text-deep-basalt">
             {AFLAJ_PANEL.title}
           </h2>
-          <PanelBody panel={AFLAJ_PANEL} />
+          <Collapsible surface="sand" id={`panel-${AFLAJ_PANEL.id}`}>
+            <PanelBody panel={AFLAJ_PANEL} />
+          </Collapsible>
         </section>
       </div>
     </article>
