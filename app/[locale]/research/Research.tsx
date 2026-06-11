@@ -2,6 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
 import PanelBody from '@/app/components/PanelBody';
+import BookShelf from '@/app/components/BookShelf';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
 
@@ -154,6 +155,10 @@ export default function Research() {
             <PanelBody panel={panel} />
           </section>
         ))}
+
+        <section className="border-t border-deep-basalt/15 pt-12 mb-16">
+          <BookShelf />
+        </section>
 
         <section
           aria-labelledby="references-heading"
