@@ -4,5 +4,7 @@
 // adding or removing a cover.
 
 export const COVERS = new Set<string>([
+  "lo-scisma-della-mezzaluna-sunniti-e-scii",
   "ragazze-di-riad",
+  "the-modern-arabic-short-story-shahrazad-",
 ]);
