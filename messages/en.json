@@ -11,7 +11,13 @@
     "history": "History",
     "research": "Research",
     "climate": "Climate & Aflaj",
-    "archive3d": "3D Archive"
+    "archive3d": "3D Archive",
+    "newsroom": "Newsroom"
+  },
+  "newsroom": {
+    "kicker": "Press & Coverage",
+    "title": "Newsroom",
+    "lead": "The Gulf as the world's press has framed it — a wall of clippings on oil, water, labour, diplomacy and power across Arabia. Tap any cutting to read the original piece."
   },
   "hero": {
     "tag": "Temporary Exhibition · 59th Seminar for Arabian Studies",

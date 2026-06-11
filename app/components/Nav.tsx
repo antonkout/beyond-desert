@@ -18,6 +18,7 @@ export default function Nav({ locale }: { locale: string }) {
     { href: 'research', label: t('research') },
     { href: 'archive-3d', label: t('archive3d') },
     { href: 'climate-aflaj', label: t('climate') },
+    { href: 'newsroom', label: t('newsroom') },
   ];
 
   return (
