@@ -16,6 +16,7 @@ export const COVERS = new Set<string>([
   "l-architettura-islamica-una-storia-mondi",
   "l-occhio-e-l-ago-saggio-sulle-mille-e-un",
   "la-bicicletta-verde-su-due-ruote-verso-l",
+  "la-biciletta-verde",
   "la-mecca-rivelata-avventure-di-esplorato",
   "lawrence-d-arabia-e-l-invenzione-del-med",
   "le-mille-e-una-notte",
