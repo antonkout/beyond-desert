@@ -11,6 +11,7 @@ export const COVERS = new Set<string>([
   "dormire-con-il-diavolo-come-washington-h",
   "gli-arabi-3000-anni-di-storia-di-popoli-",
   "i-partigiani-di-allah-dall-iran-all-arab",
+  "i-sette-pilastri-della-saggezza",
   "ingolfato-come-l-arabia-saudita-ha-compr",
   "isolario-arabo-medioevale",
   "l-architettura-islamica-una-storia-mondi",
