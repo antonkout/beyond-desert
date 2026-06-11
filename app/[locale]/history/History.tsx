@@ -1,7 +1,57 @@
 'use client';
-import { PANELS } from './panels';
-import PanelBody from '@/app/components/PanelBody';
+import { PANELS, type Block } from './panels';
+import PanelBody, { slug } from '@/app/components/PanelBody';
+import Collapsible from '@/app/components/Collapsible';
 import Timeline from './Timeline';
+
+// Renders the "historical journey" panel as a list of subsections, where each
+// period heading (Palaeolithic, Neolithic, …) stays visible and its long body
+// collapses behind a "Read more" toggle. Heading ids match the Timeline anchors.
+function JourneySubsections({ blocks }: { blocks: Block[] }) {
+  const groups: { heading?: Block; paras: Block[] }[] = [];
+  for (const b of blocks) {
+    if (b.type === 'h') groups.push({ heading: b, paras: [] });
+    else {
+      if (groups.length === 0) groups.push({ paras: [] });
+      groups[groups.length - 1].paras.push(b);
+    }
+  }
+
+  return (
+    <div className="space-y-10">
+      {groups.map((g, i) => {
+        const body = (
+          <div className="space-y-5 leading-relaxed">
+            {g.paras.map((p, j) => (
+              <p key={j} className="max-w-prose">
+                {p.text}
+              </p>
+            ))}
+          </div>
+        );
+        return (
+          <div key={i}>
+            {g.heading && (
+              <h3
+                id={slug(g.heading.text)}
+                className="font-display font-extrabold text-xl md:text-2xl pt-4 mb-4 scroll-mt-24 text-unibo-red"
+              >
+                {g.heading.text}
+              </h3>
+            )}
+            {g.heading ? (
+              <Collapsible surface="petroleum" id={`journey-${slug(g.heading.text)}`}>
+                {body}
+              </Collapsible>
+            ) : (
+              body
+            )}
+          </div>
+        );
+      })}
+    </div>
+  );
+}
 
 // The history page now carries only the introduction and the long
 // chronological journey. The other panels live on their own pages:
@@ -69,10 +119,17 @@ export default function History() {
                 {panel.title}
               </h2>
 
-              {/* Chronological bar sits on the historical-journey panel only */}
-              {panel.id === 'history' && <Timeline />}
-
-              <PanelBody panel={panel} />
+              {panel.id === 'history' ? (
+                <>
+                  {/* Chronological bar sits on the historical-journey panel only */}
+                  <Timeline />
+                  <JourneySubsections blocks={panel.blocks ?? []} />
+                </>
+              ) : (
+                <Collapsible surface="sand" id={`panel-${panel.id}`}>
+                  <PanelBody panel={panel} />
+                </Collapsible>
+              )}
             </div>
           </section>
         );
