@@ -1,7 +1,7 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
-import PanelBody from '@/app/components/PanelBody';
+import CollapsiblePanel from '@/app/components/CollapsiblePanel';
 import BookShelf from '@/app/components/BookShelf';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
@@ -141,19 +141,7 @@ export default function Research() {
         </div>
 
         {RESEARCH_PANELS.map((panel) => (
-          <section
-            key={panel.id}
-            id={panel.id}
-            className="mb-16 scroll-mt-24 text-deep-basalt"
-          >
-            <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
-              {panel.kicker}
-            </p>
-            <h2 className="font-display text-3xl md:text-4xl mb-8 text-deep-basalt">
-              {panel.title}
-            </h2>
-            <PanelBody panel={panel} />
-          </section>
+          <CollapsiblePanel key={panel.id} panel={panel} />
         ))}
 
         <section className="border-t border-deep-basalt/15 pt-12 mb-16">
