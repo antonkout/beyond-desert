@@ -4,22 +4,30 @@
 //   node scripts/fetch-covers.mjs            # fetch missing covers
 //   node scripts/fetch-covers.mjs --force    # re-fetch even if a file exists
 //
-// Sources, tried in order per book: Google Books, then Open Library. Run this
-// on your own machine — shared/CI IPs are often rate-limited (HTTP 429) by
-// Google. Covers that aren't found keep their designed fallback in the UI.
+// Primary source is Google's cover-image CDN (books.google.com/books/content),
+// which serves cover thumbnails by ISBN without the rate-limited API. For each
+// book we try several zoom levels and keep the highest-resolution real cover.
+// Open Library is a final fallback.
 //
-// Note: cover images are publisher copyright; this is the same use a library
-// or bookshop listing makes of them. Review if you need formal clearance.
+// "Cover not available" is a generic placeholder image Google returns with HTTP
+// 200. We detect it automatically: any image that repeats across several
+// different books is a placeholder and is rejected, so those books keep their
+// designed fallback cover in the UI.
+//
+// Note: cover images are publisher copyright; this is the same use a library or
+// bookshop listing makes of them. Review if you need formal clearance.
 
-import { readFileSync, writeFileSync, existsSync, readdirSync } from 'node:fs';
+import { readFileSync, writeFileSync, existsSync, readdirSync, rmSync } from 'node:fs';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
 import { execFileSync } from 'node:child_process';
 
 const BOOKS_TS = 'app/[locale]/research/books.ts';
 const OUT_DIR = 'public/images/books';
 const FORCE = process.argv.includes('--force');
-
+const ZOOMS = [3, 2, 1]; // high → low resolution
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+const md5 = (buf) => createHash('md5').update(buf).digest('hex');
 
 function parseBooks() {
   const src = readFileSync(BOOKS_TS, 'utf8');
@@ -27,80 +35,70 @@ function parseBooks() {
   const out = [];
   let m;
   while ((m = re.exec(src))) {
-    const slug = m[1];
-    const isbn = m[2] === 'null' ? null : m[2].slice(1, -1);
-    out.push({ slug, isbn });
+    out.push({ slug: m[1], isbn: m[2] === 'null' ? null : m[2].slice(1, -1) });
   }
   return out;
 }
 
-async function fetchJson(url, tries = 5) {
-  let delay = 1500;
-  for (let i = 0; i < tries; i++) {
+async function fetchBuffer(url) {
+  try {
     const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
-    if (res.status === 429) {
-      await sleep(delay);
-      delay *= 2;
-      continue;
-    }
     if (!res.ok) return null;
-    return res.json();
+    const buf = Buffer.from(await res.arrayBuffer());
+    return buf.length > 1500 ? buf : null;
+  } catch {
+    return null;
   }
-  return null;
 }
 
-async function googleCover(isbn) {
-  const d = await fetchJson(
-    `https://www.googleapis.com/books/v1/volumes?q=isbn:${isbn}&country=US`
-  );
-  const li = d?.items?.[0]?.volumeInfo?.imageLinks;
-  let url = li?.thumbnail || li?.smallThumbnail;
-  if (!url) return null;
-  // Upgrade to a larger, un-curled image and force https.
-  return url.replace(/^http:/, 'https:').replace(/&zoom=\d/, '').replace('&edge=curl', '');
+const googleUrl = (isbn, zoom) =>
+  `https://books.google.com/books/content?vid=ISBN${isbn}&printsec=frontcover&img=1&zoom=${zoom}`;
+const openLibUrl = (isbn) => `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`;
+
+const books = parseBooks().filter((b) => b.isbn);
+const targets = FORCE
+  ? books
+  : books.filter((b) => !existsSync(join(OUT_DIR, `${b.slug}.jpg`)));
+
+// Pass 1 — gather candidate images (all zooms + Open Library) and hash them so
+// we can spot the shared "no cover" placeholder.
+const candidates = new Map(); // slug -> [{score, buf, hash}]
+const hashCount = new Map();
+for (const { slug, isbn } of targets) {
+  const list = [];
+  for (const z of ZOOMS) {
+    const buf = await fetchBuffer(googleUrl(isbn, z));
+    if (buf) list.push({ score: z, buf, hash: md5(buf) });
+    await sleep(250);
+  }
+  const ol = await fetchBuffer(openLibUrl(isbn));
+  if (ol) list.push({ score: 0.5, buf: ol, hash: md5(ol) });
+  for (const c of list) hashCount.set(c.hash, (hashCount.get(c.hash) || 0) + 1);
+  candidates.set(slug, list);
 }
 
-async function openLibraryCover(isbn) {
-  const url = `https://covers.openlibrary.org/b/isbn/${isbn}-L.jpg?default=false`;
-  const res = await fetch(url);
-  return res.ok && Number(res.headers.get('content-length') || 0) > 1000 ? url : null;
-}
-
-async function download(url, dest) {
-  const res = await fetch(url, { headers: { 'User-Agent': 'Mozilla/5.0' } });
-  if (!res.ok) return false;
-  const buf = Buffer.from(await res.arrayBuffer());
-  if (buf.length < 1000) return false; // guard against 1x1 placeholders
-  writeFileSync(dest, buf);
-  return true;
-}
-
-const existing = new Set(
-  existsSync(OUT_DIR)
-    ? readdirSync(OUT_DIR).filter((f) => /\.(jpe?g|png|webp)$/i.test(f)).map((f) => f.replace(/\.[^.]+$/, ''))
-    : []
+const placeholders = new Set(
+  [...hashCount.entries()].filter(([, n]) => n >= 3).map(([h]) => h)
 );
 
-const books = parseBooks();
+// Pass 2 — keep the highest-scoring non-placeholder image per book.
 let got = 0;
 const misses = [];
-
-for (const { slug, isbn } of books) {
-  if (!isbn) continue;
-  if (!FORCE && existing.has(slug)) continue;
-
-  const url = (await googleCover(isbn)) || (await openLibraryCover(isbn));
-  if (url && (await download(url, join(OUT_DIR, `${slug}.jpg`)))) {
+for (const { slug } of targets) {
+  const real = (candidates.get(slug) || [])
+    .filter((c) => !placeholders.has(c.hash))
+    .sort((a, b) => b.score - a.score);
+  const dest = join(OUT_DIR, `${slug}.jpg`);
+  if (real.length) {
+    writeFileSync(dest, real[0].buf);
     got++;
     console.log(`  ✓ ${slug}`);
   } else {
+    if (existsSync(dest)) rmSync(dest); // drop any stale placeholder
     misses.push(slug);
-    console.log(`  · ${slug} (not found — keeps designed cover)`);
+    console.log(`  · ${slug} (no cover — keeps designed fallback)`);
   }
-  await sleep(600);
 }
 
-console.log(`\nFetched ${got} cover(s). ${misses.length} not found.`);
-
-// Refresh the manifest so the UI picks up whatever we downloaded.
+console.log(`\nFetched ${got} cover(s). ${misses.length} without a cover.`);
 execFileSync('node', ['scripts/gen-covers.mjs'], { stdio: 'inherit' });
