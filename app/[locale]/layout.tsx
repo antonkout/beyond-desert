@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { locales, type Locale } from '@/i18n';
 import Nav from '@/app/components/Nav';
 import Footer from '@/app/components/Footer';
+import SmoothScroll from '@/app/components/SmoothScroll';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
@@ -38,6 +39,7 @@ export default async function RootLayout({
           Skip to main content
         </a>
         <NextIntlClientProvider messages={messages}>
+          <SmoothScroll />
           <Nav locale={locale} />
           <main id="main">{children}</main>
           <Footer />
