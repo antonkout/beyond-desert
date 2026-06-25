@@ -1,17 +1,28 @@
 'use client';
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
-import { motion } from 'framer-motion';
+import { motion, useScroll, useTransform, useReducedMotion } from 'framer-motion';
 
 export default function Hero() {
   const t = useTranslations();
+  const ref = useRef<HTMLElement>(null);
+  const reduce = useReducedMotion();
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start start', 'end start'],
+  });
+  // Parallax: the camel mark drifts up and fades as the hero scrolls away.
+  const markY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
+  const markOpacity = useTransform(scrollYProgress, [0, 1], [0.07, 0.02]);
 
   return (
-    <section className="relative bg-petroleum-blue text-desert-sand overflow-hidden">
+    <section ref={ref} className="relative bg-petroleum-blue text-desert-sand overflow-hidden">
       {/* Decorative camel brand mark, faded into the background */}
-      <img
+      <motion.img
         src="/images/logo-mark.svg"
         alt=""
         aria-hidden
+        style={reduce ? undefined : { y: markY, opacity: markOpacity }}
         className="absolute -right-16 -bottom-16 w-[560px] h-[560px] opacity-[0.07] pointer-events-none select-none"
       />
 
