@@ -3,9 +3,11 @@ import { useEffect, useState } from 'react';
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-// Saisei-style opening: a book cover that swings open from its spine on first
-// visit, revealing the hero beneath. Shown once per session.
-const EASE = [0.83, 0, 0.17, 1] as const;
+// Opening: a book cover that swings open from its spine on first visit,
+// revealing the hero beneath. Shown once per session. The animated cover is
+// promoted to its own GPU layer (transform-only + will-change) so the swing
+// stays at 60fps.
+const EASE = [0.16, 1, 0.3, 1] as const; // easeOutExpo — confident, fluid open
 
 export default function BookIntro() {
   const t = useTranslations();
@@ -14,17 +16,13 @@ export default function BookIntro() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    if (reduce) {
-      setDone(true);
-      return;
-    }
-    if (sessionStorage.getItem('introSeen')) {
+    if (reduce || sessionStorage.getItem('introSeen')) {
       setDone(true);
       return;
     }
     sessionStorage.setItem('introSeen', '1');
     document.body.style.overflow = 'hidden';
-    const t1 = setTimeout(() => setOpen(true), 1100); // let the closed book read first
+    const t1 = setTimeout(() => setOpen(true), 1100);
     return () => clearTimeout(t1);
   }, [reduce]);
 
@@ -36,13 +34,16 @@ export default function BookIntro() {
         <motion.div
           key="intro"
           className="fixed inset-0 z-[90] overflow-hidden bg-deep-basalt"
-          style={{ perspective: 2200 }}
+          style={{ perspective: 2400 }}
           initial={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.5, delay: 0.2 }}
+          transition={{ duration: 0.45, delay: 0.15 }}
         >
           {/* Static back page revealed as the cover opens. */}
-          <div className="absolute inset-0 flex items-center justify-center bg-petroleum-blue">
+          <div
+            className="absolute inset-0 flex items-center justify-center bg-petroleum-blue"
+            style={{ transform: 'translateZ(0)' }}
+          >
             <img
               src="/images/logo-mark.svg"
               alt=""
@@ -54,33 +55,31 @@ export default function BookIntro() {
           {/* The cover that swings open from the left spine. */}
           <motion.div
             className="absolute inset-0 origin-left"
-            style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
+            style={{
+              transformStyle: 'preserve-3d',
+              backfaceVisibility: 'hidden',
+              willChange: 'transform',
+            }}
             initial={{ rotateY: 0 }}
-            animate={open ? { rotateY: -118 } : { rotateY: 0 }}
-            transition={{ duration: 2.2, ease: EASE }}
+            animate={open ? { rotateY: -110 } : { rotateY: 0 }}
+            transition={{ duration: 1.9, ease: EASE }}
             onAnimationComplete={() => {
               if (open) {
                 document.body.style.overflow = '';
-                setTimeout(() => setDone(true), 100);
+                setDone(true);
               }
             }}
           >
             {/* Cover face */}
-            <div className="absolute inset-0 bg-petroleum-blue">
+            <div className="absolute inset-0 bg-petroleum-blue" style={{ transform: 'translateZ(0)' }}>
               {/* Spine shading on the left edge */}
               <div
                 aria-hidden
                 className="absolute inset-y-0 left-0 w-16"
-                style={{
-                  background:
-                    'linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0) )',
-                }}
+                style={{ background: 'linear-gradient(90deg, rgba(0,0,0,0.45), rgba(0,0,0,0))' }}
               />
               {/* Page-edge sheen on the right */}
-              <div
-                aria-hidden
-                className="absolute inset-y-0 right-0 w-2 bg-desert-sand/30"
-              />
+              <div aria-hidden className="absolute inset-y-0 right-0 w-2 bg-desert-sand/30" />
 
               <div className="absolute inset-0 flex flex-col items-center justify-center px-8 text-center">
                 <motion.img
@@ -92,10 +91,7 @@ export default function BookIntro() {
                   animate={{ y: 0, opacity: 0.9 }}
                   transition={{ duration: 0.6, delay: 0.1 }}
                 />
-                <div
-                  aria-hidden
-                  className="w-16 h-px bg-desert-sand/40 mb-6"
-                />
+                <div aria-hidden className="w-16 h-px bg-desert-sand/40 mb-6" />
                 <motion.h1
                   className="font-display font-extrabold text-desert-sand text-3xl md:text-5xl leading-tight max-w-xl"
                   initial={{ y: 12, opacity: 0 }}
