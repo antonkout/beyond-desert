@@ -4,6 +4,7 @@ import { PANELS } from '@/app/[locale]/history/panels';
 import CollapsiblePanel from '@/app/components/CollapsiblePanel';
 import SitesMap from '@/app/components/SitesMap';
 import PhotoBand from '@/app/components/PhotoBand';
+import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
 
@@ -150,19 +151,22 @@ export default function Research() {
           />
         </div>
 
-        {RESEARCH_PANELS.map((panel) => (
+        {RESEARCH_PANELS.filter((p) => p.id === 'history-of-studies').map((panel) => (
           <CollapsiblePanel key={panel.id} panel={panel} />
         ))}
 
-        <div className="mb-16 overflow-hidden rounded-xl">
-          <PhotoBand
-            src="/images/photos/excavation-trench.jpg"
-            alt="An archaeologist documenting a stone-built trench in Oman"
-            caption="On the ground today — UniBo fieldwork in Oman"
-            heightClass="h-[52vh] min-h-[340px]"
-            focal="center 35%"
-          />
-        </div>
+        {/* "On the ground today" over the excavation-trench backdrop */}
+        {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
+          <div
+            key={panel.id}
+            className="relative overflow-hidden rounded-2xl mb-16 bg-petroleum-blue"
+          >
+            <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 32%" />
+            <div className="relative z-10 px-6 md:px-10 pt-10 md:pt-14">
+              <CollapsiblePanel panel={panel} tone="dark" />
+            </div>
+          </div>
+        ))}
 
         <section aria-labelledby="excavation-map-heading" className="mb-16">
           <h3

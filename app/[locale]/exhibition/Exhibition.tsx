@@ -44,23 +44,29 @@ export default function Exhibition() {
         </div>
       </section>
 
-      <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
-        <Reveal>
-          <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-12 mb-6 text-desert-sand">
-            Geography
-          </h2>
-        </Reveal>
-        <div className="max-w-prose space-y-5 leading-relaxed opacity-90">
-          {GEOGRAPHY.map((p, i) => (
-            <Reveal key={i} delay={i * 0.05}>
-              <p>{p}</p>
-            </Reveal>
-          ))}
+      {/* Geography over a coastal backdrop */}
+      <section className="relative overflow-hidden">
+        <PhotoBackdrop src="/images/photos/beach-rider.jpg" focal="center 42%" />
+        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20">
+          <Reveal>
+            <h2 className="font-display font-extrabold text-2xl md:text-3xl mb-6 text-desert-sand">
+              Geography
+            </h2>
+          </Reveal>
+          <div className="max-w-prose space-y-5 leading-relaxed opacity-95">
+            {GEOGRAPHY.map((p, i) => (
+              <Reveal key={i} delay={i * 0.05}>
+                <p>{p}</p>
+              </Reveal>
+            ))}
+          </div>
         </div>
+      </section>
 
+      <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
         <section
           id="credits"
-          className="mt-16 pt-12 border-t border-desert-sand/20 scroll-mt-24"
+          className="mt-4 pt-12 border-t border-desert-sand/20 scroll-mt-24"
         >
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-2">
             {CREDITS_PANEL.kicker}
