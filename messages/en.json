@@ -1,15 +1,15 @@
 {
   "meta": {
-    "title": "Beyond the Desert: Stories of Civilizations",
-    "description": "Temporary exhibition at Biblioteca Sala Borsa, Bologna, on occasion of the 59th Seminar for Arabian Studies.",
-    "dates": "13 July – 3 August 2026",
-    "venue": "Biblioteca Sala Borsa, Bologna"
+    "title": "Beyond the Desert: Stones of people and discoveries",
+    "description": "Temporary exhibition at Biblioteca Salaborsa, Bologna, on occasion of the 59th Seminar for Arabian Studies.",
+    "dates": "13 July – 1 August 2026",
+    "venue": "Biblioteca Salaborsa, Bologna"
   },
   "nav": {
     "exhibition": "Exhibition",
-    "geography": "Geography",
     "history": "History",
     "research": "Research",
+    "library": "Library",
     "climate": "Climate & Aflaj",
     "archive3d": "3D Archive",
     "newsroom": "Newsroom"
@@ -26,6 +26,10 @@
     "cta": "Begin the journey"
   },
   "sections": {
+    "library": {
+      "title": "Library",
+      "lead": "The Reading Room — books, e-books and a film on Arabia, selected for the exhibition and held at Biblioteca Salaborsa."
+    },
     "geography": {
       "title": "Geography",
       "lead": "Decades of Italian and international archaeological work mapped across the Arabian Peninsula — from Yemeni highlands to the Omani coast.",
@@ -105,6 +109,6 @@
   },
   "footer": {
     "rights": "University of Bologna · Department of Cultural Heritage",
-    "partner": "In collaboration with Biblioteca Sala Borsa and Comune di Bologna"
+    "partner": "In collaboration with Biblioteca Salaborsa and Comune di Bologna"
   }
 }

@@ -1,6 +1,6 @@
 # Beyond the Desert — Exhibition Website
 
-Companion site for the temporary exhibition *Beyond the Desert: Stories of Civilizations*, hosted at Biblioteca Sala Borsa, Bologna (13 July – 3 August 2026), in occasion of the 59th Seminar for Arabian Studies.
+Companion site for the temporary exhibition *Beyond the Desert: Stones of people and discoveries*, hosted at Biblioteca Salaborsa, Bologna (13 July – 1 August 2026), in occasion of the 59th Seminar for Arabian Studies.
 
 ## Stack
 

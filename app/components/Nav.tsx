@@ -13,9 +13,9 @@ export default function Nav({ locale }: { locale: string }) {
 
   const items = [
     { href: 'exhibition', label: t('exhibition') },
-    { href: 'geography', label: t('geography') },
     { href: 'history', label: t('history') },
     { href: 'research', label: t('research') },
+    { href: 'library', label: t('library') },
     { href: 'archive-3d', label: t('archive3d') },
     { href: 'climate-aflaj', label: t('climate') },
     { href: 'newsroom', label: t('newsroom') },

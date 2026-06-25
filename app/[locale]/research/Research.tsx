@@ -2,7 +2,7 @@
 import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
 import CollapsiblePanel from '@/app/components/CollapsiblePanel';
-import BookShelf from '@/app/components/BookShelf';
+import SitesMap from '@/app/components/SitesMap';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
 
@@ -144,8 +144,14 @@ export default function Research() {
           <CollapsiblePanel key={panel.id} panel={panel} />
         ))}
 
-        <section className="border-t border-deep-basalt/15 pt-12 mb-16">
-          <BookShelf />
+        <section aria-labelledby="excavation-map-heading" className="mb-16">
+          <h3
+            id="excavation-map-heading"
+            className="font-display font-extrabold text-xl md:text-2xl text-deep-basalt mb-5"
+          >
+            Excavation map
+          </h3>
+          <SitesMap />
         </section>
 
         <section

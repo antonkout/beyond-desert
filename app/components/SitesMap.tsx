@@ -4,7 +4,8 @@ import { useTranslations } from 'next-intl';
 import 'maplibre-gl/dist/maplibre-gl.css';
 import sites from '@/public/data/sites.geojson.json';
 
-export default function GeographyMap() {
+// Map of the current UniBo excavations. Moved here from the Geography section.
+export default function SitesMap() {
   const t = useTranslations('sections.geography');
   const mapContainer = useRef<HTMLDivElement>(null);
 
@@ -29,8 +30,8 @@ export default function GeographyMap() {
           },
           layers: [{ id: 'osm', type: 'raster', source: 'osm' }],
         },
-        center: [56, 22],
-        zoom: 5,
+        center: [58, 23],
+        zoom: 6.4,
       });
 
       map.addControl(new maplibregl.NavigationControl(), 'top-right');
@@ -61,6 +62,7 @@ export default function GeographyMap() {
             ${props.period ? `<div style="font-size: 12px; color: #163039; opacity: 0.7; margin-top: 4px;">${props.period}</div>` : ''}
             ${props.lead ? `<div style="font-size: 12px; color: #163039; margin-top: 6px;">${props.lead}</div>` : ''}
             ${props.institute ? `<div style="font-size: 11px; color: #163039; opacity: 0.7; margin-top: 4px; font-style: italic;">${props.institute}</div>` : ''}
+            ${props.link ? `<div style="margin-top: 8px;"><a href="${props.link}" target="_blank" rel="noopener noreferrer" style="font-size: 12px; color: #A32D2D; text-decoration: underline;">Project page →</a></div>` : ''}
           </div>
         `;
 
@@ -75,44 +77,27 @@ export default function GeographyMap() {
   }, []);
 
   return (
-    <article className="bg-desert-sand py-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">
-          Geography
-        </p>
-        <h1 className="font-display text-4xl md:text-5xl mb-4 text-deep-basalt">
-          {t('title')}
-        </h1>
-        <p className="max-w-prose mb-6 text-deep-basalt/85">{t('lead')}</p>
-
-        <div className="flex flex-wrap gap-6 mb-6 text-sm">
-          <span className="flex items-center gap-2 text-deep-basalt">
-            <span
-              aria-hidden
-              className="inline-block w-4 h-4 rounded-full bg-unibo-red border-2 border-desert-sand"
-            />
-            {t('legendUnibo')}
-          </span>
-          <span className="flex items-center gap-2 text-deep-basalt">
-            <span
-              aria-hidden
-              className="inline-block w-3 h-3 rounded-full bg-petroleum-blue border-2 border-desert-sand"
-            />
-            {t('legendOther')}
-          </span>
-        </div>
-
-        <div
-          ref={mapContainer}
-          role="application"
-          aria-label="Map of archaeological sites in the Arabian Peninsula"
-          className="w-full h-[560px] rounded-lg border border-deep-basalt/15 overflow-hidden"
-        />
-
-        <p className="text-xs text-deep-basalt/60 mt-4">
-          {t('caption')} Map data © OpenStreetMap contributors.
-        </p>
+    <div>
+      <div className="flex flex-wrap gap-6 mb-4 text-sm">
+        <span className="flex items-center gap-2 text-deep-basalt">
+          <span
+            aria-hidden
+            className="inline-block w-4 h-4 rounded-full bg-unibo-red border-2 border-desert-sand"
+          />
+          {t('legendUnibo')}
+        </span>
       </div>
-    </article>
+
+      <div
+        ref={mapContainer}
+        role="application"
+        aria-label="Map of UniBo archaeological excavations in Oman"
+        className="w-full h-[520px] rounded-lg border border-deep-basalt/15 overflow-hidden"
+      />
+
+      <p className="text-xs text-deep-basalt/60 mt-4">
+        {t('caption')} Map data © OpenStreetMap contributors.
+      </p>
+    </div>
   );
 }

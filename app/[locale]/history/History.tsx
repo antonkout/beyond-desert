@@ -56,7 +56,7 @@ function JourneySubsections({ blocks }: { blocks: Block[] }) {
 // The history page now carries only the introduction and the long
 // chronological journey. The other panels live on their own pages:
 // "aflaj" -> Climate & Aflaj, "history-of-studies" and "current-excavations"
-// -> Research, and "credits" -> the home page.
+// -> Research, and "credits" -> the Exhibition section.
 const HISTORY_PANELS = PANELS.filter(
   (p) => p.id === 'introduction' || p.id === 'history'
 );
