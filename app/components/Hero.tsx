@@ -24,14 +24,14 @@ export default function Hero() {
         alt=""
         aria-hidden
         style={reduce ? undefined : { y: photoY }}
-        className="absolute inset-0 h-full w-full object-cover opacity-30 pointer-events-none select-none"
+        className="absolute inset-0 h-full w-full object-cover opacity-50 pointer-events-none select-none"
       />
       <div
         aria-hidden
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            'linear-gradient(180deg, rgba(31,63,77,0.82) 0%, rgba(31,63,77,0.72) 55%, rgba(22,48,57,0.92) 100%)',
+            'linear-gradient(180deg, rgba(31,63,77,0.62) 0%, rgba(31,63,77,0.5) 55%, rgba(22,48,57,0.82) 100%)',
         }}
       />
 
