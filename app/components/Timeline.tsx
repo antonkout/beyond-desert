@@ -2,6 +2,7 @@
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
 import Reveal from './Reveal';
+import PhotoBackdrop from './PhotoBackdrop';
 
 const PERIODS = ['bronze', 'iron', 'preIslamic'] as const;
 type Period = (typeof PERIODS)[number];
@@ -18,8 +19,9 @@ export default function Timeline() {
     setExpanded((prev) => ({ ...prev, [period]: !prev[period] }));
 
   return (
-    <section className="bg-petroleum-blue text-desert-sand py-20">
-      <div className="max-w-5xl mx-auto px-6">
+    <section className="relative overflow-hidden bg-petroleum-blue text-desert-sand py-20">
+      <PhotoBackdrop src="/images/photos/fishermen-gulls.jpg" focal="center 40%" />
+      <div className="relative z-10 max-w-5xl mx-auto px-6">
         <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
           Timeline
         </p>
