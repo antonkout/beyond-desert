@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { useTranslations, useLocale } from 'next-intl';
 
 const SECTIONS = [
-  { key: 'geography', href: 'geography', icon: '🗺' },
   { key: 'history', href: 'history', icon: '📜' },
   { key: 'research', href: 'research', icon: '⛏' },
+  { key: 'library', href: 'library', icon: '📚' },
   { key: 'archive3d', href: 'archive-3d', icon: '🧊' },
 ] as const;
 

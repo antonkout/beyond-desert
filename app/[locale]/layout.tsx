@@ -8,8 +8,8 @@ import Footer from '@/app/components/Footer';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Beyond the Desert: Stories of Civilizations',
-  description: 'Temporary exhibition, Biblioteca Sala Borsa, Bologna — July 2026.',
+  title: 'Beyond the Desert: Stones of people and discoveries',
+  description: 'Temporary exhibition, Biblioteca Salaborsa, Bologna — July 2026.',
 };
 
 export function generateStaticParams() {
