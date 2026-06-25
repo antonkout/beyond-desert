@@ -1,6 +1,7 @@
 'use client';
 import { useState } from 'react';
 import { useTranslations } from 'next-intl';
+import Reveal from './Reveal';
 
 const PERIODS = ['bronze', 'iron', 'preIslamic'] as const;
 type Period = (typeof PERIODS)[number];
@@ -28,7 +29,7 @@ export default function Timeline() {
         <p className="max-w-prose mb-12 opacity-85 leading-relaxed">{t('lead')}</p>
 
         <ol className="relative border-l-2 border-unibo-red/40 ms-4 space-y-12">
-          {PERIODS.map((period) => {
+          {PERIODS.map((period, i) => {
             const isOpen = expanded[period];
             const paragraphs = t(`${period}.body`).split('\n\n');
 
@@ -38,6 +39,7 @@ export default function Timeline() {
                   aria-hidden
                   className="absolute -start-[11px] top-1 w-5 h-5 bg-unibo-red rounded-full ring-4 ring-petroleum-blue"
                 />
+                <Reveal delay={i * 0.06}>
                 <p className="text-sm opacity-70 mb-1">{t(`${period}.period`)}</p>
                 <h3 className="font-display font-extrabold text-2xl mb-3 text-desert-sand">
                   {t(`${period}.title`)}
@@ -83,6 +85,7 @@ export default function Timeline() {
                     🔊 Listen
                   </button>
                 </div>
+                </Reveal>
               </li>
             );
           })}

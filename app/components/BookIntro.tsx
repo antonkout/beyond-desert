@@ -24,7 +24,7 @@ export default function BookIntro() {
     }
     sessionStorage.setItem('introSeen', '1');
     document.body.style.overflow = 'hidden';
-    const t1 = setTimeout(() => setOpen(true), 750); // let the closed book read first
+    const t1 = setTimeout(() => setOpen(true), 1100); // let the closed book read first
     return () => clearTimeout(t1);
   }, [reduce]);
 
@@ -57,7 +57,7 @@ export default function BookIntro() {
             style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden' }}
             initial={{ rotateY: 0 }}
             animate={open ? { rotateY: -118 } : { rotateY: 0 }}
-            transition={{ duration: 1.5, ease: EASE }}
+            transition={{ duration: 2.2, ease: EASE }}
             onAnimationComplete={() => {
               if (open) {
                 document.body.style.overflow = '';

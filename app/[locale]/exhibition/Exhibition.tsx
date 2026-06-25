@@ -1,5 +1,6 @@
 'use client';
 import PanelBody from '@/app/components/PanelBody';
+import Reveal from '@/app/components/Reveal';
 import { PANELS } from '@/app/[locale]/history/panels';
 
 const CREDITS_PANEL = PANELS.find((p) => p.id === 'credits')!;
@@ -31,16 +32,22 @@ export default function Exhibition() {
 
         <div className="max-w-prose space-y-5 text-lg leading-relaxed opacity-90">
           {INTRO.map((p, i) => (
-            <p key={i}>{p}</p>
+            <Reveal key={i} delay={i * 0.05}>
+              <p>{p}</p>
+            </Reveal>
           ))}
         </div>
 
-        <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-12 mb-6 text-desert-sand">
-          Geography
-        </h2>
+        <Reveal>
+          <h2 className="font-display font-extrabold text-2xl md:text-3xl mt-12 mb-6 text-desert-sand">
+            Geography
+          </h2>
+        </Reveal>
         <div className="max-w-prose space-y-5 leading-relaxed opacity-90">
           {GEOGRAPHY.map((p, i) => (
-            <p key={i}>{p}</p>
+            <Reveal key={i} delay={i * 0.05}>
+              <p>{p}</p>
+            </Reveal>
           ))}
         </div>
 
