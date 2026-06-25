@@ -14,9 +14,27 @@ export default function Hero() {
   // Parallax: the camel mark drifts up and fades as the hero scrolls away.
   const markY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
   const markOpacity = useTransform(scrollYProgress, [0, 1], [0.07, 0.02]);
+  const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
     <section ref={ref} className="relative bg-petroleum-blue text-desert-sand overflow-hidden">
+      {/* Photographic backdrop (Rub al-Khali dunes) under a petroleum wash. */}
+      <motion.img
+        src="/images/photos/dunes-figures.jpg"
+        alt=""
+        aria-hidden
+        style={reduce ? undefined : { y: photoY }}
+        className="absolute inset-0 h-full w-full object-cover opacity-30 pointer-events-none select-none"
+      />
+      <div
+        aria-hidden
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background:
+            'linear-gradient(180deg, rgba(31,63,77,0.82) 0%, rgba(31,63,77,0.72) 55%, rgba(22,48,57,0.92) 100%)',
+        }}
+      />
+
       {/* Decorative camel brand mark, faded into the background */}
       <motion.img
         src="/images/logo-mark.svg"

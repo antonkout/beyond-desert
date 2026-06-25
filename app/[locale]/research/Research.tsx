@@ -3,6 +3,7 @@ import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
 import CollapsiblePanel from '@/app/components/CollapsiblePanel';
 import SitesMap from '@/app/components/SitesMap';
+import PhotoBand from '@/app/components/PhotoBand';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
 
@@ -140,9 +141,28 @@ export default function Research() {
           <p className="text-deep-basalt/85 leading-relaxed">{t('history.lead')}</p>
         </div>
 
+        <div className="mb-16 overflow-hidden rounded-xl">
+          <PhotoBand
+            src="/images/photos/fieldwork-camp.jpg"
+            alt="Field kit and a finds board at a UniBo excavation camp in Oman"
+            heightClass="h-[44vh] min-h-[300px]"
+            focal="center 60%"
+          />
+        </div>
+
         {RESEARCH_PANELS.map((panel) => (
           <CollapsiblePanel key={panel.id} panel={panel} />
         ))}
+
+        <div className="mb-16 overflow-hidden rounded-xl">
+          <PhotoBand
+            src="/images/photos/excavation-trench.jpg"
+            alt="An archaeologist documenting a stone-built trench in Oman"
+            caption="On the ground today — UniBo fieldwork in Oman"
+            heightClass="h-[52vh] min-h-[340px]"
+            focal="center 35%"
+          />
+        </div>
 
         <section aria-labelledby="excavation-map-heading" className="mb-16">
           <h3

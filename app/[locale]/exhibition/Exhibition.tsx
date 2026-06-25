@@ -1,6 +1,7 @@
 'use client';
 import PanelBody from '@/app/components/PanelBody';
 import Reveal from '@/app/components/Reveal';
+import PhotoBand from '@/app/components/PhotoBand';
 import { PANELS } from '@/app/[locale]/history/panels';
 
 const CREDITS_PANEL = PANELS.find((p) => p.id === 'credits')!;
@@ -36,6 +37,15 @@ export default function Exhibition() {
               <p>{p}</p>
             </Reveal>
           ))}
+        </div>
+
+        <div className="my-12 overflow-hidden rounded-xl">
+          <PhotoBand
+            src="/images/photos/beach-woman-child.jpg"
+            alt="A woman and a child on a quiet Omani beach at dusk"
+            heightClass="h-[44vh] min-h-[300px]"
+            focal="center 45%"
+          />
         </div>
 
         <Reveal>
