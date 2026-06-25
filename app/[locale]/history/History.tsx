@@ -2,7 +2,7 @@
 import { PANELS, type Block } from './panels';
 import PanelBody, { slug } from '@/app/components/PanelBody';
 import Collapsible from '@/app/components/Collapsible';
-import PhotoBand from '@/app/components/PhotoBand';
+import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 import Timeline from './Timeline';
 
 // Renders the "historical journey" panel as a list of subsections, where each
@@ -65,9 +65,10 @@ const HISTORY_PANELS = PANELS.filter(
 export default function History() {
   return (
     <article>
-      {/* Page header */}
-      <header className="bg-petroleum-blue text-desert-sand py-20">
-        <div className="max-w-6xl mx-auto px-6">
+      {/* Page header over a camels-by-water backdrop */}
+      <header className="relative overflow-hidden bg-petroleum-blue text-desert-sand py-20">
+        <PhotoBackdrop src="/images/photos/camels-water.jpg" focal="center 55%" />
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
             History
           </p>
@@ -94,13 +95,6 @@ export default function History() {
           </nav>
         </div>
       </header>
-
-      <PhotoBand
-        src="/images/photos/camels-water.jpg"
-        alt="Camels grazing along a reservoir edge in inland Oman"
-        caption="Where water meets the desert — life on the Peninsula"
-        focal="center 55%"
-      />
 
       {/* Panels, alternating background for visual rhythm */}
       {HISTORY_PANELS.map((panel, idx) => {
