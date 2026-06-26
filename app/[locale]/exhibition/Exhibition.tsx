@@ -24,6 +24,7 @@ export default function Exhibition() {
   return (
     <article className="bg-petroleum-blue text-desert-sand">
       {/* Intro over a beach backdrop */}
+      <Reveal variant="clip">
       <section className="relative overflow-hidden">
         <PhotoBackdrop src="/images/photos/beach-woman-child.jpg" focal="center 45%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28">
@@ -43,8 +44,10 @@ export default function Exhibition() {
           </div>
         </div>
       </section>
+      </Reveal>
 
       {/* Geography over a coastal backdrop */}
+      <Reveal variant="clip">
       <section className="relative overflow-hidden">
         <PhotoBackdrop src="/images/photos/beach-rider.jpg" focal="center 42%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20">
@@ -62,6 +65,7 @@ export default function Exhibition() {
           </div>
         </div>
       </section>
+      </Reveal>
 
       <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
         <section
