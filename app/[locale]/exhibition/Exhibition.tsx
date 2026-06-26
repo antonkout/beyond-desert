@@ -25,7 +25,7 @@ export default function Exhibition() {
     <article className="bg-petroleum-blue text-desert-sand">
       {/* Intro over a beach backdrop */}
       <section className="relative overflow-hidden">
-        <PhotoBackdrop src="/images/photos/beach-woman-child.jpg" focal="center 45%" />
+        <PhotoBackdrop src="/images/photos/bir-hima-cattle.jpg" focal="center 45%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
             The Exhibition

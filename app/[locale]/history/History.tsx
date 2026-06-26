@@ -67,7 +67,7 @@ export default function History() {
     <article>
       {/* Page header over a camels-by-water backdrop */}
       <header className="relative overflow-hidden bg-petroleum-blue text-desert-sand py-20">
-        <PhotoBackdrop src="/images/photos/camels-water.jpg" focal="center 55%" />
+        <PhotoBackdrop src="/images/photos/history-bg.jpg" focal="center 50%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
             History
