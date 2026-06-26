@@ -110,15 +110,19 @@ export default function Research() {
   const t = useTranslations('sections.research');
 
   return (
-    <article className="bg-desert-sand py-16">
-      <div className="max-w-6xl mx-auto px-6">
-        <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">
-          Research
-        </p>
-        <h1 className="font-display text-4xl md:text-5xl mb-4 text-deep-basalt">
-          {t('title')}
-        </h1>
-        <p className="max-w-prose mb-12 text-deep-basalt/85">{t('lead')}</p>
+    <article className="bg-desert-sand">
+      <header className="relative overflow-hidden bg-petroleum-blue text-desert-sand py-20">
+        <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 35%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
+        <div className="relative z-10 max-w-6xl mx-auto px-6">
+          <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
+            Research
+          </p>
+          <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
+          <p className="max-w-prose opacity-90">{t('lead')}</p>
+        </div>
+      </header>
+
+      <div className="max-w-6xl mx-auto px-6 py-16">
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
           {SITES.map((site) => (
@@ -158,17 +162,11 @@ export default function Research() {
         </section>
       ))}
 
-      {/* On the ground today — full-bleed over the excavation-trench backdrop */}
-      {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
-        <section key={panel.id} className="relative overflow-hidden bg-petroleum-blue mb-16">
-          <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 35%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24">
-            <CollapsiblePanel panel={panel} tone="dark" />
-          </div>
-        </section>
-      ))}
-
       <div className="max-w-6xl mx-auto px-6">
+        {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
+          <CollapsiblePanel key={panel.id} panel={panel} />
+        ))}
+
         <section aria-labelledby="excavation-map-heading" className="mb-16">
           <h3
             id="excavation-map-heading"
