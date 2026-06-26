@@ -16,11 +16,10 @@ export default function BookIntro() {
   const [done, setDone] = useState(false);
 
   useEffect(() => {
-    if (reduce || sessionStorage.getItem('introSeen')) {
+    if (reduce) {
       setDone(true);
       return;
     }
-    sessionStorage.setItem('introSeen', '1');
     document.body.style.overflow = 'hidden';
     const t1 = setTimeout(() => setOpen(true), 1100);
     return () => clearTimeout(t1);
