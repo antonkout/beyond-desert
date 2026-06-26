@@ -4,10 +4,10 @@ import { useTranslations, useLocale } from 'next-intl';
 import Reveal from './Reveal';
 
 const SECTIONS = [
-  { key: 'history', href: 'history', icon: '📜' },
-  { key: 'research', href: 'research', icon: '⛏' },
-  { key: 'library', href: 'library', icon: '📚' },
-  { key: 'archive3d', href: 'archive-3d', icon: '🧊' },
+  { key: 'history', href: 'history' },
+  { key: 'research', href: 'research' },
+  { key: 'library', href: 'library' },
+  { key: 'archive3d', href: 'archive-3d' },
 ] as const;
 
 export default function SectionGrid() {
@@ -18,11 +18,11 @@ export default function SectionGrid() {
     <section
       id="sections"
       className="relative py-20 bg-cover bg-center bg-no-repeat"
-      style={{ backgroundImage: "url('/images/desert-dune.jpg')" }}
+      style={{ backgroundImage: "url('/images/photos/home-bg.jpg')" }}
     >
       <div aria-hidden className="absolute inset-0 bg-desert-sand/35" />
 
-      <div className="max-w-6xl mx-auto px-6 relative">
+      <div className="max-w-6xl mx-auto px-6 relative text-center">
         <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">
           Explore the exhibition
         </p>
@@ -30,16 +30,13 @@ export default function SectionGrid() {
           Four threads through the sand.
         </h2>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 text-left">
           {SECTIONS.map((section, i) => (
             <Reveal key={section.key} delay={i * 0.08}>
               <Link
                 href={`/${locale}/${section.href}`}
                 className="group block h-full bg-white border border-deep-basalt/15 rounded-lg p-6 transition-all duration-300 hover:-translate-y-1 hover:border-unibo-red hover:shadow-xl hover:shadow-deep-basalt/10"
               >
-                <div className="text-3xl mb-4 transition-transform duration-300 group-hover:scale-110" aria-hidden>
-                  {section.icon}
-                </div>
                 <h3 className="font-display font-extrabold text-lg mb-2 text-deep-basalt">
                   {t(`sections.${section.key}.title`)}
                 </h3>
