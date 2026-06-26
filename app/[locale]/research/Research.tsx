@@ -3,8 +3,12 @@ import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
 import CollapsiblePanel from '@/app/components/CollapsiblePanel';
 import SitesMap from '@/app/components/SitesMap';
-import PhotoBand from '@/app/components/PhotoBand';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
+
+// Even petroleum scrim: the photo stays visible across the whole section while
+// light text remains legible over it (matches the Exhibition backdrops).
+const RESEARCH_OVERLAY =
+  'linear-gradient(180deg, rgba(22,48,57,0.70) 0%, rgba(22,48,57,0.64) 45%, rgba(22,48,57,0.80) 100%)';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
 
@@ -142,32 +146,29 @@ export default function Research() {
           <p className="text-deep-basalt/85 leading-relaxed">{t('history.lead')}</p>
         </div>
 
-        <div className="mb-16 overflow-hidden rounded-xl">
-          <PhotoBand
-            src="/images/photos/fieldwork-camp.jpg"
-            alt="Field kit and a finds board at a UniBo excavation camp in Oman"
-            heightClass="h-[44vh] min-h-[300px]"
-            focal="center 60%"
-          />
-        </div>
+      </div>
 
-        {RESEARCH_PANELS.filter((p) => p.id === 'history-of-studies').map((panel) => (
-          <CollapsiblePanel key={panel.id} panel={panel} />
-        ))}
-
-        {/* "On the ground today" over the excavation-trench backdrop */}
-        {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
-          <div
-            key={panel.id}
-            className="relative overflow-hidden rounded-2xl mb-16 bg-petroleum-blue"
-          >
-            <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 32%" />
-            <div className="relative z-10 px-6 md:px-10 pt-10 md:pt-14">
-              <CollapsiblePanel panel={panel} tone="dark" />
-            </div>
+      {/* History of research — full-bleed over the fieldwork-camp backdrop */}
+      {RESEARCH_PANELS.filter((p) => p.id === 'history-of-studies').map((panel) => (
+        <section key={panel.id} className="relative overflow-hidden bg-petroleum-blue my-16">
+          <PhotoBackdrop src="/images/photos/fieldwork-camp.jpg" focal="center 55%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24">
+            <CollapsiblePanel panel={panel} tone="dark" />
           </div>
-        ))}
+        </section>
+      ))}
 
+      {/* On the ground today — full-bleed over the excavation-trench backdrop */}
+      {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
+        <section key={panel.id} className="relative overflow-hidden bg-petroleum-blue mb-16">
+          <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 35%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24">
+            <CollapsiblePanel panel={panel} tone="dark" />
+          </div>
+        </section>
+      ))}
+
+      <div className="max-w-6xl mx-auto px-6">
         <section aria-labelledby="excavation-map-heading" className="mb-16">
           <h3
             id="excavation-map-heading"
