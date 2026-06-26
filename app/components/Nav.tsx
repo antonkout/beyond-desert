@@ -9,15 +9,16 @@ export default function Nav({ locale }: { locale: string }) {
   const t = useTranslations('nav');
   const pathname = usePathname();
 
-  const pathWithoutLocale = pathname.replace(/^\/(en|it|ar)/, '') || '/';
+  const pathWithoutLocale =
+    (pathname.replace(/^\/(en|it|ar)/, '').replace(/\/$/, '')) || '/';
 
   const items = [
     { href: 'exhibition', label: t('exhibition') },
     { href: 'history', label: t('history') },
     { href: 'research', label: t('research') },
-    { href: 'library', label: t('library') },
-    { href: 'archive-3d', label: t('archive3d') },
     { href: 'climate-aflaj', label: t('climate') },
+    { href: 'archive-3d', label: t('archive3d') },
+    { href: 'library', label: t('library') },
     { href: 'newsroom', label: t('newsroom') },
   ];
 
@@ -40,15 +41,23 @@ export default function Nav({ locale }: { locale: string }) {
         </Link>
 
         <nav className="hidden md:flex gap-6 text-sm">
-          {items.map((item) => (
-            <Link
-              key={item.href}
-              href={`/${locale}/${item.href}`}
-              className="hover:text-white transition-colors opacity-85"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {items.map((item) => {
+            const active = pathWithoutLocale === `/${item.href}`;
+            return (
+              <Link
+                key={item.href}
+                href={`/${locale}/${item.href}`}
+                aria-current={active ? 'page' : undefined}
+                className={
+                  active
+                    ? 'font-bold text-white'
+                    : 'opacity-85 hover:text-white transition-colors'
+                }
+              >
+                {item.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div
