@@ -1,17 +1,28 @@
 'use client';
+import { useState } from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
 
-// Book page-turn between sections. On each navigation a petroleum "page" hinged
-// at the left spine swings open (rotateY), revealing the new page beneath as its
-// content settles in. Transform-only + will-change so it stays at 60fps.
-const EASE = [0.76, 0, 0.24, 1] as const;
+// Book page-turn between sections. A petroleum "page" hinged at the left spine
+// swings open (rotateY) on navigation, revealing the new page beneath.
+// Transform-only + will-change for 60fps. Skipped on the first load so the
+// book-opening intro on the home page plays alone.
+const EASE = [0.65, 0, 0.2, 1] as const;
+
+// Persists across route changes within the session.
+let hasMounted = false;
 
 export default function Template({ children }: { children: React.ReactNode }) {
   const reduce = useReducedMotion();
-  if (reduce) return <>{children}</>;
+  const [isFirst] = useState(() => {
+    const first = !hasMounted;
+    hasMounted = true;
+    return first;
+  });
+
+  if (reduce || isFirst) return <>{children}</>;
 
   return (
-    <div style={{ perspective: 2000 }}>
+    <div style={{ perspective: 2200 }}>
       {/* The turning page */}
       <motion.div
         aria-hidden
@@ -19,9 +30,8 @@ export default function Template({ children }: { children: React.ReactNode }) {
         style={{ transformStyle: 'preserve-3d', backfaceVisibility: 'hidden', willChange: 'transform' }}
         initial={{ rotateY: 0 }}
         animate={{ rotateY: -105 }}
-        transition={{ duration: 0.85, ease: EASE }}
+        transition={{ duration: 1.25, ease: EASE }}
       >
-        {/* spine shadow + page-edge sheen */}
         <div
           aria-hidden
           className="absolute inset-y-0 left-0 w-20"
@@ -36,9 +46,9 @@ export default function Template({ children }: { children: React.ReactNode }) {
 
       {/* New page content settles in as the page turns */}
       <motion.div
-        initial={{ opacity: 0, y: 12 }}
+        initial={{ opacity: 0, y: 14 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.5, ease: 'easeOut', delay: 0.25 }}
+        transition={{ duration: 0.7, ease: 'easeOut', delay: 0.45 }}
       >
         {children}
       </motion.div>
