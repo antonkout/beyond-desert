@@ -98,18 +98,24 @@ export default function History() {
 
       {/* Panels, alternating background for visual rhythm */}
       {HISTORY_PANELS.map((panel, idx) => {
-        const dark = idx % 2 === 1;
+        const intro = panel.id === 'introduction';
+        const dark = idx % 2 === 1 || intro;
         return (
           <section
             key={panel.id}
             id={panel.id}
             className={`scroll-mt-20 py-16 md:py-20 ${
+              intro ? 'relative overflow-hidden bg-petroleum-blue text-desert-sand' : ''
+            } ${
               dark
                 ? 'bg-petroleum-blue text-desert-sand'
                 : 'bg-desert-sand text-deep-basalt'
             }`}
           >
-            <div className="max-w-6xl mx-auto px-6">
+            {intro && (
+              <PhotoBackdrop src="/images/photos/bir-hima-cattle.jpg" focal="center 45%" />
+            )}
+            <div className="relative z-10 max-w-6xl mx-auto px-6">
               <p
                 className={`text-xs tracking-[0.25em] uppercase mb-2 ${
                   dark ? 'text-desert-sand/60' : 'text-unibo-red'
@@ -128,7 +134,7 @@ export default function History() {
                   <JourneySubsections blocks={panel.blocks ?? []} />
                 </>
               ) : (
-                <Collapsible surface="sand" id={`panel-${panel.id}`}>
+                <Collapsible surface={dark ? 'petroleum' : 'sand'} id={`panel-${panel.id}`}>
                   <PanelBody panel={panel} />
                 </Collapsible>
               )}
