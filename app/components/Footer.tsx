@@ -18,42 +18,34 @@ export default function Footer() {
   const t = useTranslations();
 
   return (
-    <footer>
-      {/* Partner / supporter logos */}
-      <div className="bg-desert-sand py-10">
-        <div className="max-w-6xl mx-auto px-6">
-          <p className="text-center text-xs tracking-[0.25em] uppercase text-deep-basalt/55 mb-8">
-            In collaboration with &amp; supported by
-          </p>
-          <ul className="flex flex-wrap items-center justify-center gap-x-10 gap-y-8">
-            {LOGOS.map((logo) => (
-              <li key={logo.src}>
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={`/images/logos/${logo.src}`}
-                  alt={logo.alt}
-                  loading="lazy"
-                  className="h-12 md:h-14 w-auto object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
+    <footer className="bg-desert-sand py-10">
+      <div className="max-w-6xl mx-auto px-6">
+        <p className="text-center text-xs tracking-[0.25em] uppercase text-deep-basalt/55 mb-7">
+          In collaboration with &amp; supported by
+        </p>
 
-      {/* Colophon bar */}
-      <div className="bg-deep-basalt text-desert-sand/80 py-10">
-        <div className="max-w-6xl mx-auto px-6 grid md:grid-cols-2 gap-6 text-sm">
-          <div>
-            <p className="font-display font-extrabold text-desert-sand mb-1">
-              Beyond the Desert
-            </p>
-            <p>{t('footer.rights')}</p>
-          </div>
-          <div className="md:text-end">
-            <p>{t('footer.partner')}</p>
-            <p className="mt-2 opacity-60 text-xs">© 2026 · {t('meta.venue')}</p>
-          </div>
+        <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">
+          {LOGOS.map((logo) => (
+            <li key={logo.src}>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={`/images/logos/${logo.src}`}
+                alt={logo.alt}
+                loading="lazy"
+                className="h-9 md:h-10 w-auto object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+              />
+            </li>
+          ))}
+        </ul>
+
+        <div className="mt-9 pt-6 border-t border-deep-basalt/15 text-center text-xs text-deep-basalt/65">
+          <span className="font-display font-extrabold text-deep-basalt">
+            Beyond the Desert
+          </span>
+          {' · '}
+          {t('footer.rights')}
+          {' · © 2026 · '}
+          {t('meta.venue')}
         </div>
       </div>
     </footer>
