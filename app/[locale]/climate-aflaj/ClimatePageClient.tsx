@@ -32,6 +32,24 @@ export default function ClimatePageClient() {
           <p className="text-deep-basalt/85 leading-relaxed mb-4 whitespace-pre-line">
             {t('aflaj.body')}
           </p>
+
+          <figure className="my-6">
+            <video
+              className="w-full rounded-xl border border-deep-basalt/15 shadow-lg shadow-deep-basalt/10"
+              autoPlay
+              muted
+              loop
+              playsInline
+              controls
+              preload="metadata"
+            >
+              <source src="/video/aflaj.mp4" type="video/mp4" />
+            </video>
+            <figcaption className="mt-2 text-xs text-deep-basalt/60">
+              How an aflaj channels water by gravity from source to settlement.
+            </figcaption>
+          </figure>
+
           <a
             href={t('aflaj.unescoUrl')}
             target="_blank"
