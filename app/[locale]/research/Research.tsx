@@ -1,7 +1,8 @@
 'use client';
 import { useTranslations } from 'next-intl';
 import { PANELS } from '@/app/[locale]/history/panels';
-import CollapsiblePanel from '@/app/components/CollapsiblePanel';
+import EditorialPanel from '@/app/components/EditorialPanel';
+import Collapsible from '@/app/components/Collapsible';
 import SitesMap from '@/app/components/SitesMap';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 
@@ -150,21 +151,20 @@ export default function Research() {
           <p className="text-deep-basalt/85 leading-relaxed">{t('history.lead')}</p>
         </div>
 
-      </div>
+        {RESEARCH_PANELS.filter((p) => p.id === 'history-of-studies').map((panel) => (
+          <EditorialPanel
+            key={panel.id}
+            panel={panel}
+            className="mb-16 border-t border-deep-basalt/15 pt-12"
+          />
+        ))}
 
-      {/* History of research — full-bleed over the fieldwork-camp backdrop */}
-      {RESEARCH_PANELS.filter((p) => p.id === 'history-of-studies').map((panel) => (
-        <section key={panel.id} className="relative overflow-hidden bg-petroleum-blue my-16">
-          <PhotoBackdrop src="/images/photos/fieldwork-camp.jpg" focal="center 55%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
-          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-24">
-            <CollapsiblePanel panel={panel} tone="dark" />
-          </div>
-        </section>
-      ))}
-
-      <div className="max-w-6xl mx-auto px-6">
         {RESEARCH_PANELS.filter((p) => p.id === 'current-excavations').map((panel) => (
-          <CollapsiblePanel key={panel.id} panel={panel} />
+          <EditorialPanel
+            key={panel.id}
+            panel={panel}
+            className="mb-16 border-t border-deep-basalt/15 pt-12"
+          />
         ))}
 
         <section aria-labelledby="excavation-map-heading" className="mb-16">
@@ -191,29 +191,31 @@ export default function Research() {
             {t('references.lead')}
           </p>
 
-          <ol className="space-y-4 text-sm leading-relaxed text-deep-basalt/85">
-            {REFERENCES.map((ref) => (
-              <li
-                key={ref.cite}
-                className="ps-2 border-s-2 border-unibo-red/30"
-              >
-                <span>{ref.cite}</span>
-                {ref.url && (
-                  <>
-                    {' '}
-                    <a
-                      href={ref.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="text-unibo-red hover:underline break-all"
-                    >
-                      {ref.url}
-                    </a>
-                  </>
-                )}
-              </li>
-            ))}
-          </ol>
+          <Collapsible surface="sand" collapsedClass="max-h-64" id="references">
+            <ol className="space-y-4 text-sm leading-relaxed text-deep-basalt/85">
+              {REFERENCES.map((ref) => (
+                <li
+                  key={ref.cite}
+                  className="ps-2 border-s-2 border-unibo-red/30"
+                >
+                  <span>{ref.cite}</span>
+                  {ref.url && (
+                    <>
+                      {' '}
+                      <a
+                        href={ref.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-unibo-red hover:underline break-all"
+                      >
+                        {ref.url}
+                      </a>
+                    </>
+                  )}
+                </li>
+              ))}
+            </ol>
+          </Collapsible>
         </section>
       </div>
     </article>
