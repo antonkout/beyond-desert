@@ -1,8 +1,9 @@
 'use client';
 import { PANELS, type Block } from './panels';
-import PanelBody, { slug } from '@/app/components/PanelBody';
+import { slug } from '@/app/components/PanelBody';
 import Collapsible from '@/app/components/Collapsible';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
+import EditorialPanel from '@/app/components/EditorialPanel';
 import Timeline from './Timeline';
 
 // Renders the "historical journey" panel as a list of subsections, where each
@@ -96,46 +97,32 @@ export default function History() {
         </div>
       </header>
 
-      {/* Panels, alternating background for visual rhythm */}
-      {HISTORY_PANELS.map((panel, idx) => {
-        const dark = idx % 2 === 1;
-        return (
-          <section
-            key={panel.id}
-            id={panel.id}
-            className={`scroll-mt-20 py-16 md:py-20 ${
-              dark
-                ? 'bg-petroleum-blue text-desert-sand'
-                : 'bg-desert-sand text-deep-basalt'
-            }`}
-          >
-            <div className="max-w-6xl mx-auto px-6">
-              <p
-                className={`text-xs tracking-[0.25em] uppercase mb-2 ${
-                  dark ? 'text-desert-sand/60' : 'text-unibo-red'
-                }`}
-              >
-                {panel.kicker}
-              </p>
-              <h2 className="font-display text-3xl md:text-4xl mb-8">
-                {panel.title}
-              </h2>
+      {/* Introduction — editorial treatment (sticky rail, drop cap, channel) */}
+      {HISTORY_PANELS.filter((p) => p.id === 'introduction').map((panel) => (
+        <div key={panel.id} className="bg-desert-sand py-16 md:py-20">
+          <div className="max-w-6xl mx-auto px-6">
+            <EditorialPanel panel={panel} />
+          </div>
+        </div>
+      ))}
 
-              {panel.id === 'history' ? (
-                <>
-                  {/* Chronological bar sits on the historical-journey panel only */}
-                  <Timeline />
-                  <JourneySubsections blocks={panel.blocks ?? []} />
-                </>
-              ) : (
-                <Collapsible surface={dark ? 'petroleum' : 'sand'} id={`panel-${panel.id}`}>
-                  <PanelBody panel={panel} />
-                </Collapsible>
-              )}
-            </div>
-          </section>
-        );
-      })}
+      {/* Historical journey — chronological bar + collapsible period subsections */}
+      {HISTORY_PANELS.filter((p) => p.id === 'history').map((panel) => (
+        <section
+          key={panel.id}
+          id={panel.id}
+          className="scroll-mt-20 py-16 md:py-20 bg-petroleum-blue text-desert-sand"
+        >
+          <div className="max-w-6xl mx-auto px-6">
+            <p className="text-xs tracking-[0.25em] uppercase mb-2 text-desert-sand/60">
+              {panel.kicker}
+            </p>
+            <h2 className="font-display text-3xl md:text-4xl mb-8">{panel.title}</h2>
+            <Timeline />
+            <JourneySubsections blocks={panel.blocks ?? []} />
+          </div>
+        </section>
+      ))}
     </article>
   );
 }
