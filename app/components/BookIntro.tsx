@@ -21,7 +21,7 @@ export default function BookIntro() {
       return;
     }
     document.body.style.overflow = 'hidden';
-    const t1 = setTimeout(() => setOpen(true), 1100);
+    const t1 = setTimeout(() => setOpen(true), 500);
     return () => clearTimeout(t1);
   }, [reduce]);
 
@@ -61,7 +61,7 @@ export default function BookIntro() {
             }}
             initial={{ rotateY: 0 }}
             animate={open ? { rotateY: -110 } : { rotateY: 0 }}
-            transition={{ duration: 1.9, ease: EASE }}
+            transition={{ duration: 1.3, ease: EASE }}
             onAnimationComplete={() => {
               if (open) {
                 document.body.style.overflow = '';

@@ -34,17 +34,16 @@ export default function ClimatePageClient() {
           </p>
 
           <figure className="my-6">
-            <video
-              className="w-full rounded-xl border border-deep-basalt/15 shadow-lg shadow-deep-basalt/10"
-              autoPlay
-              muted
-              loop
-              playsInline
-              controls
-              preload="metadata"
-            >
-              <source src="/video/aflaj.mp4" type="video/mp4" />
-            </video>
+            <div className="relative aspect-video overflow-hidden rounded-xl border border-deep-basalt/15 shadow-lg shadow-deep-basalt/10">
+              <iframe
+                className="absolute inset-0 h-full w-full"
+                src="https://www.youtube-nocookie.com/embed/Cl2P7f7BD9k"
+                title="How an aflaj works"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerPolicy="strict-origin-when-cross-origin"
+                allowFullScreen
+              />
+            </div>
             <figcaption className="mt-2 text-xs text-deep-basalt/60">
               How an aflaj channels water by gravity from source to settlement.
             </figcaption>
