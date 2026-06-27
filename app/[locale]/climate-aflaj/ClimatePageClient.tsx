@@ -1,12 +1,73 @@
 'use client';
+import { useRef } from 'react';
 import { useTranslations } from 'next-intl';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import { PANELS } from '@/app/[locale]/history/panels';
-import PanelBody from '@/app/components/PanelBody';
 import Collapsible from '@/app/components/Collapsible';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 
 // Long-form panel moved here from the history section.
 const AFLAJ_PANEL = PANELS.find((p) => p.id === 'aflaj')!;
+
+// Editorial treatment for the long aflaj text: a sticky title rail, a drop cap,
+// and a "falaj" channel line down the margin that fills with water as you read.
+function AflajSection() {
+  const ref = useRef<HTMLDivElement>(null);
+  const { scrollYProgress } = useScroll({
+    target: ref,
+    offset: ['start center', 'end end'],
+  });
+  const fill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
+  const blocks = AFLAJ_PANEL.blocks ?? [];
+
+  return (
+    <section
+      id={AFLAJ_PANEL.id}
+      className="mt-16 pt-12 border-t border-deep-basalt/15 scroll-mt-24 text-deep-basalt"
+    >
+      <div className="lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12">
+        <div className="mb-6 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
+          <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
+            {AFLAJ_PANEL.kicker}
+          </p>
+          <h2 className="font-display text-3xl md:text-4xl text-deep-basalt">
+            {AFLAJ_PANEL.title}
+          </h2>
+          <svg viewBox="0 0 60 24" className="mt-5 w-16 text-petroleum-blue/50" fill="none" aria-hidden>
+            <path d="M0 6 H22 L30 18 L38 6 H60" stroke="currentColor" strokeWidth="1.5" />
+          </svg>
+        </div>
+
+        <div ref={ref} className="relative">
+          <span aria-hidden className="absolute left-0 top-1 bottom-1 hidden w-px bg-petroleum-blue/15 md:block" />
+          <motion.span
+            aria-hidden
+            style={{ height: fill }}
+            className="absolute left-[-0.5px] top-1 hidden w-[2px] bg-petroleum-blue/60 md:block"
+          />
+          <div className="md:pl-7">
+            <Collapsible surface="sand" id={`panel-${AFLAJ_PANEL.id}`}>
+              <div className="space-y-5 leading-[1.75] text-[1.02rem] text-deep-basalt/85">
+                {blocks.map((b, i) => (
+                  <p
+                    key={i}
+                    className={
+                      i === 0
+                        ? 'first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-6xl first-letter:font-extrabold first-letter:leading-[0.78] first-letter:text-petroleum-blue'
+                        : ''
+                    }
+                  >
+                    {b.text}
+                  </p>
+                ))}
+              </div>
+            </Collapsible>
+          </div>
+        </div>
+      </div>
+    </section>
+  );
+}
 
 export default function ClimatePageClient() {
   const t = useTranslations('sections.climate');
@@ -68,20 +129,7 @@ export default function ClimatePageClient() {
           </p>
         </section>
 
-        <section
-          id={AFLAJ_PANEL.id}
-          className="mt-16 pt-12 border-t border-deep-basalt/15 scroll-mt-24 text-deep-basalt"
-        >
-          <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
-            {AFLAJ_PANEL.kicker}
-          </p>
-          <h2 className="font-display text-3xl md:text-4xl mb-8 text-deep-basalt">
-            {AFLAJ_PANEL.title}
-          </h2>
-          <Collapsible surface="sand" id={`panel-${AFLAJ_PANEL.id}`}>
-            <PanelBody panel={AFLAJ_PANEL} />
-          </Collapsible>
-        </section>
+        <AflajSection />
       </div>
     </article>
   );
