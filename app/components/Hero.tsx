@@ -11,9 +11,6 @@ export default function Hero() {
     target: ref,
     offset: ['start start', 'end start'],
   });
-  // Parallax: the camel mark drifts up and fades as the hero scrolls away.
-  const markY = useTransform(scrollYProgress, [0, 1], ['0%', '-30%']);
-  const markOpacity = useTransform(scrollYProgress, [0, 1], [0.07, 0.02]);
   const photoY = useTransform(scrollYProgress, [0, 1], ['0%', '12%']);
 
   return (
@@ -35,14 +32,6 @@ export default function Hero() {
         }}
       />
 
-      {/* Decorative camel brand mark, faded into the background */}
-      <motion.img
-        src="/images/logo-mark.svg"
-        alt=""
-        aria-hidden
-        style={reduce ? undefined : { y: markY, opacity: markOpacity }}
-        className="absolute -right-16 -bottom-16 w-[560px] h-[560px] opacity-[0.07] pointer-events-none select-none"
-      />
 
       <div className="max-w-5xl mx-auto px-6 py-24 md:py-32 relative">
         <motion.p

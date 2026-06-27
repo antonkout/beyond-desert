@@ -2,6 +2,7 @@
 import PanelBody from '@/app/components/PanelBody';
 import Reveal from '@/app/components/Reveal';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
+import EditorialPanel from '@/app/components/EditorialPanel';
 import { PANELS } from '@/app/[locale]/history/panels';
 
 const CREDITS_PANEL = PANELS.find((p) => p.id === 'credits')!;
@@ -25,46 +26,27 @@ export default function Exhibition() {
     <article className="bg-petroleum-blue text-desert-sand">
       {/* Intro over a beach backdrop */}
       <Reveal variant="clip">
-      <section className="relative overflow-hidden">
-        <PhotoBackdrop src="/images/photos/beach-woman-child.jpg" focal="center 45%" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28">
-          <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            The Exhibition
-          </p>
-          <h1 className="font-display text-4xl md:text-6xl leading-[1.05] mb-10">
-            Introduction to the exhibition and political geography
-          </h1>
-
-          <div className="max-w-prose space-y-5 text-lg leading-relaxed opacity-90">
-            {INTRO.map((p, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
+        <section className="relative overflow-hidden">
+          <PhotoBackdrop src="/images/photos/beach-woman-child.jpg" focal="center 45%" />
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-20 md:py-28">
+            <EditorialPanel
+              tone="dark"
+              kicker="The Exhibition"
+              title="Introduction to the exhibition and political geography"
+              paragraphs={INTRO}
+            />
           </div>
-        </div>
-      </section>
+        </section>
       </Reveal>
 
       {/* Geography over a coastal backdrop */}
       <Reveal variant="clip">
-      <section className="relative overflow-hidden">
-        <PhotoBackdrop src="/images/photos/beach-rider.jpg" focal="center 42%" />
-        <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20">
-          <Reveal>
-            <h2 className="font-display font-extrabold text-2xl md:text-3xl mb-6 text-desert-sand">
-              Geography
-            </h2>
-          </Reveal>
-          <div className="max-w-prose space-y-5 leading-relaxed opacity-95">
-            {GEOGRAPHY.map((p, i) => (
-              <Reveal key={i} delay={i * 0.05}>
-                <p>{p}</p>
-              </Reveal>
-            ))}
+        <section className="relative overflow-hidden">
+          <PhotoBackdrop src="/images/photos/beach-rider.jpg" focal="center 42%" />
+          <div className="relative z-10 max-w-6xl mx-auto px-6 py-16 md:py-20">
+            <EditorialPanel tone="dark" title="Geography" paragraphs={GEOGRAPHY} />
           </div>
-        </div>
-      </section>
+        </section>
       </Reveal>
 
       <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
