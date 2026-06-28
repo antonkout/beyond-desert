@@ -3,10 +3,10 @@ import { useEffect, useState } from 'react';
 import { motion, useReducedMotion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
 
-// Opening: a book cover that swings open from its spine on first visit,
-// revealing the hero beneath. Shown once per session. The animated cover is
-// promoted to its own GPU layer (transform-only + will-change) so the swing
-// stays at 60fps.
+// Opening: a book cover that swings open from its left spine on first visit,
+// holding long enough to read, then revealing the hero directly beneath (no
+// fade — the cover self-hides past 90° via backfaceVisibility). The animated
+// cover is promoted to its own GPU layer (transform-only) to stay at 60fps.
 const EASE = [0.16, 1, 0.3, 1] as const; // easeOutExpo — confident, fluid open
 
 export default function BookIntro() {
@@ -21,7 +21,7 @@ export default function BookIntro() {
       return;
     }
     document.body.style.overflow = 'hidden';
-    const t1 = setTimeout(() => setOpen(true), 500);
+    const t1 = setTimeout(() => setOpen(true), 2400);
     return () => clearTimeout(t1);
   }, [reduce]);
 
@@ -32,26 +32,11 @@ export default function BookIntro() {
       {!done && (
         <motion.div
           key="intro"
-          className="fixed inset-0 z-[90] overflow-hidden bg-deep-basalt"
+          className="fixed inset-0 z-[90] overflow-hidden"
           style={{ perspective: 2400 }}
           initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.45, delay: 0.15 }}
         >
-          {/* Static back page revealed as the cover opens. */}
-          <div
-            className="absolute inset-0 flex items-center justify-center bg-petroleum-blue"
-            style={{ transform: 'translateZ(0)' }}
-          >
-            <img
-              src="/images/logo-mark.svg"
-              alt=""
-              aria-hidden
-              className="w-40 h-40 opacity-10"
-            />
-          </div>
-
-          {/* The cover that swings open from the left spine. */}
+          {/* The cover swings open over the real hero beneath. */}
           <motion.div
             className="absolute inset-0 origin-left"
             style={{
@@ -61,7 +46,7 @@ export default function BookIntro() {
             }}
             initial={{ rotateY: 0 }}
             animate={open ? { rotateY: -110 } : { rotateY: 0 }}
-            transition={{ duration: 1.3, ease: EASE }}
+            transition={{ duration: 0.9, ease: EASE }}
             onAnimationComplete={() => {
               if (open) {
                 document.body.style.overflow = '';
