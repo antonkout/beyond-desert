@@ -7,7 +7,9 @@ import { useTranslations } from 'next-intl';
 // holding long enough to read, then revealing the hero directly beneath (no
 // fade — the cover self-hides past 90° via backfaceVisibility). The animated
 // cover is promoted to its own GPU layer (transform-only) to stay at 60fps.
-const EASE = [0.16, 1, 0.3, 1] as const; // easeOutExpo — confident, fluid open
+// Matches the section page-turn in app/[locale]/template.tsx so the cover
+// opens at the same speed and feel as turning between sections.
+const EASE = [0.62, 0, 0.2, 1] as const;
 
 export default function BookIntro() {
   const t = useTranslations();
@@ -33,7 +35,7 @@ export default function BookIntro() {
         <motion.div
           key="intro"
           className="fixed inset-0 z-[90] overflow-hidden"
-          style={{ perspective: 2400 }}
+          style={{ perspective: 2200 }}
           initial={{ opacity: 1 }}
         >
           {/* The cover swings open over the real hero beneath. */}
@@ -45,8 +47,8 @@ export default function BookIntro() {
               willChange: 'transform',
             }}
             initial={{ rotateY: 0 }}
-            animate={open ? { rotateY: -110 } : { rotateY: 0 }}
-            transition={{ duration: 0.9, ease: EASE }}
+            animate={open ? { rotateY: -108 } : { rotateY: 0 }}
+            transition={{ duration: 1.7, ease: EASE }}
             onAnimationComplete={() => {
               if (open) {
                 document.body.style.overflow = '';
