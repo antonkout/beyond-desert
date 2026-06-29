@@ -9,7 +9,7 @@ import SmoothScroll from '@/app/components/SmoothScroll';
 import '@/app/globals.css';
 
 export const metadata: Metadata = {
-  title: 'Beyond the Desert: Stones of people and discoveries',
+  title: 'Beyond the Desert: Stories of people and discoveries',
   description: 'Temporary exhibition, Biblioteca Salaborsa, Bologna — July 2026.',
 };
 
