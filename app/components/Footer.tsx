@@ -3,12 +3,8 @@ import { useTranslations } from 'next-intl';
 
 const LOGOS = [
   { src: 'unibo-seal.png', alt: 'Alma Mater Studiorum – Università di Bologna' },
-  { src: 'project-logo.png', alt: 'ISMEO' },
   { src: 'ubosb.png', alt: 'Biblioteca Salaborsa' },
   { src: 'comune-bologna.png', alt: 'Comune di Bologna' },
-  { src: 'iasa.png', alt: 'International Association for the Study of Arabia' },
-  { src: 'maeci.png', alt: 'Ministero degli Affari Esteri e della Cooperazione Internazionale' },
-  { src: 'mhc-oman.png', alt: 'Ministry of Heritage and Tourism, Sultanate of Oman' },
   { src: 'experience-oman.png', alt: 'Experience Oman' },
   { src: 'ch360.png', alt: 'CH360' },
   { src: 'bones-lab.png', alt: 'Bones Lab' },

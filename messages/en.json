@@ -11,16 +11,11 @@
     "research": "Research",
     "library": "Library",
     "climate": "Climate & Aflaj",
-    "archive3d": "3D Archive",
-    "newsroom": "Newsroom"
-  },
-  "newsroom": {
-    "kicker": "Press & Coverage",
-    "title": "Newsroom",
-    "lead": "The Gulf as the world's press has framed it — a wall of clippings on oil, water, labour, diplomacy and power across Arabia. Tap any cutting to read the original piece."
+    "archive3d": "3D Archive"
   },
   "hero": {
     "tag": "Temporary Exhibition · 59th Seminar for Arabian Studies",
+    "coverTag": "Temporary Exhibition",
     "lead": "Step into a land where ancient worlds meet cutting-edge science. From vast deserts to thriving civilizations, discover how archaeology is uncovering the past — and helping us understand the climate challenges of our future.",
     "tagline": "Explore. Discover. Rethink the past.",
     "cta": "Begin the journey"
