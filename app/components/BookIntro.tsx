@@ -92,7 +92,7 @@ export default function BookIntro() {
                   animate={{ opacity: 1 }}
                   transition={{ duration: 0.7, delay: 0.35 }}
                 >
-                  {t('hero.tag')}
+                  {t('hero.coverTag')}
                 </motion.p>
               </div>
             </div>
