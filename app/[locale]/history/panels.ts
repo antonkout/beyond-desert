@@ -399,7 +399,6 @@ export const PANELS: Panel[] = [
     title: 'Credits & acknowledgements',
     credits: [
       { role: 'Scientific lead', names: ['Eugenio Bortolini'] },
-      { role: 'Coordination', names: ['Vittoria Bianchi'] },
       { role: 'Texts', names: ['Amanda Antonelli', 'Vittoria Bianchi', 'Francesca Barchiesi'] },
       { role: 'Design & graphics', names: ['Benedetta Gaeta'] },
       { role: 'Web design', names: ['Antonios Koutroumpas'] },
