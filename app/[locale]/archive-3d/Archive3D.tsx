@@ -9,19 +9,17 @@ type Model = {
 };
 
 const MODELS: Model[] = [
-  { id: 'rah-tomb-1', name: 'Ras al-Hadd Tomb HD-6', period: 'Bronze Age' },
-  { id: 'rah-tomb-2', name: 'Ras al-Hadd Tomb HD-10', period: 'Bronze Age' },
   {
     id: 'hal-21',
     name: 'Halban Tomb HAL-21',
     period: 'Iron Age',
-    sketchfab: '0355a26711404913937cbf9231d5109e',
+    sketchfab: '57141cbf3d6f493491492346a18c4b97',
   },
   {
     id: 'hal-25',
     name: 'Halban Tomb HAL-25',
     period: 'Iron Age',
-    sketchfab: 'f9a4bc7e84e64b828fb64a4dfb09646d',
+    sketchfab: '4c014dd765794ff8963e3d653c3e28c1',
   },
 ];
 
