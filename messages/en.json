@@ -1,8 +1,8 @@
 {
   "meta": {
     "title": "Beyond the Desert: Stories of people and discoveries",
-    "description": "Temporary exhibition at Biblioteca Salaborsa, Bologna, on occasion of the 59th Seminar for Arabian Studies.",
-    "dates": "13 July – 1 August 2026",
+    "description": "Temporary exhibition at Biblioteca Salaborsa, Bologna.",
+    "dates": "20 July – 28 August 2026",
     "venue": "Biblioteca Salaborsa, Bologna"
   },
   "nav": {
@@ -14,8 +14,7 @@
     "archive3d": "3D Archive"
   },
   "hero": {
-    "tag": "Temporary Exhibition · 59th Seminar for Arabian Studies",
-    "coverTag": "Temporary Exhibition",
+    "tag": "Temporary Exhibition",
     "lead": "Step into a land where ancient worlds meet cutting-edge science. From vast deserts to thriving civilizations, discover how archaeology is uncovering the past — and helping us understand the climate challenges of our future.",
     "tagline": "Explore. Discover. Rethink the past.",
     "cta": "Begin the journey"

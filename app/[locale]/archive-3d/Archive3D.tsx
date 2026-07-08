@@ -12,13 +12,13 @@ const MODELS: Model[] = [
   {
     id: 'hal-21',
     name: 'Halban Tomb HAL-21',
-    period: 'Iron Age',
+    period: 'Bronze Age',
     sketchfab: '57141cbf3d6f493491492346a18c4b97',
   },
   {
     id: 'hal-25',
     name: 'Halban Tomb HAL-25',
-    period: 'Iron Age',
+    period: 'Bronze Age',
     sketchfab: '4c014dd765794ff8963e3d653c3e28c1',
   },
 ];
