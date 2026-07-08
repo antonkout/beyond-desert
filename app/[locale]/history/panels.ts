@@ -399,15 +399,68 @@ export const PANELS: Panel[] = [
     title: 'Credits & acknowledgements',
     credits: [
       { role: 'Scientific lead', names: ['Eugenio Bortolini'] },
-      { role: 'Texts', names: ['Amanda Antonelli', 'Vittoria Bianchi', 'Francesca Barchiesi'] },
+      { role: 'Coordination', names: ['Vittoria Bianchi'] },
+      {
+        role: 'Concept',
+        names: [
+          'Amanda Antonelli',
+          'Francesca Barchiesi',
+          'Vittoria Bianchi',
+          'Benedetta Gaeta',
+          'Antonios Koutroumpas',
+        ],
+      },
+      {
+        role: 'Texts',
+        names: [
+          'Amanda Antonelli',
+          'Francesca Barchiesi',
+          'Vittoria Bianchi',
+          'Eugenio Bortolini',
+          'Maurizio Cattani',
+          'Dennys Frenez',
+          'Silvia Lischi',
+          'Elena Maini',
+          'Maria Pia Maiorano',
+        ],
+      },
       { role: 'Design & graphics', names: ['Benedetta Gaeta'] },
       { role: 'Web design', names: ['Antonios Koutroumpas'] },
       { role: 'Social & communication', names: ['Simone Rizzuto'] },
-      { role: 'Photography', names: ['Adam Al-Ghafry', 'Fahad'] },
-      { role: '3D models', names: ['Sara Facciani', 'Enzo Cocca'] },
-      { role: 'Translations', names: ['Theodore Sheehan'] },
+      {
+        role: 'Photography',
+        names: [
+          'Adam Al Ghafry (@adamalghafry)',
+          'Fahad Al Kindi (@f_kindi)',
+          'Mohammed Badr (@Mo_Bader)',
+        ],
+      },
+      { role: '3D models', names: ['Sara Facciani'] },
+      {
+        role: 'Comic — concept & artwork',
+        names: [
+          'Glauco Ambrosini',
+          'Piero Favento',
+          'Simone Rizzuto',
+          'Vittoria Bianchi',
+        ],
+      },
+      {
+        role: 'Excavation & field photography',
+        names: [
+          'Sara Facciani',
+          'Eugenio Bortolini',
+          'Adam Al Ghafry',
+          'Antonios Koutroumpas',
+          'Vittoria Bianchi',
+          'Antonino Vazzana',
+          'Gian Luca Cavalcanti',
+          'Maurizio Cattani',
+        ],
+      },
+      { role: 'Arabic translation', names: ['Hamid Al Bouchouari'] },
     ],
     acknowledgements:
-      'With thanks to ISMEO, the University of Bologna and Biblioteca Salaborsa.',
+      'We thank the Ministry of Heritage and Culture of the Sultanate of Oman, Explore Oman, the University of Bologna, and Comune di Bologna – Biblioteca Salaborsa.',
   },
 ];
