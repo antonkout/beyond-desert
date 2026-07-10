@@ -102,7 +102,7 @@ export const BOOKS: Book[] = [
     genre: "Saggistica",
     publisher: "Mondadori",
     isbn: "9788804800682",
-    permalink: null,
+    permalink: "https://www.mondadori.it/libri/i-partigiani-di-allah-laura-silvia-battaglia/",
   },
   {
     slug: "sabbie-arabe",
@@ -138,7 +138,7 @@ export const BOOKS: Book[] = [
     genre: "Narrativa",
     publisher: "Guanda",
     isbn: "9788823517233",
-    permalink: null,
+    permalink: "https://sol.unibo.it/SebinaOpac/resource/arabia-deserta/ML_0000150148878?pb=UBOSB",
   },
   {
     slug: "medio-oriente-uno-sguardo-antropologico",
@@ -318,7 +318,7 @@ export const BOOKS: Book[] = [
     genre: "Narrativa",
     publisher: "Mondadori",
     isbn: "9788804662808",
-    permalink: null,
+    permalink: "https://sol.unibo.it/SebinaOpac/resource/la-bicicletta-verde-su-due-ruote-verso-la-liberta/UBO04610599?pb=UBOSB",
   },
   {
     slug: "i-sette-pilastri-della-saggezza",
