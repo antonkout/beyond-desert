@@ -39,9 +39,9 @@ export default function Footer() {
             Beyond the Desert
           </span>
           {' · '}
-          {t('footer.rights')}
-          {' · © 2026 · '}
           {t('meta.venue')}
+          {' · © 2026 '}
+          {t('footer.rights')}
         </div>
       </div>
     </footer>
