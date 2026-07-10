@@ -102,7 +102,7 @@ export const BOOKS: Book[] = [
     genre: "Saggistica",
     publisher: "Mondadori",
     isbn: "9788804800682",
-    permalink: "https://www.mondadori.it/libri/i-partigiani-di-allah-laura-silvia-battaglia/",
+    permalink: "https://sol.unibo.it/SebinaOpac/resource/i-partigiani-di-allah/UBO10327465?pb=UBOSB",
   },
   {
     slug: "sabbie-arabe",
