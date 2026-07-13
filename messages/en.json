@@ -33,44 +33,44 @@
     },
     "history": {
       "title": "Stories of People and Discoveries",
-      "lead": "Three formative periods reshape what we know about Arabia: not a marginal periphery of the Near East, but an active, connected, dynamic territory.",
+      "lead": "From the Paleolithic to the birth of Islam, the Arabian Peninsula was a space of adaptation and relation between Africa, Asia, and the Mediterranean — shaped by water, metals, oases, and trade routes.",
       "bronze": {
         "title": "Bronze Age",
-        "period": "3rd–2nd millennium BCE",
-        "body": "Contrary to the long-held view of Arabia as a marginal periphery of the Near East, archaeological evidence shows the Peninsula as an active, connected, and dynamic territory. Its people developed innovative strategies for radically diverse environments — inland deserts and oases, coasts and mountain chains. Mobility was not backwardness but an organizing principle: pastoralists, merchants, and artisans moved regularly between oases, coastal sites, and inland routes, sustaining long-distance exchange networks and diffusing technologies and cultural styles.\n\nArabia was already woven into the trade systems of the Near East, connected with Mesopotamia, the Levant, East Africa, and the Indus Valley. Omani copper, marine products, and exotic goods circulated along well-defined overland and maritime routes. Arab communities were not isolated — they participated in global networks while keeping significant cultural and social autonomy.\n\nFunerary architecture is among the most eloquent witnesses of the period. Tumuli, necropolises, and monumental tombs — like those at Marib's Temple of Awam in Yemen — reveal a sophisticated symbolic order built around memory, lineage, and territory. Thousands of stelae bear stylized portraits and dedicatory inscriptions: a striking attention to the eternal name of the deceased. At Baraqish, empty cenotaphs commemorate merchants lost on the long Incense Road journeys, whose bodies could not be brought home — proof that memory and honor mattered more than physical presence.\n\nTombs also marked the landscape. They served as territorial reference points, transforming the desert into a cultural landscape where memory, trade, and identity intertwined. Burial typology evolved from collective clan tombs to individual graves tied to social status, signaling growing differentiation without centralized states.\n\nOases and coasts played a strategic role. Oases were not only agricultural centers but meeting points between communities and nodes of water-resource control. Coasts hosted fishing, navigation, and maritime trade. The diffusion of the dromedary further revolutionized desert mobility, sustaining caravan routes and stable inter-community ties — a social, economic, and symbolic infrastructure supporting increasingly complex Arabian societies."
+        "period": "3rd millennium BCE",
+        "body": "In the third millennium BCE, copper made the Arabian Peninsula a protagonist of the great trade networks of the Near East. Mesopotamian sources name the land of Magan — southeastern Arabia and the Oman Peninsula — and the kingdom of Dilmun in the Gulf.\n\nCopper was an engine of exchange, connecting Mesopotamia, Iran, the Indus Valley, the Arabian Gulf, and the Sea of Oman. Plants and agricultural practices circulated too, contributing to the formation of the oasis. Water, date palms, cultivation, and herding built more stable productive landscapes without erasing seasonal mobility."
       },
       "iron": {
         "title": "Iron Age",
         "period": "1st millennium BCE – early Islamic era",
-        "body": "The Iron Age — roughly the 1st millennium BCE to the early Islamic era — marks the consolidation and intensification of Arabian social and political structures. Stable kingdoms emerge: Saba, Qataban, Ma'in. They consolidate control over trade routes and local resources without developing centralized states on Mesopotamian or Egyptian models.\n\nSettlement stability grows in oases and fertile agricultural areas. Regular agricultural production and water-resource control sustain larger populations and more complex communities. Mobility remains essential — long-distance trade still requires constant movement between cities, oases, and coastal landings.\n\nMonumental necropolises become tools of political and social identity. The cemetery at Marib's Temple of Awam, with thousands of tombs, is emblematic. Stelae with stylized portraits and inscriptions reveal extreme attention to the memory and prestige of the dead, often linked to influential families or high-ranking merchants. These structures consolidate kingdoms' territorial presence and mark symbolic boundaries, turning tombs into beacons of the desert landscape.\n\nAlongside real burials, cenotaphs commemorate merchants who died on commercial journeys. The physical body is not needed; what matters is respect for the deceased and recognition of their role in the economic and social network. Iron Age Arabia consolidates the Incense Road, connecting the entire Near East to the Mediterranean. Arab kingdoms control trade in incense, myrrh, and other precious goods, using mobility as a strategic instrument — never as authoritarian centralization. Cooperation and alliances between families and clans remain crucial.\n\nExternal influences from the Levant, Mesopotamia, and later Hellenistic and Roman worlds are absorbed and reinterpreted. Loculus and kokhim tombs echo outside traditions but integrate into local funerary practices, creating an original heritage adapted to Arabian conditions. Cultural interaction never means subordination.\n\nA gradual simplification of funerary practices — fewer grave goods, growing attention to equality before death — already prefigures the uniform practices of Islam."
+        "body": "In the first millennium BCE, water and mobility became decisive forces. In southeastern Arabia the falaj spread — tunnels and channels tapping underground water toward fields and oases — favoring agriculture, denser settlement, and connections between mountains, plains, and coasts.\n\nThe domestication of the dromedary transformed desert travel. The South Arabian Kingdoms, including Saba, prospered on irrigated agriculture, caravan routes, and the trade of frankincense and myrrh, while the north and northwest linked the southern routes to the Levant and Rome."
       },
       "preIslamic": {
-        "title": "Pre-Islamic to Islamic",
-        "period": "1st–7th century CE",
-        "body": "Funerary practices simplify; the attention to equality before death anticipates the uniform practices of Islam. Climate, oases, and the falaj irrigation systems shape settlement patterns that endure to the present day. The transition is not a rupture but a slow recomposition of older Arabian symbolic and economic structures around new religious horizons."
+        "title": "Islamic Period",
+        "period": "from the 7th century CE",
+        "body": "In the seventh century CE, the birth of Islam deeply transformed the Peninsula. Mecca and Medina became the centers of a new religious and political community, uniting diverse groups without erasing local traditions.\n\nEven when power shifted outside Arabia, the region kept an essential role: the holy cities remained poles of pilgrimage, and the coasts continued to take part in the trade of the Red Sea, the Arabian Gulf, and the Indian Ocean."
       }
     },
     "research": {
       "title": "UniBo Excavations in Arabia",
-      "lead": "Forty years of archaeological research by the University of Bologna in Oman, from the Joint Hadd Project to ongoing missions at Halban and Ras al-Hadd.",
+      "lead": "Decades of University of Bologna archaeological research in Oman — from the Joint Hadd Project to ongoing missions at Ras al-Hadd, Al-Khutm, Halban, and the Romail shelter.",
       "rasAlHadd": {
         "title": "Ras al-Hadd",
-        "lead": "Bronze Age coastal complex on the Omani Sea, investigated since the 1980s by the Joint Hadd Project under Maurizio Cattani.",
+        "lead": "Bronze Age coastal landscape around the HD-6 settlement and the HD-7/HD-10 necropolises, investigated by the University of Bologna for over thirty years.",
         "period": "Bronze Age (3rd millennium BCE)"
       },
       "halban": {
-        "title": "Halban Necropolis (IAMHAL)",
-        "lead": "Bronze Age burial landscape on the Batinah coast, currently excavated by the IAMHAL mission led by Eugenio Bortolini and Stefano Benazzi.",
+        "title": "Halban Necropolis",
+        "lead": "Monumental Bronze Age tombs on a limestone terrace in Al-Batinah, excavated since 2023 with digital survey, osteoarchaeology, and isotopic analysis.",
         "period": "Bronze Age"
       },
       "romail": {
         "title": "Romail Shelter",
-        "lead": "Prehistoric rock shelter offering rare evidence of pre-Neolithic life in the interior of Oman.",
+        "lead": "A prehistoric rock shelter between the Wahiba Sands and the Hajar Mountains, documenting the transition from Final Paleolithic to Neolithic about 10,000 years ago.",
         "period": "Prehistoric"
       },
       "history": {
         "title": "Forty years in Oman",
-        "lead": "From the foundational work of Maurizio Tosi and Geraldina Santini-Tosi to the current generation, Bologna's archaeologists have shaped how the Bronze Age of southeastern Arabia is understood today."
+        "lead": "From Maurizio Tosi's first campaigns at Ras al-Hamra in the late 1970s to today's DiSCi and DBC projects, Bologna's archaeologists have shaped how the prehistory and protohistory of southeastern Arabia are understood."
       },
       "references": {
         "title": "Scientific References",
@@ -79,16 +79,16 @@
     },
     "climate": {
       "title": "Climate, Oases and Aflaj",
-      "lead": "Arabia's environments — deserts, oases, and falaj irrigation systems — shaped settlement for millennia. The five Aflaj Irrigation Systems of Oman, inscribed on the UNESCO World Heritage List in 2006, still water villages today.",
+      "lead": "In Arabia, water was the decisive element. Communities transformed arid environments into productive oases and, from the Iron Age, built the falaj irrigation systems — five of them inscribed on the UNESCO World Heritage List in Oman.",
       "aflaj": {
         "title": "The Aflaj of Oman",
-        "body": "A falaj (plural: aflaj) is an ancient channel-irrigation system. Water flows by gravity from underground aquifers or springs through stone and earth channels into terraced fields and date palms. The system relies on precise gradients, communal management, and a sundial-based system for distributing water rights among households. Dating back at least to 500 CE, and likely far earlier, the surviving aflaj of Oman remain in active use — a living infrastructure connecting climate, agriculture, and social organization.",
+        "body": "A falaj (plural: aflaj) is a hydraulic system that captures water from springs, water tables, or aquifers and carries it by gravity to settlements, palm groves, and fields. The water is divided into shares and shifts under community management. Introduced at the beginning of the Iron Age along the foothills of the Al-Hajar Mountains, thousands of aflaj are still documented in Oman today, and five are inscribed on the UNESCO World Heritage List.",
         "unesco": "UNESCO World Heritage: Aflaj Irrigation Systems of Oman (2006)",
         "unescoUrl": "https://whc.unesco.org/en/list/1207/"
       },
       "climate": {
-        "title": "Past climates, future challenges",
-        "body": "Recent palaeoclimate research shows the Arabian Peninsula has oscillated between humid and arid phases over the last 100,000 years. Greener intervals enabled human dispersals, lake formation, and dense occupation; arid phases pushed populations toward oases and coasts. Studying these past responses helps us understand how human societies adapted — and what lessons they hold for the climate challenges of our own century."
+        "title": "Water in an arid land",
+        "body": "In the popular imagination the desert is empty and hostile, yet Arabia's history is far more complex. Its communities did not merely cross arid environments — they learned to know them, exploit their resources, and, in some cases, transform them into productive landscapes. Collecting, conserving, distributing, and protecting water demanded technical knowledge, social organization, and a continuous capacity for adaptation."
       }
     },
     "archive3d": {
