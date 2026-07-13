@@ -6,11 +6,10 @@ import { slug } from '@/app/components/PanelBody';
 import type { Block } from './panels';
 
 const DATES: Record<string, string> = {
-  Palaeolithic: 'until c. 10,000 years ago',
-  Neolithic: 'c. 8000–3100 BCE',
+  Prehistory: 'until c. 3100 BCE',
   'Bronze Age': '3100–1250 BCE',
   'Iron Age': '1st mill. BCE – 7th c. CE',
-  Islam: 'from the 7th c. CE',
+  'Islamic Period': 'from the 7th c. CE',
 };
 
 type Period = { heading: string; paras: string[] };
