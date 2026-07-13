@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
+import { useLocale } from 'next-intl';
 
 // Generic "Read more / Read less" wrapper. Clips its children behind a fade and
 // a pill toggle. The fade + button colours adapt to the surface the block sits
@@ -29,6 +30,7 @@ export default function Collapsible({
 }) {
   const [open, setOpen] = useState(false);
   const [needsToggle, setNeedsToggle] = useState(true);
+  const isIt = useLocale() === 'it';
   const ref = useRef<HTMLDivElement>(null);
   const s = SURFACE[surface];
   const bodyId = id ? `${id}-body` : undefined;
@@ -66,7 +68,7 @@ export default function Collapsible({
           aria-controls={bodyId}
           className={`group mt-6 inline-flex items-center gap-2 rounded-full border px-5 py-2 text-sm font-semibold transition-colors ${s.btn}`}
         >
-          {open ? 'Read less' : 'Read more'}
+          {open ? (isIt ? 'Leggi meno' : 'Read less') : isIt ? 'Leggi tutto' : 'Read more'}
           <span
             aria-hidden
             className={`transition-transform duration-200 ${

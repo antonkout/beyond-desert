@@ -1,5 +1,5 @@
 'use client';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 
 type Model = {
   id: string;
@@ -26,11 +26,14 @@ const MODELS: Model[] = [
 export default function Archive3DPage() {
   const t = useTranslations('sections.archive3d');
 
+  const locale = useLocale();
+  const isIt = locale === 'it';
+
   return (
     <article className="bg-desert-sand py-16">
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">
-          3D Archive
+          {isIt ? 'Archivio 3D' : '3D Archive'}
         </p>
         <h1 className="font-display text-4xl md:text-5xl mb-4 text-deep-basalt">
           {t('title')}
@@ -63,7 +66,7 @@ export default function Archive3DPage() {
               </div>
               <div className="p-5">
                 <p className="text-xs uppercase tracking-wider text-unibo-red mb-1">
-                  {model.period}
+                  {isIt && model.period === 'Bronze Age' ? 'Età del Bronzo' : model.period}
                 </p>
                 <h3 className="font-display font-extrabold text-lg text-deep-basalt">
                   {model.name}
@@ -75,7 +78,7 @@ export default function Archive3DPage() {
                     rel="noopener noreferrer"
                     className="mt-3 inline-block text-sm text-deep-basalt hover:text-unibo-red transition-colors"
                   >
-                    View on Sketchfab →
+                    {isIt ? 'Vedi su Sketchfab' : 'View on Sketchfab'} →
                   </a>
                 )}
               </div>
