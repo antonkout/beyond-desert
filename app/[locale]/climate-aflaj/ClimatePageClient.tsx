@@ -48,18 +48,27 @@ function AflajSection() {
           <div className="md:pl-7">
             <Collapsible surface="sand" id={`panel-${AFLAJ_PANEL.id}`}>
               <div className="space-y-5 leading-[1.75] text-[1.02rem] text-deep-basalt/85">
-                {blocks.map((b, i) => (
-                  <p
-                    key={i}
-                    className={
-                      i === 0
-                        ? 'first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-6xl first-letter:font-extrabold first-letter:leading-[0.78] first-letter:text-petroleum-blue'
-                        : ''
-                    }
-                  >
-                    {b.text}
-                  </p>
-                ))}
+                {blocks.map((b, i) =>
+                  b.type === 'h' ? (
+                    <h3
+                      key={i}
+                      className="font-display font-extrabold text-xl md:text-2xl text-deep-basalt pt-3"
+                    >
+                      {b.text}
+                    </h3>
+                  ) : (
+                    <p
+                      key={i}
+                      className={
+                        i === 0
+                          ? 'first-letter:float-left first-letter:mr-3 first-letter:font-display first-letter:text-6xl first-letter:font-extrabold first-letter:leading-[0.78] first-letter:text-petroleum-blue'
+                          : ''
+                      }
+                    >
+                      {b.text}
+                    </p>
+                  )
+                )}
               </div>
             </Collapsible>
           </div>
