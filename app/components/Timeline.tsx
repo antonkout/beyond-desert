@@ -1,6 +1,6 @@
 'use client';
 import { useState } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import Reveal from './Reveal';
 import PhotoBackdrop from './PhotoBackdrop';
 
@@ -9,6 +9,7 @@ type Period = (typeof PERIODS)[number];
 
 export default function Timeline() {
   const t = useTranslations('sections.history');
+  const isIt = useLocale() === 'it';
   const [expanded, setExpanded] = useState<Record<Period, boolean>>({
     bronze: false,
     iron: false,
@@ -23,7 +24,7 @@ export default function Timeline() {
       <PhotoBackdrop src="/images/photos/fishermen-gulls.jpg" focal="center 40%" />
       <div className="relative z-10 max-w-5xl mx-auto px-6">
         <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-          Timeline
+          {isIt ? 'Cronologia' : 'Timeline'}
         </p>
         <h2 className="font-display text-3xl md:text-4xl mb-4 text-desert-sand">
           {t('title')}
@@ -74,7 +75,13 @@ export default function Timeline() {
                     aria-controls={`period-body-${period}`}
                     className="inline-flex items-center gap-1 text-sm font-semibold text-desert-sand underline-offset-4 hover:underline transition-colors"
                   >
-                    {isOpen ? 'Read less' : 'Read more'}
+                    {isOpen
+                      ? isIt
+                        ? 'Leggi meno'
+                        : 'Read less'
+                      : isIt
+                      ? 'Leggi tutto'
+                      : 'Read more'}
                     <span aria-hidden className={isOpen ? 'rotate-180' : ''}>
                       ↓
                     </span>
@@ -84,7 +91,7 @@ export default function Timeline() {
                     className="inline-flex items-center gap-2 text-sm text-desert-sand/80 hover:text-desert-sand transition-colors"
                     aria-label={t(`${period}.title`) + ' — listen to audio'}
                   >
-                    🔊 Listen
+                    🔊 {isIt ? 'Ascolta' : 'Listen'}
                   </button>
                 </div>
                 </Reveal>

@@ -1,6 +1,6 @@
 'use client';
-import { useTranslations } from 'next-intl';
-import { PANELS } from '@/app/[locale]/history/panels';
+import { useTranslations, useLocale } from 'next-intl';
+import { getPanels } from '@/app/[locale]/history/panels';
 import EditorialPanel from '@/app/components/EditorialPanel';
 import Collapsible from '@/app/components/Collapsible';
 import SitesMap from '@/app/components/SitesMap';
@@ -12,11 +12,6 @@ const RESEARCH_OVERLAY =
   'linear-gradient(180deg, rgba(22,48,57,0.70) 0%, rgba(22,48,57,0.64) 45%, rgba(22,48,57,0.80) 100%)';
 
 const SITES = ['rasAlHadd', 'halban', 'romail'] as const;
-
-// Long-form panels moved here from the history section.
-const RESEARCH_PANELS = PANELS.filter(
-  (p) => p.id === 'history-of-studies' || p.id === 'current-excavations'
-);
 
 // Bibliography. Citations are kept in their original language, as is standard
 // for scholarly references, so they are not part of the i18n message files.
@@ -109,6 +104,10 @@ const REFERENCES: Reference[] = [
 
 export default function Research() {
   const t = useTranslations('sections.research');
+  const locale = useLocale();
+  const RESEARCH_PANELS = getPanels(locale).filter(
+    (p) => p.id === 'history-of-studies' || p.id === 'current-excavations'
+  );
 
   return (
     <article className="bg-desert-sand">
@@ -116,7 +115,7 @@ export default function Research() {
         <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 35%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            Research
+            {locale === 'it' ? 'Ricerca' : 'Research'}
           </p>
           <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
           <p className="max-w-prose opacity-90">{t('lead')}</p>
@@ -172,7 +171,7 @@ export default function Research() {
             id="excavation-map-heading"
             className="font-display font-extrabold text-xl md:text-2xl text-deep-basalt mb-5"
           >
-            Excavation map
+            {locale === 'it' ? 'Mappa degli scavi' : 'Excavation map'}
           </h3>
           <SitesMap />
         </section>

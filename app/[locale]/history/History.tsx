@@ -1,5 +1,6 @@
 'use client';
-import { PANELS } from './panels';
+import { useLocale } from 'next-intl';
+import { getPanels } from './panels';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 import EditorialPanel from '@/app/components/EditorialPanel';
 import JourneyTimeline from './JourneyTimeline';
@@ -8,11 +9,11 @@ import JourneyTimeline from './JourneyTimeline';
 // chronological journey. The other panels live on their own pages:
 // "aflaj" -> Climate & Aflaj, "history-of-studies" and "current-excavations"
 // -> Research, and "credits" -> the Exhibition section.
-const HISTORY_PANELS = PANELS.filter(
-  (p) => p.id === 'introduction' || p.id === 'history'
-);
-
 export default function History() {
+  const locale = useLocale();
+  const HISTORY_PANELS = getPanels(locale).filter(
+    (p) => p.id === 'introduction' || p.id === 'history'
+  );
   return (
     <article>
       {/* Page header over a camels-by-water backdrop */}
@@ -20,16 +21,17 @@ export default function History() {
         <PhotoBackdrop src="/images/photos/history-bg.jpg" focal="center 50%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            History
+            {locale === 'it' ? 'Storia' : 'History'}
           </p>
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05] mb-6">
-            A history written in the sand
+            {locale === 'it'
+              ? 'Una storia scritta nella sabbia'
+              : 'A history written in the sand'}
           </h1>
           <p className="max-w-prose text-lg opacity-85 leading-relaxed mb-10">
-            From the first stone tools to the Islamic era, the Arabian Peninsula
-            tells a far richer story than its deserts suggest. Follow the threads
-            below — geography, the long chronological journey, oases and water,
-            and four decades of University of Bologna fieldwork in Oman.
+            {locale === 'it'
+              ? 'Dalle prime pietre scheggiate all’età islamica, la Penisola Araba racconta una storia molto più ricca di quanto suggeriscano i suoi deserti. Segui i fili qui sotto — geografia, il lungo viaggio cronologico, oasi e acqua, e quarant’anni di ricerche sul campo dell’Università di Bologna in Oman.'
+              : 'From the first stone tools to the Islamic era, the Arabian Peninsula tells a far richer story than its deserts suggest. Follow the threads below — geography, the long chronological journey, oases and water, and four decades of University of Bologna fieldwork in Oman.'}
           </p>
 
           <nav aria-label="Section index" className="flex flex-wrap gap-3">

@@ -1,37 +1,34 @@
 'use client';
 import { useRef } from 'react';
-import { useTranslations } from 'next-intl';
+import { useTranslations, useLocale } from 'next-intl';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { PANELS } from '@/app/[locale]/history/panels';
+import { getPanels, type Panel } from '@/app/[locale]/history/panels';
 import Collapsible from '@/app/components/Collapsible';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 
-// Long-form panel moved here from the history section.
-const AFLAJ_PANEL = PANELS.find((p) => p.id === 'aflaj')!;
-
 // Editorial treatment for the long aflaj text: a sticky title rail, a drop cap,
 // and a "falaj" channel line down the margin that fills with water as you read.
-function AflajSection() {
+function AflajSection({ panel }: { panel: Panel }) {
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start center', 'end end'],
   });
   const fill = useTransform(scrollYProgress, [0, 1], ['0%', '100%']);
-  const blocks = AFLAJ_PANEL.blocks ?? [];
+  const blocks = panel.blocks ?? [];
 
   return (
     <section
-      id={AFLAJ_PANEL.id}
+      id={panel.id}
       className="mt-16 pt-12 border-t border-deep-basalt/15 scroll-mt-24 text-deep-basalt"
     >
       <div className="lg:grid lg:grid-cols-[200px_minmax(0,1fr)] lg:gap-12">
         <div className="mb-6 lg:mb-0 lg:sticky lg:top-24 lg:self-start">
           <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
-            {AFLAJ_PANEL.kicker}
+            {panel.kicker}
           </p>
           <h2 className="font-display text-3xl md:text-4xl text-deep-basalt">
-            {AFLAJ_PANEL.title}
+            {panel.title}
           </h2>
           <svg viewBox="0 0 60 24" className="mt-5 w-16 text-petroleum-blue/50" fill="none" aria-hidden>
             <path d="M0 6 H22 L30 18 L38 6 H60" stroke="currentColor" strokeWidth="1.5" />
@@ -46,7 +43,7 @@ function AflajSection() {
             className="absolute left-[-0.5px] top-1 hidden w-[2px] bg-petroleum-blue/60 md:block"
           />
           <div className="md:pl-7">
-            <Collapsible surface="sand" id={`panel-${AFLAJ_PANEL.id}`}>
+            <Collapsible surface="sand" id={`panel-${panel.id}`}>
               <div className="space-y-5 leading-[1.75] text-[1.02rem] text-deep-basalt/85">
                 {blocks.map((b, i) =>
                   b.type === 'h' ? (
@@ -80,6 +77,9 @@ function AflajSection() {
 
 export default function ClimatePageClient() {
   const t = useTranslations('sections.climate');
+  const locale = useLocale();
+  const aflajPanel = getPanels(locale).find((p) => p.id === 'aflaj')!;
+  const isIt = locale === 'it';
 
   return (
     <article className="bg-desert-sand">
@@ -87,7 +87,7 @@ export default function ClimatePageClient() {
         <PhotoBackdrop src="/images/photos/camels-water.jpg" focal="center 55%" />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            Climate & Aflaj
+            {isIt ? 'Clima e Aflaj' : 'Climate & Aflaj'}
           </p>
           <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
           <p className="text-lg opacity-90 leading-relaxed max-w-prose">{t('lead')}</p>
@@ -115,7 +115,9 @@ export default function ClimatePageClient() {
               />
             </div>
             <figcaption className="mt-2 text-xs text-deep-basalt/60">
-              How an aflaj channels water by gravity from source to settlement.
+              {isIt
+                ? 'Come un aflaj conduce l’acqua per gravità dalla sorgente all’abitato.'
+                : 'How an aflaj channels water by gravity from source to settlement.'}
             </figcaption>
           </figure>
 
@@ -138,7 +140,7 @@ export default function ClimatePageClient() {
           </p>
         </section>
 
-        <AflajSection />
+        <AflajSection panel={aflajPanel} />
       </div>
     </article>
   );

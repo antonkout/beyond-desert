@@ -1,3 +1,108 @@
 {
-  "_note": "Italian translation pending. Copy en.json structure and translate values."
+  "meta": {
+    "title": "Oltre il deserto: storie di popoli e scoperte",
+    "description": "Mostra temporanea presso la Biblioteca Salaborsa, Bologna.",
+    "dates": "20 luglio – 28 agosto 2026",
+    "venue": "Biblioteca Salaborsa, Bologna"
+  },
+  "nav": {
+    "exhibition": "Mostra",
+    "history": "Storia",
+    "research": "Ricerca",
+    "library": "Biblioteca",
+    "climate": "Clima e Aflaj",
+    "archive3d": "Archivio 3D"
+  },
+  "hero": {
+    "tag": "Mostra temporanea",
+    "lead": "Entra in una terra dove mondi antichi incontrano la scienza più avanzata. Dai grandi deserti alle civiltà fiorenti, scopri come l’archeologia riporta alla luce il passato — e ci aiuta a comprendere le sfide climatiche del nostro futuro.",
+    "tagline": "Esplora. Scopri. Ripensa il passato.",
+    "cta": "Inizia il viaggio"
+  },
+  "sections": {
+    "library": {
+      "title": "Biblioteca",
+      "lead": "La Sala Lettura — libri, e-book e un film sull’Arabia, selezionati per la mostra e conservati presso la Biblioteca Salaborsa."
+    },
+    "geography": {
+      "title": "Geografia",
+      "lead": "Decenni di lavoro archeologico italiano e internazionale mappati attraverso la Penisola Araba — dagli altopiani yemeniti alla costa omanita.",
+      "caption": "Clicca un indicatore per i dettagli della missione e i collegamenti.",
+      "legendUnibo": "Missioni dell’Università di Bologna",
+      "legendOther": "Altre missioni internazionali"
+    },
+    "history": {
+      "title": "Storie di popoli e scoperte",
+      "lead": "Dal Paleolitico alla nascita dell’Islam, la Penisola Araba fu uno spazio di adattamento e relazione tra Africa, Asia e Mediterraneo — plasmato da acqua, metalli, oasi e rotte commerciali.",
+      "bronze": {
+        "title": "Età del Bronzo",
+        "period": "III millennio a.C.",
+        "body": "Nel terzo millennio a.C. il rame rese la Penisola Araba protagonista delle grandi reti commerciali del Vicino Oriente. Le fonti mesopotamiche ricordano il paese di Magan — l’Arabia sud-orientale e la Penisola dell’Oman — e il regno di Dilmun nel Golfo.\n\nIl rame fu un motore di scambi, collegando Mesopotamia, Iran, Valle dell’Indo, Golfo Arabico e Mare d’Oman. Circolavano anche piante e pratiche agricole, che contribuirono alla formazione dell’oasi. Acqua, palme da dattero, coltivazione e allevamento costruirono paesaggi produttivi più stabili senza cancellare la mobilità stagionale."
+      },
+      "iron": {
+        "title": "Età del Ferro",
+        "period": "I millennio a.C. – prima età islamica",
+        "body": "Nel primo millennio a.C. acqua e mobilità divennero forze decisive. In Arabia sud-orientale si diffuse il falaj — gallerie e canali che captavano l’acqua sotterranea verso campi e oasi — favorendo l’agricoltura, insediamenti più densi e collegamenti tra montagne, pianure e coste.\n\nLa domesticazione del dromedario trasformò il viaggio nel deserto. I Regni Sudarabici, tra cui Saba, prosperarono sull’agricoltura irrigua, sulle rotte carovaniere e sul commercio di incenso e mirra, mentre il nord e il nord-ovest collegavano le rotte meridionali al Levante e a Roma."
+      },
+      "preIslamic": {
+        "title": "Periodo Islamico",
+        "period": "dal VII secolo d.C.",
+        "body": "Nel settimo secolo d.C. la nascita dell’Islam trasformò in profondità la Penisola. La Mecca e Medina divennero i centri di una nuova comunità religiosa e politica, capace di unire gruppi diversi senza cancellare le tradizioni locali.\n\nAnche quando il potere si spostò fuori dall’Arabia, la regione mantenne un ruolo essenziale: le città sante rimasero poli del pellegrinaggio e le coste continuarono a partecipare ai traffici del Mar Rosso, del Golfo Arabico e dell’Oceano Indiano."
+      }
+    },
+    "research": {
+      "title": "Scavi UniBo in Arabia",
+      "lead": "Decenni di ricerca archeologica dell’Università di Bologna in Oman — dal Joint Hadd Project alle missioni in corso a Ras al-Hadd, Al-Khutm, Halban e al riparo di Romail.",
+      "rasAlHadd": {
+        "title": "Ras al-Hadd",
+        "lead": "Paesaggio costiero dell’Età del Bronzo attorno all’abitato di HD-6 e alle necropoli di HD-7/HD-10, indagato dall’Università di Bologna da oltre trent’anni.",
+        "period": "Età del Bronzo (III millennio a.C.)"
+      },
+      "halban": {
+        "title": "Necropoli di Halban",
+        "lead": "Tombe monumentali dell’Età del Bronzo su una terrazza calcarea in Al-Batinah, in scavo dal 2023 con rilievo digitale, osteoarcheologia e analisi isotopiche.",
+        "period": "Età del Bronzo"
+      },
+      "romail": {
+        "title": "Riparo di Romail",
+        "lead": "Un riparo preistorico tra le Wahiba Sands e i Monti Hajar, che documenta il passaggio dal Paleolitico Finale al Neolitico circa 10.000 anni fa.",
+        "period": "Preistorico"
+      },
+      "history": {
+        "title": "Quarant’anni in Oman",
+        "lead": "Dalle prime campagne di Maurizio Tosi a Ras al-Hamra alla fine degli anni Settanta ai progetti odierni di DiSCi e DBC, gli archeologi bolognesi hanno plasmato la comprensione della preistoria e protostoria dell’Arabia sud-orientale."
+      },
+      "references": {
+        "title": "Riferimenti scientifici",
+        "lead": "Una selezione di fonti scientifiche alla base dei pannelli e delle ricerche della mostra."
+      }
+    },
+    "climate": {
+      "title": "Clima, oasi e aflaj",
+      "lead": "In Arabia l’acqua fu l’elemento decisivo. Le comunità trasformarono ambienti aridi in oasi produttive e, dall’Età del Ferro, costruirono i sistemi di irrigazione falaj — cinque dei quali iscritti nella Lista del Patrimonio Mondiale UNESCO in Oman.",
+      "aflaj": {
+        "title": "Gli aflaj dell’Oman",
+        "body": "Un falaj (plurale: aflaj) è un sistema idraulico che capta l’acqua da sorgenti, falde o acquiferi e la conduce per gravità verso abitati, palmeti e campi. L’acqua viene divisa in quote e turni con gestione comunitaria. Introdotti all’inizio dell’Età del Ferro lungo la pedemontana dei Monti Al-Hajar, migliaia di aflaj sono ancora documentati in Oman, e cinque sono iscritti nella Lista del Patrimonio Mondiale UNESCO.",
+        "unesco": "Patrimonio UNESCO: Sistemi di irrigazione Aflaj dell’Oman (2006)",
+        "unescoUrl": "https://whc.unesco.org/en/list/1207/"
+      },
+      "climate": {
+        "title": "L’acqua in una terra arida",
+        "body": "Nell’immaginario comune il deserto è vuoto e ostile, ma la storia dell’Arabia è molto più complessa. Le sue comunità non si limitarono ad attraversare gli ambienti aridi — impararono a conoscerli, a sfruttarne le risorse e, in alcuni casi, a trasformarli in paesaggi produttivi. Raccogliere, conservare, distribuire e proteggere l’acqua richiese conoscenze tecniche, organizzazione sociale e una continua capacità di adattamento."
+      }
+    },
+    "archive3d": {
+      "title": "Archivio 3D",
+      "lead": "Ruota, ingrandisci e colloca nello spazio le strutture funerarie di Ras al-Hadd e Halban con la realtà aumentata. Inquadra i codici QR in mostra per vederle in AR."
+    }
+  },
+  "accessibility": {
+    "audioLabel": "Ascolta questo pannello",
+    "skipToContent": "Vai al contenuto principale",
+    "languageSwitch": "Cambia lingua"
+  },
+  "footer": {
+    "rights": "Università di Bologna · Dipartimento di Beni Culturali",
+    "partner": "In collaborazione con la Biblioteca Salaborsa e il Comune di Bologna"
+  }
 }
