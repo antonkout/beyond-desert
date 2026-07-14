@@ -21,17 +21,21 @@ export default function History() {
         <PhotoBackdrop src="/images/photos/history-bg.jpg" focal="center 50%" />
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            {locale === 'it' ? 'Storia' : 'History'}
+            {{ en: 'History', it: 'Storia', ar: 'التاريخ' }[locale] ?? 'History'}
           </p>
           <h1 className="font-display text-4xl md:text-6xl leading-[1.05] mb-6">
-            {locale === 'it'
-              ? 'Una storia scritta nella sabbia'
-              : 'A history written in the sand'}
+            {{
+              en: 'A history written in the sand',
+              it: 'Una storia scritta nella sabbia',
+              ar: 'تاريخ مكتوب في الرمال',
+            }[locale] ?? 'A history written in the sand'}
           </h1>
           <p className="max-w-prose text-lg opacity-85 leading-relaxed mb-10">
-            {locale === 'it'
-              ? 'Dalle prime pietre scheggiate all’età islamica, la Penisola Araba racconta una storia molto più ricca di quanto suggeriscano i suoi deserti. Segui i fili qui sotto — geografia, il lungo viaggio cronologico, oasi e acqua, e quarant’anni di ricerche sul campo dell’Università di Bologna in Oman.'
-              : 'From the first stone tools to the Islamic era, the Arabian Peninsula tells a far richer story than its deserts suggest. Follow the threads below — geography, the long chronological journey, oases and water, and four decades of University of Bologna fieldwork in Oman.'}
+            {{
+              en: 'From the first stone tools to the Islamic era, the Arabian Peninsula tells a far richer story than its deserts suggest. Follow the threads below — geography, the long chronological journey, oases and water, and four decades of University of Bologna fieldwork in Oman.',
+              it: 'Dalle prime pietre scheggiate all’età islamica, la Penisola Araba racconta una storia molto più ricca di quanto suggeriscano i suoi deserti. Segui i fili qui sotto — geografia, il lungo viaggio cronologico, oasi e acqua, e quarant’anni di ricerche sul campo dell’Università di Bologna in Oman.',
+              ar: 'من أولى الأدوات الحجرية إلى العصر الإسلامي، تروي شبه الجزيرة العربية قصة أغنى بكثير مما توحي به صحاريها. تابع الخيوط أدناه — الجغرافيا، والرحلة الزمنية الطويلة، والواحات والمياه، وأربعة عقود من الأبحاث الميدانية لجامعة بولونيا في عُمان.',
+            }[locale] ?? ''}
           </p>
 
           <nav aria-label="Section index" className="flex flex-wrap gap-3">

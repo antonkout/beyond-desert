@@ -3,11 +3,19 @@ import { useLocale } from 'next-intl';
 import { BOOKS, SHELVES, type Book, type BookTheme } from '@/app/[locale]/research/books';
 import { COVERS } from '@/app/[locale]/research/covers';
 
-const SHELF_LABEL_IT: Record<string, string> = {
-  'Fiction & Tales': 'Narrativa e racconti',
-  'History & Politics': 'Storia e politica',
-  'Literature & Language': 'Letteratura e lingua',
-  Film: 'Film',
+const SHELF_LABELS: Record<string, Record<string, string>> = {
+  it: {
+    'Fiction & Tales': 'Narrativa e racconti',
+    'History & Politics': 'Storia e politica',
+    'Literature & Language': 'Letteratura e lingua',
+    Film: 'Film',
+  },
+  ar: {
+    'Fiction & Tales': 'روايات وحكايات',
+    'History & Politics': 'تاريخ وسياسة',
+    'Literature & Language': 'أدب ولغة',
+    Film: 'أفلام',
+  },
 };
 
 // Designed-cover palette per shelf. Used as the fallback cover and as the tint
@@ -123,22 +131,30 @@ const SHELF_BG =
   'transparent 247px, transparent 268px)';
 
 export default function BookShelf() {
-  const isIt = useLocale() === 'it';
+  const locale = useLocale();
+  const shelfLabels = SHELF_LABELS[locale];
   return (
     <section aria-labelledby="reading-room-heading" className="text-deep-basalt">
       <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-2">
-        {isIt ? 'Presso la Biblioteca Salaborsa' : 'At Biblioteca Salaborsa'}
+        {{
+          en: 'At Biblioteca Salaborsa',
+          it: 'Presso la Biblioteca Salaborsa',
+          ar: 'في مكتبة سالابورسا',
+        }[locale] ?? 'At Biblioteca Salaborsa'}
       </p>
       <h2
         id="reading-room-heading"
         className="font-display text-3xl md:text-4xl mb-3 text-deep-basalt"
       >
-        {isIt ? 'La Sala Lettura' : 'The Reading Room'}
+        {{ en: 'The Reading Room', it: 'La Sala Lettura', ar: 'قاعة المطالعة' }[locale] ??
+          'The Reading Room'}
       </h2>
       <p className="max-w-prose mb-12 text-deep-basalt/80 leading-relaxed">
-        {isIt
-          ? 'Uno scaffale di libri, e-book e un film selezionati per la mostra — dalle Mille e una notte alla politica del Golfo contemporaneo. Ogni dorso rimanda alla sua scheda nel catalogo Salaborsa.'
-          : 'A shelf of books, e-books and film selected for the exhibition — from the Thousand and One Nights to the politics of the modern Gulf. Every spine links to its record in the Salaborsa catalogue.'}
+        {{
+          en: 'A shelf of books, e-books and film selected for the exhibition — from the Thousand and One Nights to the politics of the modern Gulf. Every spine links to its record in the Salaborsa catalogue.',
+          it: 'Uno scaffale di libri, e-book e un film selezionati per la mostra — dalle Mille e una notte alla politica del Golfo contemporaneo. Ogni dorso rimanda alla sua scheda nel catalogo Salaborsa.',
+          ar: 'رفٌّ من الكتب والكتب الإلكترونية وفيلم، اختيرت للمعرض — من ألف ليلة وليلة إلى سياسة الخليج المعاصر. يرتبط كل كتاب بسجله في فهرس مكتبة سالابورسا.',
+        }[locale] ?? ''}
       </p>
 
       <div className="space-y-12">
@@ -148,7 +164,7 @@ export default function BookShelf() {
           return (
             <div key={shelf.theme}>
               <h3 className="font-display font-extrabold text-lg text-deep-basalt/90 mb-5">
-                {isIt ? SHELF_LABEL_IT[shelf.label] ?? shelf.label : shelf.label}
+                {shelfLabels?.[shelf.label] ?? shelf.label}
                 <span className="ml-2 text-sm font-body font-normal text-deep-basalt/45">
                   {books.length}
                 </span>

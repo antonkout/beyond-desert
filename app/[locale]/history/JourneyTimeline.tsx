@@ -14,6 +14,10 @@ const DATES: Record<string, string> = {
   'Età del Bronzo': '3100–1250 a.C.',
   'Età del Ferro': 'I mill. a.C. – VII sec. d.C.',
   'Periodo Islamico': 'dal VII sec. d.C.',
+  'عصور ما قبل التاريخ': 'حتى نحو 3100 ق.م',
+  'العصر البرونزي': '3100–1250 ق.م',
+  'العصر الحديدي': 'الألفية الأولى ق.م – القرن السابع م',
+  'العصر الإسلامي': 'من القرن السابع الميلادي',
 };
 
 type Period = { heading: string; paras: string[] };

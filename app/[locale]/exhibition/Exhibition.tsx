@@ -30,17 +30,29 @@ const GEOGRAPHY_IT: string[] = [
   'Guardare alla Penisola Araba oltre il deserto significa superare gli stereotipi e riconoscere una regione dinamica, attraversata da vie terrestri e marittime, capace di collegare mondi diversi. Significa anche comprendere come ambienti apparentemente estremi abbiano offerto possibilità di adattamento, innovazione e scambio. È da questa prospettiva che la mostra presenta al pubblico il contributo dell’Università di Bologna allo studio archeologico dell’Arabia.',
 ];
 
-const LABELS = {
+const INTRO_AR: string[] = [
+  'غالبًا ما ترتبط شبه الجزيرة العربية، في المخيلة العامة، بامتداد الصحراء الشاسع. ولكن وراء هذه الصورة، القوية والمجزأة في آن واحد، يتكشف تاريخ أكثر ثراءً بكثير، يتألف من سواحل، وجبال، وواحات، وطرق بحرية، وموارد معدنية، ومستوطنات، وتبادلات، وتفاعلات بين مجتمعات مختلفة. لقد نشأ معرض «ما وراء الصحراء» ليرافق الجمهور في اكتشاف هذا التعقيد، وليبين كيف يمكن لعلم الآثار أن يعيد العمق التاريخي لمنطقة محورية في العلاقات بين آسيا وإفريقيا وحوض البحر الأبيض المتوسط منذ العصور القديمة.',
+  'تنظم جامعة بولونيا هذا المعرض بمناسبة انعقاد الندوة التاسعة والخمسين للدراسات العربية، وهي أحد أهم اللقاءات الدولية المخصصة لدراسة شبه الجزيرة العربية. إن استضافة هذا المؤتمر تعني جلب باحثين ومؤسسات وأبحاث من مختلف دول الجزيرة العربية والخليج إلى بولونيا، كما تعني أيضًا إتاحة الفرصة للمواطنين للتعرف عن قرب على تراث تاريخي وأثري ذي أهمية استثنائية.',
+  'منذ عقود عديدة، تقوم جامعة بولونيا بأنشطة بحثية في شبه الجزيرة العربية، وتربطها علاقة ذات أهمية خاصة وطويلة الأمد مع سلطنة عُمان. لقد شكل هذا التعاون بوابة وصول مميزة لدراسة المناظر الطبيعية، والمستوطنات، والتقنيات، والمجتمعات القديمة في جنوب شرق الجزيرة العربية. وفي الوقت نفسه، يندرج هذا التعاون في إطار منظور أوسع، منفتح على شبه الجزيرة العربية بأكملها وعلى صلاتها الإقليمية والدولية.',
+];
+
+const GEOGRAPHY_AR: string[] = [
+  'تشغل شبه الجزيرة العربية الجزء الجنوبي الغربي من قارة آسيا، وتحيط بها مساحات بحرية شاسعة. فمن الغرب تطل على البحر الأحمر، ومن الجنوب الشرقي على بحر العرب وبحر عُمان، ومن الشمال الشرقي على الخليج. وقد جعلها موقعها، منذ العصور القديمة، منطقة عبور بين البحر الأبيض المتوسط، وشرق إفريقيا، وبلاد الرافدين، وإيران، وجنوب آسيا، والمحيط الهندي.',
+  'تعد الصحراء مكونًا أساسيًا في هذا المشهد الطبيعي، لكنها لا تختصره بمفردها. فإلى جانب الامتدادات الرملية الشاسعة، مثل الربع الخالي، توجد سلاسل جبلية، وهضاب، وسهول ساحلية، ومجارٍ مائية موسمية، وواحات، ومناطق موسمية (مونصونية) في جنوب شبه الجزيرة. وقد شجع هذا التنوع البيئي على نشوء أشكال مختلفة من الحياة والاستيطان، من المجتمعات الرعوية إلى القرى الزراعية، ومن المراكز الساحلية إلى مناطق التعدين ومحاور التبادل التجاري.',
+  'إن النظر إلى شبه الجزيرة العربية «ما وراء الصحراء» يعني تجاوز الصور النمطية وتثمين منطقة ديناميكية، تتقاطع فيها الطرق البرية والبحرية، وقادرة على ربط عوالم مختلفة. ويعني أيضًا فهم كيف أتاحت بيئات تبدو قاسية في ظاهرها فرصًا للتكيف، والابتكار، والتبادل. ومن هذا المنطلق، يُعرِّف المعرض الجمهور بمساهمة جامعة بولونيا في الدراسات الأثرية الخاصة بشبه الجزيرة العربية.',
+];
+
+const LABELS: Record<string, { kicker: string; intro: string; geography: string }> = {
   en: { kicker: 'The Exhibition', intro: 'Introduction', geography: 'Geographical Setting' },
   it: { kicker: 'La mostra', intro: 'Introduzione', geography: 'Inquadramento geografico' },
+  ar: { kicker: 'المعرض', intro: 'مقدمة', geography: 'الإطار الجغرافي' },
 };
 
 export default function Exhibition() {
   const locale = useLocale();
-  const isIt = locale === 'it';
-  const intro = isIt ? INTRO_IT : INTRO;
-  const geography = isIt ? GEOGRAPHY_IT : GEOGRAPHY;
-  const labels = isIt ? LABELS.it : LABELS.en;
+  const intro = locale === 'it' ? INTRO_IT : locale === 'ar' ? INTRO_AR : INTRO;
+  const geography = locale === 'it' ? GEOGRAPHY_IT : locale === 'ar' ? GEOGRAPHY_AR : GEOGRAPHY;
+  const labels = LABELS[locale] ?? LABELS.en;
   const CREDITS_PANEL = getPanels(locale).find((p) => p.id === 'credits')!;
   return (
     <article className="bg-petroleum-blue text-desert-sand">

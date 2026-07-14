@@ -36,7 +36,11 @@ export default async function RootLayout({
     <html lang={locale} dir={dir}>
       <body>
         <a href="#main" className="skip-link">
-          Skip to main content
+          {locale === 'it'
+            ? 'Vai al contenuto principale'
+            : locale === 'ar'
+            ? 'تخطَّ إلى المحتوى الرئيسي'
+            : 'Skip to main content'}
         </a>
         <NextIntlClientProvider messages={messages}>
           <SmoothScroll />

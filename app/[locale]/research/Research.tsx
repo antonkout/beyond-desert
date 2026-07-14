@@ -115,7 +115,7 @@ export default function Research() {
         <PhotoBackdrop src="/images/photos/excavation-trench.jpg" focal="center 35%" imgOpacity={0.62} overlay={RESEARCH_OVERLAY} />
         <div className="relative z-10 max-w-6xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            {locale === 'it' ? 'Ricerca' : 'Research'}
+            {{ en: 'Research', it: 'Ricerca', ar: 'البحث' }[locale] ?? 'Research'}
           </p>
           <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
           <p className="max-w-prose opacity-90">{t('lead')}</p>
@@ -171,7 +171,8 @@ export default function Research() {
             id="excavation-map-heading"
             className="font-display font-extrabold text-xl md:text-2xl text-deep-basalt mb-5"
           >
-            {locale === 'it' ? 'Mappa degli scavi' : 'Excavation map'}
+            {{ en: 'Excavation map', it: 'Mappa degli scavi', ar: 'خريطة التنقيبات' }[locale] ??
+              'Excavation map'}
           </h3>
           <SitesMap />
         </section>
