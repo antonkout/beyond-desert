@@ -12,15 +12,17 @@ const LOGOS = [
 
 export default function Footer() {
   const t = useTranslations();
-  const isIt = useLocale() === 'it';
+  const locale = useLocale();
 
   return (
     <footer className="bg-desert-sand py-10">
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-center text-xs tracking-[0.25em] uppercase text-deep-basalt/55 mb-7">
-          {isIt
-            ? 'In collaborazione con e con il supporto di'
-            : 'In collaboration with & supported by'}
+          {{
+            en: 'In collaboration with & supported by',
+            it: 'In collaborazione con e con il supporto di',
+            ar: 'بالتعاون مع وبدعم من',
+          }[locale] ?? 'In collaboration with & supported by'}
         </p>
 
         <ul className="flex flex-wrap items-center justify-center gap-x-8 gap-y-6">

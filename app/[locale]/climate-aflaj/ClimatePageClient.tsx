@@ -79,7 +79,6 @@ export default function ClimatePageClient() {
   const t = useTranslations('sections.climate');
   const locale = useLocale();
   const aflajPanel = getPanels(locale).find((p) => p.id === 'aflaj')!;
-  const isIt = locale === 'it';
 
   return (
     <article className="bg-desert-sand">
@@ -87,7 +86,8 @@ export default function ClimatePageClient() {
         <PhotoBackdrop src="/images/photos/camels-water.jpg" focal="center 55%" />
         <div className="relative z-10 max-w-4xl mx-auto px-6">
           <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-3">
-            {isIt ? 'Clima e Aflaj' : 'Climate & Aflaj'}
+            {{ en: 'Climate & Aflaj', it: 'Clima e Aflaj', ar: 'المناخ والأفلاج' }[locale] ??
+              'Climate & Aflaj'}
           </p>
           <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
           <p className="text-lg opacity-90 leading-relaxed max-w-prose">{t('lead')}</p>
@@ -115,9 +115,11 @@ export default function ClimatePageClient() {
               />
             </div>
             <figcaption className="mt-2 text-xs text-deep-basalt/60">
-              {isIt
-                ? 'Come un aflaj conduce l’acqua per gravità dalla sorgente all’abitato.'
-                : 'How an aflaj channels water by gravity from source to settlement.'}
+              {{
+                en: 'How an aflaj channels water by gravity from source to settlement.',
+                it: 'Come un aflaj conduce l’acqua per gravità dalla sorgente all’abitato.',
+                ar: 'كيف يوصل الفلج الماء بفعل الجاذبية من المصدر إلى المستوطنة.',
+              }[locale] ?? ''}
             </figcaption>
           </figure>
 

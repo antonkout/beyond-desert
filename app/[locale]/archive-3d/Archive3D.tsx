@@ -27,13 +27,13 @@ export default function Archive3DPage() {
   const t = useTranslations('sections.archive3d');
 
   const locale = useLocale();
-  const isIt = locale === 'it';
 
   return (
     <article className="bg-desert-sand py-16">
       <div className="max-w-6xl mx-auto px-6">
         <p className="text-xs tracking-[0.25em] uppercase text-unibo-red mb-3">
-          {isIt ? 'Archivio 3D' : '3D Archive'}
+          {{ en: '3D Archive', it: 'Archivio 3D', ar: 'الأرشيف ثلاثي الأبعاد' }[locale] ??
+            '3D Archive'}
         </p>
         <h1 className="font-display text-4xl md:text-5xl mb-4 text-deep-basalt">
           {t('title')}
@@ -66,7 +66,10 @@ export default function Archive3DPage() {
               </div>
               <div className="p-5">
                 <p className="text-xs uppercase tracking-wider text-unibo-red mb-1">
-                  {isIt && model.period === 'Bronze Age' ? 'Età del Bronzo' : model.period}
+                  {model.period === 'Bronze Age'
+                    ? { en: 'Bronze Age', it: 'Età del Bronzo', ar: 'العصر البرونزي' }[locale] ??
+                      model.period
+                    : model.period}
                 </p>
                 <h3 className="font-display font-extrabold text-lg text-deep-basalt">
                   {model.name}
@@ -78,7 +81,10 @@ export default function Archive3DPage() {
                     rel="noopener noreferrer"
                     className="mt-3 inline-block text-sm text-deep-basalt hover:text-unibo-red transition-colors"
                   >
-                    {isIt ? 'Vedi su Sketchfab' : 'View on Sketchfab'} →
+                    {{ en: 'View on Sketchfab', it: 'Vedi su Sketchfab', ar: 'عرض على Sketchfab' }[
+                      locale
+                    ] ?? 'View on Sketchfab'}{' '}
+                    →
                   </a>
                 )}
               </div>
