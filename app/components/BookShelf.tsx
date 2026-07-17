@@ -151,9 +151,9 @@ export default function BookShelf() {
       </h2>
       <p className="max-w-prose mb-12 text-deep-basalt/80 leading-relaxed">
         {{
-          en: 'A shelf of books, e-books and film selected for the exhibition — from the Thousand and One Nights to the politics of the modern Gulf. Every spine links to its record in the Salaborsa catalogue.',
-          it: 'Uno scaffale di libri, e-book e un film selezionati per la mostra — dalle Mille e una notte alla politica del Golfo contemporaneo. Ogni dorso rimanda alla sua scheda nel catalogo Salaborsa.',
-          ar: 'رفٌّ من الكتب والكتب الإلكترونية وفيلم، اختيرت للمعرض — من ألف ليلة وليلة إلى سياسة الخليج المعاصر. يرتبط كل كتاب بسجله في فهرس مكتبة سالابورسا.',
+          en: 'A shelf of books, e-books and films selected for the exhibition — from the Thousand and One Nights to the politics of the modern Gulf. Every spine links to its record in the Salaborsa catalogue.',
+          it: 'Uno scaffale di libri, e-book e film selezionati per la mostra — dalle Mille e una notte alla politica del Golfo contemporaneo. Ogni dorso rimanda alla sua scheda nel catalogo Salaborsa.',
+          ar: 'رفٌّ من الكتب والكتب الإلكترونية والأفلام، اختيرت للمعرض — من ألف ليلة وليلة إلى سياسة الخليج المعاصر. يرتبط كل كتاب بسجله في فهرس مكتبة سالابورسا.',
         }[locale] ?? ''}
       </p>
 

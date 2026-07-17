@@ -144,7 +144,7 @@ export const PANELS_EN: Panel[] = [
       { role: "Excavation & field photography", names: ["Francesca Barchiesi", "Vittoria Bianchi", "Eugenio Bortolini", "Maurizio Cattani", "Enzo Cocca", "Sara Facciani", "Adam Al Ghafry", "Antonios Koutroumpas", "Antonino Vazzana"] },
       { role: "Arabic translation", names: ["Hamid Al Bouchouari"] },
     ],
-    acknowledgements: "We thank the Ministry of Heritage and Culture of the Sultanate of Oman, Experience Oman, the University of Bologna, and Comune di Bologna – Biblioteca Salaborsa.",
+    acknowledgements: "We thank the Ministry of Heritage and Culture of the Sultanate of Oman, Experience Oman, the University of Bologna, AIGO S.R.L., and Comune di Bologna – Biblioteca Salaborsa.",
   },
 ];
 
@@ -273,7 +273,7 @@ export const PANELS_IT: Panel[] = [
       { role: "Fotografie di scavo e da campo", names: ["Francesca Barchiesi", "Vittoria Bianchi", "Eugenio Bortolini", "Maurizio Cattani", "Gian Luca Cavalcanti", "Enzo Cocca", "Sara Facciani", "Adam Al Ghafry", "Antonios Koutroumpas", "Antonino Vazzana"] },
       { role: "Traduzione araba", names: ["Hamid Al Bouchouari"] },
     ],
-    acknowledgements: "Ringraziamo il Ministry of Heritage and Culture del Sultanato dell’Oman, Experience Oman, l’Università di Bologna e il Comune di Bologna – Biblioteca Salaborsa.",
+    acknowledgements: "Ringraziamo il Ministry of Heritage and Culture del Sultanato dell’Oman, Experience Oman, l’Università di Bologna, AIGO S.R.L. e il Comune di Bologna – Biblioteca Salaborsa.",
   },
 ];
 
@@ -402,7 +402,7 @@ export const PANELS_AR: Panel[] = [
       { role: "تصوير الحفريات والعمل الميداني", names: ["Francesca Barchiesi", "Vittoria Bianchi", "Eugenio Bortolini", "Maurizio Cattani", "Enzo Cocca", "Sara Facciani", "Adam Al Ghafry", "Antonios Koutroumpas", "Antonino Vazzana"] },
       { role: "الترجمة العربية", names: ["Hamid Al Bouchouari"] },
     ],
-    acknowledgements: "نتوجه بالشكر إلى وزارة التراث والثقافة في سلطنة عُمان، وExperience Oman، وجامعة بولونيا، وبلدية بولونيا – مكتبة سالابورسا.",
+    acknowledgements: "نتوجه بالشكر إلى وزارة التراث والثقافة في سلطنة عُمان، وExperience Oman، وجامعة بولونيا، وAIGO S.R.L.، وبلدية بولونيا – مكتبة سالابورسا.",
   },
 ];
 

@@ -61,6 +61,21 @@
         "unibo": true,
         "country": "Oman"
       }
+    },
+    {
+      "type": "Feature",
+      "geometry": { "type": "Point", "coordinates": [58.373386, 23.589682] },
+      "properties": {
+        "id": "dexpo",
+        "name": "DExPO — Dolphin Exploitation in Prehistoric Oman",
+        "mission": "DExPO",
+        "institute": "Bologna University (DiSCi) & Ministry of Heritage and Tourism, Sultanate of Oman",
+        "lead": "",
+        "period": "Neolithic – Late Iron Age",
+        "link": "",
+        "unibo": true,
+        "country": "Oman"
+      }
     }
   ]
 }
