@@ -326,7 +326,7 @@ export const BOOKS: Book[] = [
     type: "Film",
     title: "Viaggio alla Mecca",
     author: "Ferroukhi, Ismael",
-    year: null,
+    year: 2004,
     genre: "Drammatico",
     publisher: null,
     isbn: null,
