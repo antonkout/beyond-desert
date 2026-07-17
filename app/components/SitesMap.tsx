@@ -12,9 +12,12 @@ export default function SitesMap() {
   useEffect(() => {
     if (!mapContainer.current) return;
     let map: any;
+    let cancelled = false;
 
     (async () => {
       const maplibregl = (await import('maplibre-gl')).default;
+      // The import resolves after unmount if we were torn down meanwhile.
+      if (cancelled) return;
 
       map = new maplibregl.Map({
         container: mapContainer.current!,
@@ -42,7 +45,6 @@ export default function SitesMap() {
         const isUnibo = props.unibo === true;
 
         const el = document.createElement('button');
-        el.setAttribute('aria-label', props.name);
         el.style.cssText = `
           width: ${isUnibo ? '22px' : '16px'};
           height: ${isUnibo ? '22px' : '16px'};
@@ -66,14 +68,20 @@ export default function SitesMap() {
           </div>
         `;
 
-        new maplibregl.Marker(el)
+        new maplibregl.Marker({ element: el })
           .setLngLat([lng, lat])
           .setPopup(new maplibregl.Popup({ offset: 18, maxWidth: '300px' }).setHTML(popupHtml))
           .addTo(map);
+
+        // Marker overwrites the element's aria-label with a generic one, so name it after.
+        el.setAttribute('aria-label', props.name);
       });
     })();
 
-    return () => map?.remove();
+    return () => {
+      cancelled = true;
+      map?.remove();
+    };
   }, []);
 
   return (
