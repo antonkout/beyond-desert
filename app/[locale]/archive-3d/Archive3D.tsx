@@ -21,6 +21,24 @@ const MODELS: Model[] = [
     period: 'Bronze Age',
     sketchfab: '4c014dd765794ff8963e3d653c3e28c1',
   },
+  {
+    id: 'hd7-g2-t1',
+    name: "Ra's al-Hadd HD-7, Group 2, Tomb 1",
+    period: 'Bronze Age',
+    sketchfab: '1434b9c770a54a36bec1f5ee01ecf1b9',
+  },
+  {
+    id: 'hd10-g4-t1',
+    name: "Ra's al-Hadd HD-10, Group 4, Tomb 1",
+    period: 'Bronze Age',
+    sketchfab: '02c129b664844406bc4a9236b58ef958',
+  },
+  {
+    id: 'hd10-g4-t2',
+    name: "Ra's al-Hadd HD-10, Group 4, Tomb 2",
+    period: 'Bronze Age',
+    sketchfab: 'befe158d756f4c2ebe624c153a1d25b5',
+  },
 ];
 
 export default function Archive3DPage() {
