@@ -171,7 +171,7 @@ const REFERENCES: Reference[] = [
     cite: "Ramazzotti, M. (2022). Fumi e profumi d’Oriente. Legami essenziali e aromatici tra l’Asia occidentale e l’Africa orientale. ISIMU, 25, 185–196.",
   },
   {
-    cite: "Rose, J. L. (2022). An Introduction to Human Prehistory in Arabia: The Lost World of the Southern Crescent. Cham: Springer.",
+    cite: "Rose, J. I. (2022). An Introduction to Human Prehistory in Arabia: The Lost World of the Southern Crescent. Cham: Springer.",
   },
   {
     cite: "Stein, P. (2010). Die altsüdarabischen Minuskelinschriften auf Holzstäbchen aus der Bayerischen Staatsbibliothek in München (Epigraphische Forschungen auf der Arabischen Halbinsel 5). Tübingen: Wasmuth.",
