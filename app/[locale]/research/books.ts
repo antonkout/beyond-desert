@@ -338,11 +338,12 @@ export const BOOKS: Book[] = [
     type: "Film",
     title: "La sposa bambina",
     author: "al-Salami, Khadija",
-    year: 2014,
+    year: 2016,
     genre: "Drammatico",
-    publisher: null,
+    publisher: "CG Entertainment",
     isbn: null,
-    permalink: null,
+    // Held elsewhere in the Polo Bolognese, not at Salaborsa — hence no pb filter.
+    permalink: "https://sol.unibo.it/SebinaOpac/resource/la-sposa-bambina/UBO04703547",
   },
   {
     slug: "la-candidata-ideale",
