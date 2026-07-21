@@ -5,6 +5,7 @@ import Reveal from '@/app/components/Reveal';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
 import EditorialPanel from '@/app/components/EditorialPanel';
 import { getPanels } from '@/app/[locale]/history/panels';
+import { getPhotographers } from './photographers';
 
 const INTRO: string[] = [
   'The Arabian Peninsula is often associated, in the popular consciousness, with the immensity of the desert. Beyond this image, powerful yet partial, lies a much richer history made of coasts, mountains, oases, maritime routes, mineral resources, settlements, exchanges, and encounters between different communities. Beyond the Desert was created to guide the public in discovering this complexity and to show how archaeology can restore historical depth to a region that has been central to relations between Asia, Africa, and the Mediterranean since antiquity.',
@@ -42,10 +43,34 @@ const GEOGRAPHY_AR: string[] = [
   'إن النظر إلى شبه الجزيرة العربية «ما وراء الصحراء» يعني تجاوز الصور النمطية وتثمين منطقة ديناميكية، تتقاطع فيها الطرق البرية والبحرية، وقادرة على ربط عوالم مختلفة. ويعني أيضًا فهم كيف أتاحت بيئات تبدو قاسية في ظاهرها فرصًا للتكيف، والابتكار، والتبادل. ومن هذا المنطلق، يُعرِّف المعرض الجمهور بمساهمة جامعة بولونيا في الدراسات الأثرية الخاصة بشبه الجزيرة العربية.',
 ];
 
-const LABELS: Record<string, { kicker: string; intro: string; geography: string }> = {
-  en: { kicker: 'The Exhibition', intro: 'Introduction', geography: 'Geographical Setting' },
-  it: { kicker: 'La mostra', intro: 'Introduzione', geography: 'Inquadramento geografico' },
-  ar: { kicker: 'المعرض', intro: 'مقدمة', geography: 'الإطار الجغرافي' },
+const LABELS: Record<
+  string,
+  { kicker: string; intro: string; geography: string; photographers: string; photographersLead: string }
+> = {
+  en: {
+    kicker: 'The Exhibition',
+    intro: 'Introduction',
+    geography: 'Geographical Setting',
+    photographers: 'The Photographers',
+    photographersLead:
+      'Three Omani photographers whose work runs through the exhibition, each documenting a different facet of life between the coast, the desert and the mountains.',
+  },
+  it: {
+    kicker: 'La mostra',
+    intro: 'Introduzione',
+    geography: 'Inquadramento geografico',
+    photographers: 'I fotografi',
+    photographersLead:
+      'Tre fotografi omaniti il cui lavoro attraversa la mostra, ciascuno impegnato a documentare un diverso aspetto della vita tra la costa, il deserto e le montagne.',
+  },
+  ar: {
+    kicker: 'المعرض',
+    intro: 'مقدمة',
+    geography: 'الإطار الجغرافي',
+    photographers: 'المصوّرون',
+    photographersLead:
+      'ثلاثة مصوّرين عُمانيين تتخلّل أعمالهم المعرض، يوثّق كل منهم وجهًا مختلفًا من الحياة بين الساحل والصحراء والجبال.',
+  },
 };
 
 export default function Exhibition() {
@@ -54,6 +79,7 @@ export default function Exhibition() {
   const geography = locale === 'it' ? GEOGRAPHY_IT : locale === 'ar' ? GEOGRAPHY_AR : GEOGRAPHY;
   const labels = LABELS[locale] ?? LABELS.en;
   const CREDITS_PANEL = getPanels(locale).find((p) => p.id === 'credits')!;
+  const photographers = getPhotographers(locale);
   return (
     <article className="bg-petroleum-blue text-desert-sand">
       {/* Intro over a beach backdrop */}
@@ -82,6 +108,51 @@ export default function Exhibition() {
       </Reveal>
 
       <div className="max-w-6xl mx-auto px-6 pb-20 md:pb-28">
+        <section
+          id="photographers"
+          aria-labelledby="photographers-heading"
+          className="mt-4 pt-12 border-t border-desert-sand/20 scroll-mt-24"
+        >
+          <p className="text-xs tracking-[0.25em] uppercase text-desert-sand/60 mb-2">
+            {labels.kicker}
+          </p>
+          <h2
+            id="photographers-heading"
+            className="font-display text-3xl md:text-4xl mb-3 text-desert-sand"
+          >
+            {labels.photographers}
+          </h2>
+          <p className="max-w-prose mb-10 text-desert-sand/80 leading-relaxed">
+            {labels.photographersLead}
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-10">
+            {photographers.map((p) => (
+              <div key={p.id}>
+                <h3 className="font-display font-extrabold text-xl text-desert-sand">
+                  {p.name}
+                </h3>
+                {p.instagram && (
+                  <a
+                    href={`https://instagram.com/${p.instagram}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="mt-1 inline-block text-sm text-desert-sand/70 hover:text-desert-sand transition-colors"
+                    dir="ltr"
+                  >
+                    @{p.instagram}
+                  </a>
+                )}
+                <div className="mt-4 space-y-3 text-sm leading-relaxed text-desert-sand/85">
+                  {p.bio.map((para, i) => (
+                    <p key={i}>{para}</p>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
         <section
           id="credits"
           className="mt-4 pt-12 border-t border-desert-sand/20 scroll-mt-24"

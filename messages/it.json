@@ -33,30 +33,35 @@
     },
     "history": {
       "title": "Storie di popoli e scoperte",
-      "lead": "Dal Paleolitico alla nascita dell’Islam, la Penisola Araba fu uno spazio di adattamento e relazione tra Africa, Asia e Mediterraneo — plasmato da acqua, metalli, oasi e rotte commerciali.",
+      "lead": "La Penisola Araba è sempre stata uno spazio di adattamento e relazione tra Africa, Asia e Mediterraneo — plasmato da acqua, metalli, oasi e rotte commerciali.",
       "bronze": {
         "title": "Età del Bronzo",
-        "period": "III millennio a.C.",
+        "period": "3200 – 1300 a.C.",
         "body": "Nel terzo millennio a.C. il rame rese la Penisola Araba protagonista delle grandi reti commerciali del Vicino Oriente. Le fonti mesopotamiche ricordano il paese di Magan — l’Arabia sud-orientale e la Penisola dell’Oman — e il regno di Dilmun nel Golfo.\n\nIl rame fu un motore di scambi, collegando Mesopotamia, Iran, Valle dell’Indo, Golfo Arabico e Mare d’Oman. Circolavano anche piante e pratiche agricole, che contribuirono alla formazione dell’oasi. Acqua, palme da dattero, coltivazione e allevamento costruirono paesaggi produttivi più stabili senza cancellare la mobilità stagionale."
       },
       "iron": {
-        "title": "Età del Ferro",
-        "period": "I millennio a.C. – prima età islamica",
+        "title": "Età del Ferro e tarda antichità",
+        "period": "1300 a.C. – 632 d.C.",
         "body": "Nel primo millennio a.C. acqua e mobilità divennero forze decisive. In Arabia sud-orientale si diffuse il falaj — gallerie e canali che captavano l’acqua sotterranea verso campi e oasi — favorendo l’agricoltura, insediamenti più densi e collegamenti tra montagne, pianure e coste.\n\nLa domesticazione del dromedario trasformò il viaggio nel deserto. I Regni Sudarabici, tra cui Saba, prosperarono sull’agricoltura irrigua, sulle rotte carovaniere e sul commercio di incenso e mirra, mentre il nord e il nord-ovest collegavano le rotte meridionali al Levante e a Roma."
       },
       "preIslamic": {
         "title": "Periodo Islamico",
-        "period": "dal VII secolo d.C.",
+        "period": "632 d.C. – oggi",
         "body": "Nel settimo secolo d.C. la nascita dell’Islam trasformò in profondità la Penisola. La Mecca e Medina divennero i centri di una nuova comunità religiosa e politica, capace di unire gruppi diversi senza cancellare le tradizioni locali.\n\nAnche quando il potere si spostò fuori dall’Arabia, la regione mantenne un ruolo essenziale: le città sante rimasero poli del pellegrinaggio e le coste continuarono a partecipare ai traffici del Mar Rosso, del Golfo Arabico e dell’Oceano Indiano."
       }
     },
     "research": {
       "title": "Scavi UniBo in Arabia",
-      "lead": "Decenni di ricerca archeologica dell’Università di Bologna in Oman — dal Joint Hadd Project alle missioni in corso a Ras al-Hadd, Al-Khutm, Halban e al riparo di Romail.",
+      "lead": "Decenni di ricerca archeologica dell’Università di Bologna in Oman — dal Joint Hadd Project alle missioni in corso a Ras Al-Hadd, Al-Khutm, Halban e Romail.",
       "rasAlHadd": {
-        "title": "Ras al-Hadd",
+        "title": "Ras Al-Hadd",
         "lead": "Paesaggio costiero dell’Età del Bronzo attorno all’abitato di HD-6 e alle necropoli di HD-7/HD-10, indagato dall’Università di Bologna da oltre trent’anni.",
-        "period": "Età del Bronzo (III millennio a.C.)"
+        "period": "Età del Bronzo"
+      },
+      "khutm": {
+        "title": "Al-Khutm",
+        "lead": "Parte dell’area UNESCO di Bat, Al-Khutm & Al-Ayn, dove l’Università di Bologna ha partecipato allo scavo di una monumentale piattaforma circolare in pietra, convenzionalmente detta ‘torre’.",
+        "period": "Età del Bronzo"
       },
       "halban": {
         "title": "Necropoli di Halban",
@@ -70,7 +75,7 @@
       },
       "history": {
         "title": "Quarant’anni in Oman",
-        "lead": "Dalle prime campagne di Maurizio Tosi a Ras al-Hamra alla fine degli anni Settanta ai progetti odierni di DiSCi e DBC, gli archeologi bolognesi hanno plasmato la comprensione della preistoria e protostoria dell’Arabia sud-orientale."
+        "lead": "Dalle prime campagne di Maurizio Tosi a Ras Al-Hamra alla fine degli anni Settanta ai progetti odierni di DiSCi e DBC, gli archeologi bolognesi hanno plasmato la comprensione della preistoria e protostoria dell’Arabia sud-orientale."
       },
       "references": {
         "title": "Riferimenti scientifici",
@@ -93,7 +98,7 @@
     },
     "archive3d": {
       "title": "Archivio 3D",
-      "lead": "Ruota, ingrandisci e colloca nello spazio le strutture funerarie di Ras al-Hadd e Halban con la realtà aumentata. Inquadra i codici QR in mostra per vederle in AR."
+      "lead": "Ruota, ingrandisci e colloca nello spazio le strutture funerarie di Ras Al-Hadd e Halban con la realtà aumentata. Inquadra i codici QR in mostra per vederle in AR."
     }
   },
   "accessibility": {

@@ -5,6 +5,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { getPanels, type Panel } from '@/app/[locale]/history/panels';
 import Collapsible from '@/app/components/Collapsible';
 import PhotoBackdrop from '@/app/components/PhotoBackdrop';
+import { italiciseTerms } from '@/app/components/italicise';
 
 // Editorial treatment for the long aflaj text: a sticky title rail, a drop cap,
 // and a "falaj" channel line down the margin that fills with water as you read.
@@ -28,7 +29,7 @@ function AflajSection({ panel }: { panel: Panel }) {
             {panel.kicker}
           </p>
           <h2 className="font-display text-3xl md:text-4xl text-deep-basalt">
-            {panel.title}
+            {italiciseTerms(panel.title)}
           </h2>
           <svg viewBox="0 0 60 24" className="mt-5 w-16 text-petroleum-blue/50" fill="none" aria-hidden>
             <path d="M0 6 H22 L30 18 L38 6 H60" stroke="currentColor" strokeWidth="1.5" />
@@ -51,7 +52,7 @@ function AflajSection({ panel }: { panel: Panel }) {
                       key={i}
                       className="font-display font-extrabold text-xl md:text-2xl text-deep-basalt pt-3"
                     >
-                      {b.text}
+                      {italiciseTerms(b.text)}
                     </h3>
                   ) : (
                     <p
@@ -62,7 +63,7 @@ function AflajSection({ panel }: { panel: Panel }) {
                           : ''
                       }
                     >
-                      {b.text}
+                      {italiciseTerms(b.text)}
                     </p>
                   )
                 )}
@@ -89,21 +90,21 @@ export default function ClimatePageClient() {
             {{ en: 'Climate & Aflaj', it: 'Clima e Aflaj', ar: 'المناخ والأفلاج' }[locale] ??
               'Climate & Aflaj'}
           </p>
-          <h1 className="font-display text-4xl md:text-5xl mb-4">{t('title')}</h1>
-          <p className="text-lg opacity-90 leading-relaxed max-w-prose">{t('lead')}</p>
+          <h1 className="font-display text-4xl md:text-5xl mb-4">
+            {italiciseTerms(t('title'))}
+          </h1>
+          <p className="text-lg opacity-90 leading-relaxed max-w-prose">
+            {italiciseTerms(t('lead'))}
+          </p>
         </div>
       </header>
 
       <div className="max-w-4xl mx-auto px-6 py-16">
+        {/* Review (D. Frenez): the prose that stood here and the "water in an
+            arid land" section below it repeated the Oases & aflaj panel almost
+            verbatim, so both were dropped and only the film was kept. */}
         <section className="mb-12 border-l-4 border-unibo-red ps-6">
-          <h2 className="font-display font-extrabold text-2xl mb-3 text-deep-basalt">
-            {t('aflaj.title')}
-          </h2>
-          <p className="text-deep-basalt/85 leading-relaxed mb-4 whitespace-pre-line">
-            {t('aflaj.body')}
-          </p>
-
-          <figure className="my-6">
+          <figure className="mb-6">
             <div className="relative aspect-video overflow-hidden rounded-xl border border-deep-basalt/15 shadow-lg shadow-deep-basalt/10">
               <iframe
                 className="absolute inset-0 h-full w-full"
@@ -115,11 +116,11 @@ export default function ClimatePageClient() {
               />
             </div>
             <figcaption className="mt-2 text-xs text-deep-basalt/60">
-              {{
+              {italiciseTerms({
                 en: 'How an aflaj channels water by gravity from source to settlement.',
                 it: 'Come un aflaj conduce l’acqua per gravità dalla sorgente all’abitato.',
                 ar: 'كيف يوصل الفلج الماء بفعل الجاذبية من المصدر إلى المستوطنة.',
-              }[locale] ?? ''}
+              }[locale] ?? '')}
             </figcaption>
           </figure>
 
@@ -131,15 +132,6 @@ export default function ClimatePageClient() {
           >
             {t('aflaj.unesco')} →
           </a>
-        </section>
-
-        <section className="border-l-4 border-petroleum-blue ps-6">
-          <h2 className="font-display font-extrabold text-2xl mb-3 text-deep-basalt">
-            {t('climate.title')}
-          </h2>
-          <p className="text-deep-basalt/85 leading-relaxed whitespace-pre-line">
-            {t('climate.body')}
-          </p>
         </section>
 
         <AflajSection panel={aflajPanel} />

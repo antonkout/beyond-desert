@@ -33,30 +33,35 @@
     },
     "history": {
       "title": "Stories of People and Discoveries",
-      "lead": "From the Paleolithic to the birth of Islam, the Arabian Peninsula was a space of adaptation and relation between Africa, Asia, and the Mediterranean — shaped by water, metals, oases, and trade routes.",
+      "lead": "The Arabian Peninsula has always been a space of adaptation and relation between Africa, Asia, and the Mediterranean — shaped by water, metals, oases, and trade routes.",
       "bronze": {
         "title": "Bronze Age",
-        "period": "3rd millennium BCE",
+        "period": "3200 – 1300 BCE",
         "body": "In the third millennium BCE, copper made the Arabian Peninsula a protagonist of the great trade networks of the Near East. Mesopotamian sources name the land of Magan — southeastern Arabia and the Oman Peninsula — and the kingdom of Dilmun in the Gulf.\n\nCopper was an engine of exchange, connecting Mesopotamia, Iran, the Indus Valley, the Arabian Gulf, and the Sea of Oman. Plants and agricultural practices circulated too, contributing to the formation of the oasis. Water, date palms, cultivation, and herding built more stable productive landscapes without erasing seasonal mobility."
       },
       "iron": {
-        "title": "Iron Age",
-        "period": "1st millennium BCE – early Islamic era",
+        "title": "Iron Age & Late Antiquity",
+        "period": "1300 BCE – CE 632",
         "body": "In the first millennium BCE, water and mobility became decisive forces. In southeastern Arabia the falaj spread — tunnels and channels tapping underground water toward fields and oases — favoring agriculture, denser settlement, and connections between mountains, plains, and coasts.\n\nThe domestication of the dromedary transformed desert travel. The South Arabian Kingdoms, including Saba, prospered on irrigated agriculture, caravan routes, and the trade of frankincense and myrrh, while the north and northwest linked the southern routes to the Levant and Rome."
       },
       "preIslamic": {
         "title": "Islamic Period",
-        "period": "from the 7th century CE",
+        "period": "632 CE – present",
         "body": "In the seventh century CE, the birth of Islam deeply transformed the Peninsula. Mecca and Medina became the centers of a new religious and political community, uniting diverse groups without erasing local traditions.\n\nEven when power shifted outside Arabia, the region kept an essential role: the holy cities remained poles of pilgrimage, and the coasts continued to take part in the trade of the Red Sea, the Arabian Gulf, and the Indian Ocean."
       }
     },
     "research": {
       "title": "UniBo Excavations in Arabia",
-      "lead": "Decades of University of Bologna archaeological research in Oman — from the Joint Hadd Project to ongoing missions at Ras al-Hadd, Al-Khutm, Halban, and the Romail shelter.",
+      "lead": "Decades of University of Bologna archaeological research in Oman — from the Joint Hadd Project to ongoing missions at Ras Al-Hadd, Al-Khutm, Halban, and Romail.",
       "rasAlHadd": {
-        "title": "Ras al-Hadd",
+        "title": "Ras Al-Hadd",
         "lead": "Bronze Age coastal landscape around the HD-6 settlement and the HD-7/HD-10 necropolises, investigated by the University of Bologna for over thirty years.",
-        "period": "Bronze Age (3rd millennium BCE)"
+        "period": "Bronze Age"
+      },
+      "khutm": {
+        "title": "Al-Khutm",
+        "lead": "Part of the UNESCO area of Bat, Al-Khutm & Al-Ayn, where the University of Bologna joined the excavation of a monumental circular stone platform, conventionally called a 'tower'.",
+        "period": "Bronze Age"
       },
       "halban": {
         "title": "Halban Necropolis",
@@ -70,7 +75,7 @@
       },
       "history": {
         "title": "Forty years in Oman",
-        "lead": "From Maurizio Tosi's first campaigns at Ras al-Hamra in the late 1970s to today's DiSCi and DBC projects, Bologna's archaeologists have shaped how the prehistory and protohistory of southeastern Arabia are understood."
+        "lead": "From Maurizio Tosi's first campaigns at Ras Al-Hamra in the late 1970s to today's DiSCi and DBC projects, Bologna's archaeologists have shaped how the prehistory and protohistory of southeastern Arabia are understood."
       },
       "references": {
         "title": "Scientific References",
@@ -93,7 +98,7 @@
     },
     "archive3d": {
       "title": "3D Archive",
-      "lead": "Rotate, zoom, and place burial structures from Ras al-Hadd and Halban in your own space using augmented reality. Scan QR codes in the exhibition to view in AR."
+      "lead": "Rotate, zoom, and place burial structures from Ras Al-Hadd and Halban in your own space using augmented reality. Scan QR codes in the exhibition to view in AR."
     }
   },
   "accessibility": {
