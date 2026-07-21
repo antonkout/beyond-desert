@@ -23,7 +23,7 @@ export const PHOTOGRAPHERS_EN: Photographer[] = [
   },
   {
     id: 'mo-bader',
-    name: 'Mo Bader',
+    name: 'Mohammed Badr',
     instagram: 'Mo_Bader',
     bio: [
       'An Omani photographer from the coastal city of Sur, where growing up around the sea naturally shaped the way he sees and documents the world. His work explores people, place, and the quiet moments that often go unnoticed. Living abroad gave him a deeper appreciation for his culture and surroundings, inspiring him to document the beauty of everyday life in Oman and share it with audiences beyond its borders.',
@@ -55,10 +55,10 @@ export const PHOTOGRAPHERS_IT: Photographer[] = [
   },
   {
     id: 'mo-bader',
-    name: 'Mo Bader',
+    name: 'Mohammed Badr',
     instagram: 'Mo_Bader',
     bio: [
-      'Mo Bader è un fotografo omanita originario della città costiera di Sur, dove crescere a contatto con il mare ha plasmato in modo naturale il suo modo di vedere e documentare il mondo. Il suo lavoro esplora le persone, i luoghi e i momenti di quiete che spesso passano inosservati. Vivere all’estero gli ha permesso di apprezzare ancor più profondamente la sua cultura, ispirandolo a documentare la bellezza della vita quotidiana in Oman e a condividerla con pubblici oltre confine.',
+      'Mohammed Badr è un fotografo omanita originario della città costiera di Sur, dove crescere a contatto con il mare ha plasmato in modo naturale il suo modo di vedere e documentare il mondo. Il suo lavoro esplora le persone, i luoghi e i momenti di quiete che spesso passano inosservati. Vivere all’estero gli ha permesso di apprezzare ancor più profondamente la sua cultura, ispirandolo a documentare la bellezza della vita quotidiana in Oman e a condividerla con pubblici oltre confine.',
       '“The Waves of Us” è una serie in continua evoluzione che esplora il rapporto tra le persone e il mare. Ispirato alla costa dell’Oman e ai luoghi in cui è cresciuto, il progetto documenta i molteplici modi in cui le persone si connettono con l’acqua, sia attraverso la vita quotidiana, la riflessione, il gioco o semplicemente trascorrendo del tempo in riva al mare. Il mare diventa più di un semplice sfondo; diventa uno spazio in cui nascono ricordi e si svelano storie personali. Attraverso queste fotografie, la serie riflette sulla connessione, sull’appartenenza e sulla presenza costante del mare nella vita di tutti i giorni.',
     ],
   },
