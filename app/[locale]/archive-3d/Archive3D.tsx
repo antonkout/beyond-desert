@@ -12,31 +12,31 @@ const MODELS: Model[] = [
   {
     id: 'hal-21',
     name: 'Halban Tomb HAL-21',
-    period: 'Bronze Age',
+    period: 'Early Bronze Age',
     sketchfab: '57141cbf3d6f493491492346a18c4b97',
   },
   {
     id: 'hal-25',
     name: 'Halban Tomb HAL-25',
-    period: 'Bronze Age',
+    period: 'Early Bronze Age',
     sketchfab: '4c014dd765794ff8963e3d653c3e28c1',
   },
   {
     id: 'hd7-g2-t1',
-    name: "Ra's al-Hadd HD-7, Group 2, Tomb 1",
-    period: 'Bronze Age',
+    name: "Ras Al-Hadd HD-7, Group 2, Tomb 1",
+    period: 'Early Bronze Age',
     sketchfab: '1434b9c770a54a36bec1f5ee01ecf1b9',
   },
   {
     id: 'hd10-g4-t1',
-    name: "Ra's al-Hadd HD-10, Group 4, Tomb 1",
-    period: 'Bronze Age',
+    name: "Ras Al-Hadd HD-10, Group 4, Tomb 1",
+    period: 'Early Bronze Age',
     sketchfab: '02c129b664844406bc4a9236b58ef958',
   },
   {
     id: 'hd10-g4-t2',
-    name: "Ra's al-Hadd HD-10, Group 4, Tomb 2",
-    period: 'Bronze Age',
+    name: "Ras Al-Hadd HD-10, Group 4, Tomb 2",
+    period: 'Early Bronze Age',
     sketchfab: 'befe158d756f4c2ebe624c153a1d25b5',
   },
 ];
@@ -84,9 +84,12 @@ export default function Archive3DPage() {
               </div>
               <div className="p-5">
                 <p className="text-xs uppercase tracking-wider text-unibo-red mb-1">
-                  {model.period === 'Bronze Age'
-                    ? { en: 'Bronze Age', it: 'Età del Bronzo', ar: 'العصر البرونزي' }[locale] ??
-                      model.period
+                  {model.period === 'Early Bronze Age'
+                    ? {
+                        en: 'Early Bronze Age',
+                        it: 'Antica Età del Bronzo',
+                        ar: 'العصر البرونزي المبكر',
+                      }[locale] ?? model.period
                     : model.period}
                 </p>
                 <h3 className="font-display font-extrabold text-lg text-deep-basalt">

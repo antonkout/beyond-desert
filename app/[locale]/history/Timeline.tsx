@@ -5,10 +5,10 @@
 // sync with the `id` values below).
 const PERIODS = [
   { id: 'palaeolithic', label: 'Palaeolithic', dates: 'until c. 10,000 yrs ago' },
-  { id: 'neolithic', label: 'Neolithic', dates: 'c. 8000–3100 BCE' },
-  { id: 'bronze-age', label: 'Bronze Age', dates: '3100–1250 BCE' },
-  { id: 'iron-age', label: 'Iron Age', dates: '1st mill. BCE – 7th c. CE' },
-  { id: 'islam', label: 'Islam', dates: 'from 7th c. CE' },
+  { id: 'neolithic', label: 'Neolithic', dates: '750k BP – 3200 BCE' },
+  { id: 'bronze-age', label: 'Bronze Age', dates: '3200 – 1300 BCE' },
+  { id: 'iron-age', label: 'Iron Age & Late Antiquity', dates: '1300 BCE – CE 632' },
+  { id: 'islam', label: 'Islam', dates: '632 CE – present' },
 ] as const;
 
 export default function Timeline() {

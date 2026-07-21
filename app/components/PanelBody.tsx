@@ -1,4 +1,5 @@
 import type { Panel } from '@/app/[locale]/history/panels';
+import { italiciseTerms } from './italicise';
 
 // Heading slug -> anchor id. Kept deliberately simple; must match the ids used
 // by the history Timeline.tsx (palaeolithic, neolithic, bronze-age, iron-age,
@@ -23,11 +24,11 @@ export default function PanelBody({ panel }: { panel: Panel }) {
             id={slug(block.text)}
             className="font-display font-extrabold text-xl md:text-2xl pt-4 scroll-mt-24 text-unibo-red"
           >
-            {block.text}
+            {italiciseTerms(block.text)}
           </h3>
         ) : (
           <p key={i} className="max-w-prose">
-            {block.text}
+            {italiciseTerms(block.text)}
           </p>
         )
       )}

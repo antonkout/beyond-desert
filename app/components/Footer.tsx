@@ -1,11 +1,18 @@
 'use client';
 import { useTranslations, useLocale } from 'next-intl';
 
+// `scale` bumps a logo whose artwork sits small inside its own canvas, so every
+// mark reads at a comparable size on the shelf (review: the ministry logo was
+// noticeably smaller than the rest).
 const LOGOS = [
   { src: 'unibo-seal.png', alt: 'Alma Mater Studiorum – Università di Bologna' },
   { src: 'comune-salaborsa.png', alt: 'Comune di Bologna · Biblioteca Salaborsa' },
   { src: 'experience-oman.png', alt: 'Experience Oman' },
-  { src: 'mhc-oman.png', alt: 'Ministry of Heritage and Tourism, Sultanate of Oman' },
+  {
+    src: 'mhc-oman.png',
+    alt: 'Ministry of Heritage and Tourism, Sultanate of Oman',
+    scale: 'h-14 md:h-16',
+  },
   { src: 'ch360.png', alt: 'CH360' },
   { src: 'bones-lab.png', alt: 'Bones Lab' },
 ];
@@ -33,7 +40,7 @@ export default function Footer() {
                 src={`/images/logos/${logo.src}`}
                 alt={logo.alt}
                 loading="lazy"
-                className="h-9 md:h-10 w-auto object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0"
+                className={`${logo.scale ?? 'h-9 md:h-10'} w-auto object-contain opacity-80 grayscale transition duration-300 hover:opacity-100 hover:grayscale-0`}
               />
             </li>
           ))}

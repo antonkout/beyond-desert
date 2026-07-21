@@ -6,18 +6,18 @@ import { slug } from '@/app/components/PanelBody';
 import type { Block } from './panels';
 
 const DATES: Record<string, string> = {
-  Prehistory: 'until c. 3100 BCE',
-  'Bronze Age': '3100–1250 BCE',
-  'Iron Age': '1st mill. BCE – 7th c. CE',
-  'Islamic Period': 'from the 7th c. CE',
-  Preistoria: 'fino a c. 3100 a.C.',
-  'Età del Bronzo': '3100–1250 a.C.',
-  'Età del Ferro': 'I mill. a.C. – VII sec. d.C.',
-  'Periodo Islamico': 'dal VII sec. d.C.',
-  'عصور ما قبل التاريخ': 'حتى نحو 3100 ق.م',
-  'العصر البرونزي': '3100–1250 ق.م',
-  'العصر الحديدي': 'الألفية الأولى ق.م – القرن السابع م',
-  'العصر الإسلامي': 'من القرن السابع الميلادي',
+  Prehistory: '750k BP – 3200 BCE',
+  'Bronze Age': '3200 – 1300 BCE',
+  'Iron Age & Late Antiquity': '1300 BCE – CE 632',
+  'Islamic Period': '632 CE – present',
+  Preistoria: '750k BP – 3200 a.C.',
+  'Età del Bronzo': '3200 – 1300 a.C.',
+  'Età del Ferro e tarda antichità': '1300 a.C. – 632 d.C.',
+  'Periodo Islamico': '632 d.C. – oggi',
+  'عصور ما قبل التاريخ': '750 ألف سنة مضت – 3200 ق.م',
+  'العصر البرونزي': '3200 – 1300 ق.م',
+  'العصر الحديدي والعصور القديمة المتأخرة': '1300 ق.م – 632 م',
+  'العصر الإسلامي': '632 م – الحاضر',
 };
 
 type Period = { heading: string; paras: string[] };
