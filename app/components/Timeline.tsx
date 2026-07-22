@@ -4,7 +4,7 @@ import { useTranslations, useLocale } from 'next-intl';
 import Reveal from './Reveal';
 import PhotoBackdrop from './PhotoBackdrop';
 
-const PERIODS = ['bronze', 'iron', 'preIslamic'] as const;
+const PERIODS = ['prehistory', 'bronze', 'iron', 'preIslamic'] as const;
 type Period = (typeof PERIODS)[number];
 
 export default function Timeline() {
@@ -16,6 +16,7 @@ export default function Timeline() {
     listen: { en: 'Listen', it: 'Ascolta', ar: 'استمع' }[locale] ?? 'Listen',
   };
   const [expanded, setExpanded] = useState<Record<Period, boolean>>({
+    prehistory: false,
     bronze: false,
     iron: false,
     preIslamic: false,

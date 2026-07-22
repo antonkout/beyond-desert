@@ -34,6 +34,11 @@
     "history": {
       "title": "Stories of People and Discoveries",
       "lead": "The Arabian Peninsula has always been a space of adaptation and relation between Africa, Asia, and the Mediterranean — shaped by water, metals, oases, and trade routes.",
+      "prehistory": {
+        "title": "Prehistory",
+        "period": "750k BP – 3200 BCE",
+        "body": "As early as the Paleolithic, over 700,000 years ago, the Arabian Peninsula was crossed and inhabited by human groups moving between Africa and Eurasia. Their presence was not continuous: climatic oscillations turned territories that are arid today into landscapes of lakes, watercourses, grasslands, and wildlife, while the return of aridity reduced settlement and prompted communities to reorganize routes and strategies.\n\nIn the Neolithic, between ten thousand and six thousand years ago, hunting, fishing, and gathering were integrated with the herding of sheep, goats, and cattle. Rather than the sedentary agricultural village typical of the Near East, the communities of Arabia adopted flexible strategies, combining herding, hunting, fishing, gathering, and seasonal mobility according to the opportunities offered by coasts, terraces, foothills, and mountains."
+      },
       "bronze": {
         "title": "Bronze Age",
         "period": "3200 – 1300 BCE",
