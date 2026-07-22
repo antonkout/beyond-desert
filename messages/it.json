@@ -34,6 +34,11 @@
     "history": {
       "title": "Storie di popoli e scoperte",
       "lead": "La Penisola Araba è sempre stata uno spazio di adattamento e relazione tra Africa, Asia e Mediterraneo — plasmato da acqua, metalli, oasi e rotte commerciali.",
+      "prehistory": {
+        "title": "Preistoria",
+        "period": "750k BP – 3200 a.C.",
+        "body": "Già nel Paleolitico, oltre 700.000 anni fa, la Penisola Araba fu attraversata e abitata da gruppi umani in movimento tra Africa ed Eurasia. Queste presenze non furono continue: le oscillazioni climatiche trasformarono territori oggi aridi in paesaggi con laghi, corsi d’acqua, praterie e fauna selvatica, mentre il ritorno dell’aridità ridusse le possibilità di insediamento e spinse le comunità a riorganizzare rotte e strategie.\n\nNel Neolitico, tra diecimila e seimila anni fa, caccia, pesca e raccolta si integrarono con l’allevamento di pecore, capre e bovini. Le comunità dell’Arabia non svilupparono il villaggio agricolo sedentario tipico del Vicino Oriente, ma adottarono strategie flessibili, combinando allevamento, caccia, pesca, raccolta e mobilità stagionale secondo le opportunità offerte da coste, terrazze, pedemontane e montagne."
+      },
       "bronze": {
         "title": "Età del Bronzo",
         "period": "3200 – 1300 a.C.",
